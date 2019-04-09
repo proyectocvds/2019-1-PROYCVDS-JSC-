@@ -1,10 +1,15 @@
 package edu.eci.cvds.managedbeans;
 
+import java.io.IOException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.impl.ServicesImpl;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "usuarioBean")
@@ -13,6 +18,8 @@ public class UsuarioBean extends BasePageBean{
 	
 	private String username;
 	private String contrasena;
+	private Usuario usuario;
+	private ServicesImpl servicesImpl;
 	
 	
 	private static final long serialVersionUID = 3594009161252782831L;
@@ -37,7 +44,9 @@ public class UsuarioBean extends BasePageBean{
 		this.contrasena=contrasena;
 	}
 	
-	public void login() {
+	public void login() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("menu.xhtml");
+		if(usuario==null) usuario = servicesImpl.getUsuario(username);
 		
 	}
 }

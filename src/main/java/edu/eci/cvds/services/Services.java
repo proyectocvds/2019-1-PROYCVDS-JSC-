@@ -1,5 +1,7 @@
 package edu.eci.cvds.services;
 
-public interface Services {
+import edu.eci.cvds.entities.Usuario;
 
+public interface Services {
+	public Usuario getUsuario(String username);
 }

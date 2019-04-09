@@ -12,4 +12,9 @@
         <result property='contrasena' column='contrasena'/>
         <result property='informacion' column='informacion'/>
     </resultMap>
+    
+    <select id="getUsuario" parameterType="map" resultMap="UsuarioResult">
+    SELECT * FROM usuario WHERE username=#{username}
+    </select>
+    
 </mapper>

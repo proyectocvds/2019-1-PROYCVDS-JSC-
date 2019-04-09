@@ -8,8 +8,8 @@ xmlns:p="http://primefaces.org/ui">
 <h:head>
 <title>Inicio de Sesion</title>
 </h:head>
-		<h:body style="margin:0px; padding:0px;">
-		<center>
+	<h:body style="margin:0px; padding:0px;">
+	<center>
 		<img src="escuela.jpg" style="width:20%;"> </img>
 		<br></br>
 		<p:layout>
@@ -27,7 +27,7 @@ xmlns:p="http://primefaces.org/ui">
 		<input TYPE="password" type="text" value="#{usuarioBean.contrasena}"></input>
 		<br></br>
 		<br></br>
-		<p:commandButton value="Login" update="usuario_form" actionListener="#{usuario.login()}"></p:commandButton>
+		<p:commandButton value="Login" update="usuario_form" actionListener="#{usuarioBean.login()}"></p:commandButton>
 		</h:form>
 	</center>
 </h:body>
