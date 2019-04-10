@@ -10,8 +10,12 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 import com.google.inject.Injector;
 
 import edu.eci.cvds.persistence.ElementoDAO;
+import edu.eci.cvds.persistence.EquipoDAO;
+import edu.eci.cvds.persistence.NovedadDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisElementoDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisEquipoDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisNovedadDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUsuarioDAO;
 import edu.eci.cvds.services.impl.ServicesImpl;
 
@@ -34,6 +38,8 @@ public class ServicesFactory {
 				bind(Services.class).to(ServicesImpl.class);
 				bind(UsuarioDAO.class).to(MyBatisUsuarioDAO.class);
 				bind(ElementoDAO.class).to(MyBatisElementoDAO.class);
+				bind(NovedadDAO.class).to(MyBatisNovedadDAO.class);
+				bind(EquipoDAO.class).to(MyBatisEquipoDAO.class);
                 
             }
         });

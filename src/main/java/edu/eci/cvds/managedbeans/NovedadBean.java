@@ -26,7 +26,34 @@ public class NovedadBean extends BasePageBean{
 	private static final long serialVersionUID = 3594009161252782831L;
 
 	@Inject
-	private Services novedadServices;
+	private Services usuarioServices;
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id=id;
+	}
+	
+	public Date getFecha() {
+		return fecha;
+	}
+	
+	public void setId(Date fecha) {
+		this.fecha=fecha;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+	
+	public void setTitulo(String titulo) {
+		this.titulo=titulo;
+	}
+	
+	
 	
 	
 }
+

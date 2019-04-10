@@ -24,23 +24,23 @@ public class ServicesImpl implements Services{
 	@Inject 
 	private NovedadDAO novedadDAO;
 
-	@Override
+	
 	public Usuario getUsuario(String username) {
 		return usuarioDAO.getUsuario(username);
 	}
 	
-	@Override
+	
 	public void registrarElemento(String id, boolean disponible, String tipo) {
 		elementoDAO.registrarElemento(id, disponible, tipo);
 		
 	}
 	
-	@Override
+	
 	public void registrarEquipo(String id, boolean disponible) {
 		equipoDAO.registrarEquipo(id, disponible);
 	}
 
-	@Override
+
 	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String usuario, String detalle,
 			String equipo, String elemento) {
 		novedadDAO.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
