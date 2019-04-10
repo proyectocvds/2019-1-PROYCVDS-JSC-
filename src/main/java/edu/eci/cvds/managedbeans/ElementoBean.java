@@ -2,7 +2,10 @@ package edu.eci.cvds.managedbeans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
+
+import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.impl.ServicesImpl;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "elementoBean")
 @RequestScoped
@@ -11,6 +14,7 @@ public class ElementoBean extends BasePageBean{
 	private String id;
 	private boolean disponible;
 	private String tipo;
+	private ServicesImpl servicesImpl;
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	
@@ -42,9 +46,9 @@ public class ElementoBean extends BasePageBean{
 		this.tipo=tipo;
 	}
 	
-	public void registrar() {
+	public void registrarElemento() {
+		Elemento elemento = new Elemento(id, disponible, tipo);
+		servicesImpl.registrarElemento(id, disponible, tipo);
 		
 	}
-	
-
 }

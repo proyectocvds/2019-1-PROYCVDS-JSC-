@@ -4,6 +4,6 @@ import edu.eci.cvds.entities.Usuario;
 
 public interface UsuarioDAO {
 	
-	Usuario getUsuario(String username);
+	public Usuario getUsuario(String username);
 
 }
