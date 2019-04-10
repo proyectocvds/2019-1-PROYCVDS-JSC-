@@ -35,7 +35,7 @@ public class Novedad {
 		return titulo;
 	}
 	
-	public void setTitulo(String id) {
+	public void setTitulo(String titulo) {
 		this.titulo=titulo;
 	}
 	

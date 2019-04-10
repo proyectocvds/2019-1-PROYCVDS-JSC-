@@ -26,7 +26,7 @@ public class NovedadBean extends BasePageBean{
 	private static final long serialVersionUID = 3594009161252782831L;
 
 	@Inject
-	private Services usuarioServices;
+	private Services novedadServices;
 	
 	
 }

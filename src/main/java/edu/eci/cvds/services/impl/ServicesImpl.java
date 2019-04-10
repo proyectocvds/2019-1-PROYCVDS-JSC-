@@ -18,7 +18,6 @@ public class ServicesImpl implements Services{
 	@Inject
 	private ElementoDAO elementoDAO;
 	
-	
 	@Inject 
 	private EquipoDAO equipoDAO;
 
@@ -29,12 +28,14 @@ public class ServicesImpl implements Services{
 	public Usuario getUsuario(String username) {
 		return usuarioDAO.getUsuario(username);
 	}
-
+	
+	@Override
 	public void registrarElemento(String id, boolean disponible, String tipo) {
 		elementoDAO.registrarElemento(id, disponible, tipo);
 		
 	}
 	
+	@Override
 	public void registrarEquipo(String id, boolean disponible) {
 		equipoDAO.registrarEquipo(id, disponible);
 	}
