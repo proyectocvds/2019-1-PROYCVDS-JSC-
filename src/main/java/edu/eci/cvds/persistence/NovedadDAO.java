@@ -1,10 +1,10 @@
 package edu.eci.cvds.persistence;
 
-import java.sql.Date;
+import java.util.Date;
 
 public interface NovedadDAO {
 	
-	public void registrarNovedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento);
+	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento);
 		
 	
 
