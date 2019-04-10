@@ -49,4 +49,8 @@ public class UsuarioBean extends BasePageBean{
 		if(usuario==null) usuario = servicesImpl.getUsuario(username);
 		
 	}
+	
+	public void logOut() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+	}
 }
