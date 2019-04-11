@@ -40,20 +40,25 @@ public class ElementoBean extends BasePageBean{
 		this.disponible=disponible;
 	}
 	
-	public String gettipo() {
+	public String getTipo() {
 		return tipo;
 		
 	}
 	
-	public void setTipo() {
+	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}
 	
 	public void registrarElemento() throws IOException {
+		System.out.println("///////////////////////////////////BEAN");
 		Elemento elemento = new Elemento(id, disponible, tipo);
-		servicesImpl.registrarElemento(id, disponible, tipo);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("elemento.xhtml");
+		usuarioServices.registrarElemento(id, disponible, tipo);
+		System.out.println("///////////////////////////////////BEAN2");
 		
+	}
+	
+	public void irElemento() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("elemento.xhtml");
 	}
 	
 	public void logOut() throws IOException {

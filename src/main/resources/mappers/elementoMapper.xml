@@ -11,8 +11,8 @@
 	<result property='disponible' column='disponible'/>
 	<result property='tipo' column='tipo'/>
 </resultMap>
-	<insert parameterType="map" id="registrarElemento">
-		INSERT INTO ELEMENTO VALUES(#{id},#{disponible},#{tipo});
+	<insert parameterType="map" id="registrarElemento" >
+		INSERT INTO ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
 	</insert>
 </mapper>
 

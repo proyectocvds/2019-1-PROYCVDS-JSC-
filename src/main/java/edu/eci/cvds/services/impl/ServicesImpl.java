@@ -31,7 +31,9 @@ public class ServicesImpl implements Services{
 	
 	
 	public void registrarElemento(String id, boolean disponible, String tipo) {
+		System.out.println("///////////////////////////////////SERVICES");
 		elementoDAO.registrarElemento(id, disponible, tipo);
+		
 		
 	}
 	

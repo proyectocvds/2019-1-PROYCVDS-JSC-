@@ -36,17 +36,20 @@ public class UsuarioBean extends BasePageBean{
 		
 	}
 	
+	
+	
 	public String getContrasena() {
 		return contrasena;
 	}
-	
+
 	public void setContrasena(String contrasena) {
-		this.contrasena=contrasena;
+		this.contrasena = contrasena;
 	}
-	
+
 	public void login() throws IOException {
+		System.out.println(username+" /////"+contrasena);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/menu.xhtml");
-		if(usuario==null) usuario = servicesImpl.getUsuario(username);
+		if(usuario!=null) usuario = servicesImpl.getUsuario(username);
 		
 	}
 	
