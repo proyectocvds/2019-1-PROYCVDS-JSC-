@@ -55,4 +55,8 @@ public class ElementoBean extends BasePageBean{
 		FacesContext.getCurrentInstance().getExternalContext().redirect("elemento.xhtml");
 		
 	}
+	
+	public void logOut() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/usuario.xhtml");
+	}
 }

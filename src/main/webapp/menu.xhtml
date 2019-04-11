@@ -24,12 +24,10 @@ xmlns:p="http://primefaces.org/ui">
  	<h:form id="menu_form">
 	<div style="margin:0px; padding:5px; background:#A51717; width:100%">
 		<ul class="my_test">
-		<li><h:commandLink value="Registrar Usuario" actionListener="#{elementoBean.registrarElemento()}" style="color:red;" ></h:commandLink></li>
-			<li><h:commandLink value="login" actionListener="#{usuarioBean.login()}" style="color:red;" ></h:commandLink></li>
-			<li><h:commandLink value="Registrar Usuario" actionListener="#{elementoBean.registrarElemento()}"  >Registrar Elemento</h:commandLink></li>
-			<li><h:commandLink value="login" actionListener="#{usuarioBean.login()}" style="color:red;" > Registrar Equipo</h:commandLink></li>
-			<li><p:commandButton value="Login" update="usuario_form" actionListener="#{usuarioBean.login()}">Registrar Novedad</p:commandButton></li>
-			<li><p:commandButton value="LogOut" update="menu_form" actionListener="#{usuarioBean.logOut()}">LogOut</p:commandButton></li>
+		<li>
+			<h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.registrarElemento()}" style="color:black;" ></h:commandLink></li>
+			<li><h:commandLink value="Registrar Usuario" actionListener="#{elementoBean.registrarElemento()}" style="color:black;"></h:commandLink></li>
+			<li><h:commandLink value="logOut" actionListener="#{elementoBean.logOut()}" style="color:black;"></h:commandLink></li>
 		</ul>
 	</div>
 	</h:form>

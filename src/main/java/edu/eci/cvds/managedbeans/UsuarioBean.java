@@ -45,12 +45,12 @@ public class UsuarioBean extends BasePageBean{
 	}
 	
 	public void login() throws IOException {
-		FacesContext.getCurrentInstance().getExternalContext().redirect("menu.xhtml");
+		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/menu.xhtml");
 		if(usuario==null) usuario = servicesImpl.getUsuario(username);
 		
 	}
 	
 	public void logOut() throws IOException {
-		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/usuario.xhtml");
 	}
 }
