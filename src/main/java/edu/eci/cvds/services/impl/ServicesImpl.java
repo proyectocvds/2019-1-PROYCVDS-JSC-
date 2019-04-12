@@ -31,7 +31,7 @@ public class ServicesImpl implements Services{
 	
 	
 	public void registrarElemento(String id, boolean disponible, String tipo) {
-		System.out.println("///////////////////////////////////SERVICES");
+		
 		elementoDAO.registrarElemento(id, disponible, tipo);
 		
 		
@@ -48,9 +48,15 @@ public class ServicesImpl implements Services{
 		novedadDAO.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
 		
 	}
-
-
 	
-	
-	
+	public Usuario consultarLogin(String username, String contrasena) {
+		
+		return usuarioDAO.consultarLogin(username, contrasena);
+		
+	}
 }
+
+	
+	
+	
+

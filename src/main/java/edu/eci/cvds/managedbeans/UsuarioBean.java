@@ -27,6 +27,13 @@ public class UsuarioBean extends BasePageBean{
 	@Inject
 	private Services usuarioServices;
 	
+	
+	/*public void validarUsuario () {
+		FacesContext fc =FacesContext.getCurrentInstance();
+		Usua
+		
+	} */
+	
 	public String getUsername() {
 		return username;
 	}

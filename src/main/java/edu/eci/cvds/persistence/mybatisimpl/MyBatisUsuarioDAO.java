@@ -16,4 +16,9 @@ public class MyBatisUsuarioDAO implements UsuarioDAO {
 		return usuarioMapper.getUsuario(username);
 	}
 
+	@Override
+	public Usuario consultarLogin(String username, String contrasena) {
+		return usuarioMapper.consultarLogin(username, contrasena);
+	}
+
 }
