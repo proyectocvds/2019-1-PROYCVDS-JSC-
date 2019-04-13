@@ -25,8 +25,9 @@ public class LaboratorioTest extends TestBase{
 	
 	@Inject 
 	Services services;
-	
+	/**
 	@Test
+	
 	public void pruebaCeroTest() throws SQLException, ServicesException{
 		qt().forAll(Generators.laboratorio()).check((equipo) -> {
 			try {
@@ -50,6 +51,7 @@ public class LaboratorioTest extends TestBase{
 		});
 	
 	}
+	*/
 
 				
 }

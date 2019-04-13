@@ -7,5 +7,6 @@ public interface UsuarioDAO {
 	public Usuario getUsuario(String username);
 	
 	public Usuario consultarLogin(String username, String contrasena);
+	
 
 }

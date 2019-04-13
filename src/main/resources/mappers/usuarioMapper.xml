@@ -13,8 +13,8 @@
         <result property='informacion' column='informacion'/>
     </resultMap>
     
-    <select id="getUsuario" parameterType="map" resultMap="UsuarioResult">
-    SELECT * FROM usuario WHERE username=#{username}
+    <select id="consultarLogin" parameterType="map" resultMap="UsuarioResult">
+    SELECT * FROM usuario WHERE username=#{username} and contrasena=#{contrasena};
     </select>
     
 </mapper>

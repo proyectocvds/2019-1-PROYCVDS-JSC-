@@ -50,10 +50,8 @@ public class ElementoBean extends BasePageBean{
 	}
 	
 	public void registrarElemento() throws IOException {
-		System.out.println("///////////////////////////////////BEAN");
 		Elemento elemento = new Elemento(id, disponible, tipo);
-		usuarioServices.registrarElemento(id, disponible, tipo);
-		System.out.println("///////////////////////////////////BEAN2");
+		usuarioServices.registrarElemento(id, true, tipo);
 		
 	}
 	

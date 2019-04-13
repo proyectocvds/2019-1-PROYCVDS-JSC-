@@ -17,6 +17,8 @@ public class Usuario {
 		this.informacion=informacion;
 	}
 	
+	public Usuario() {}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -54,7 +56,7 @@ public class Usuario {
 		return informacion;
 	}
 	
-	public void setInformacion() {
+	public void setInformacion(String informacion) {
 		this.informacion=informacion;
 	}
 

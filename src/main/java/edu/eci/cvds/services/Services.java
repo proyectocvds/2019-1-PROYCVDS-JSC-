@@ -10,6 +10,9 @@ public interface Services {
 	public void registrarElemento(String id, boolean disponible, String tipo);
 	public void registrarEquipo(String id, boolean disponible);
 	public void registrarNovedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento);
+	//public void validarUsuario();
+	//public void consultarLogin(String username, String contrasena);
+	
 
 
 

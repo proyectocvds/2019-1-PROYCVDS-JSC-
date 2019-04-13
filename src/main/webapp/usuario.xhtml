@@ -24,10 +24,10 @@ xmlns:p="http://primefaces.org/ui">
 		<br></br>
 		<br></br>
 		<p:outputLabel> Contraseña: </p:outputLabel>
-		<h:inputText type="password"  value="#{usuarioBean.contrasena}"></h:inputText>
+		<h:inputText TYPE="password" value="#{usuarioBean.contrasena}"></h:inputText>
 		<br></br>
 		<br></br>
-		<p:commandButton value="Login" update="usuario_form" actionListener="#{usuarioBean.login()}"></p:commandButton>
+		<p:commandButton value="Login" update="usuario_form" actionListener="#{usuarioBean.validarUsuario()}"></p:commandButton>
 		</h:form>
 	</center>
 </h:body>

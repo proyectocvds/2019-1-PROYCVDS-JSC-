@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.Services;
@@ -18,21 +19,26 @@ public class UsuarioBean extends BasePageBean{
 	
 	private String username;
 	private String contrasena;
-	private Usuario usuario;
-	private ServicesImpl servicesImpl;
 	
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	
-	@Inject
-	private Services usuarioServices;
+	@Inject 
 	
+	private ServicesImpl serImpl;
 	
-	/*public void validarUsuario () {
+	public void validarUsuario () throws IOException {
 		FacesContext fc =FacesContext.getCurrentInstance();
-		Usua
+		Usuario user= serImpl.consultarLogin(username, contrasena);
+		if(user!= null) {
+			HttpSession session=(HttpSession) fc.getExternalContext().getSession(true);
+			session.setAttribute("username",username);
+			session.setAttribute("contrasena",contrasena);
+			fc.getExternalContext().redirect("faces/menu.xhtml");
+			
+		}
 		
-	} */
+	} 
 	
 	public String getUsername() {
 		return username;
@@ -52,15 +58,12 @@ public class UsuarioBean extends BasePageBean{
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-
-	public void login() throws IOException {
-		System.out.println(username+" /////"+contrasena);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/menu.xhtml");
-		if(usuario!=null) usuario = servicesImpl.getUsuario(username);
-		
-	}
 	
 	public void logOut() throws IOException {
+		FacesContext fc =FacesContext.getCurrentInstance();
+		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);
+		session.setAttribute("username",username);
+		session.setAttribute("contrasena",contrasena);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/usuario.xhtml");
 	}
 }
