@@ -1,5 +1,7 @@
 package edu.eci.cvds.persistence.mybatisimpl;
 
+import java.util.List;
+
 import com.google.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
@@ -28,6 +30,12 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		if(getElemento(id)!=null) throw new proyExcepcion("El elemento ya existe");
 		elementoMapper.registrarElemento(id, disponible, tipo);
 		
-		
+	}
+
+
+
+	@Override
+	public List<Elemento> consultarElementos() {
+		return elementoMapper.consultarElemento();
 	}
 }

@@ -14,5 +14,10 @@
 	<insert parameterType="map" id="registrarElemento" >
 		INSERT INTO ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
 	</insert>
+	<select id="consultarElemento" resultMap="ElementoResult">
+		SELECT *
+		FROM ELEMENTO
+	</select>
+	
 </mapper>
 

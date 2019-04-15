@@ -24,7 +24,11 @@ xmlns:p="http://primefaces.org/ui">
 		<br></br>
 		<br></br>
 		<p:outputLabel> Contraseña: </p:outputLabel>
+<<<<<<< HEAD
 		<h:inputSecret value="#{usuarioBean.contrasena}"></h:inputSecret>
+=======
+		<h:inputSecret TYPE="password" value="#{usuarioBean.contrasena}"></h:inputSecret>
+>>>>>>> 0561e3341e896dd028a3f5449654965bede1c83d
 		<br></br>
 		<br></br>
 		<p:commandButton value="Login" update="usuario_form" actionListener="#{usuarioBean.validarUsuario()}"></p:commandButton>

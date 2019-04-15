@@ -2,8 +2,13 @@ package edu.eci.cvds.services.impl;
 
 import com.google.inject.Inject;
 import java.sql.Date;
+<<<<<<< HEAD
 
 import edu.eci.cvds.proyExcepcion;
+=======
+import java.util.List;
+
+>>>>>>> 0561e3341e896dd028a3f5449654965bede1c83d
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
@@ -56,6 +61,14 @@ public class ServicesImpl implements Services{
 		return usuarioDAO.consultarLogin(username, contrasena);
 		
 	}
+
+	public List<Elemento> listByElemento() {
+			return elementoDAO.consultarElementos();
+	}
+	
+	
+	
+	
 }
 
 	
