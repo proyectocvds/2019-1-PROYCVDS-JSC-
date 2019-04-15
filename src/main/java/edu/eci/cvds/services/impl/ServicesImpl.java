@@ -2,6 +2,8 @@ package edu.eci.cvds.services.impl;
 
 import com.google.inject.Inject;
 import java.sql.Date;
+import java.util.List;
+
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
@@ -54,6 +56,14 @@ public class ServicesImpl implements Services{
 		return usuarioDAO.consultarLogin(username, contrasena);
 		
 	}
+
+	public List<Elemento> listByElemento() {
+			return elementoDAO.consultarElementos();
+	}
+	
+	
+	
+	
 }
 
 	

@@ -1,5 +1,7 @@
 package edu.eci.cvds.persistence.mybatisimpl;
 
+import java.util.List;
+
 import com.google.inject.Inject;
 
 import edu.eci.cvds.entities.Elemento;
@@ -19,5 +21,12 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		elementoMapper.registrarElemento(id, disponible, tipo);
 		
 		
+	}
+
+
+
+	@Override
+	public List<Elemento> consultarElementos() {
+		return elementoMapper.consultarElemento();
 	}
 }
