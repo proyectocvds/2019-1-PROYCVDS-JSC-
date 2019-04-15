@@ -36,20 +36,52 @@ public class NovedadBean extends BasePageBean{
 		this.id=id;
 	}
 	
-	public Date getFecha() {
-		return fecha;
-	}
-	
-	public void setId(Date fecha) {
-		this.fecha=fecha;
-	}
-	
 	public String getTitulo() {
 		return titulo;
 	}
 	
 	public void setTitulo(String titulo) {
 		this.titulo=titulo;
+	}
+	
+	public Date getFecha() {
+		return fecha;
+	}
+	
+	public void setFecha(Date fecha) {
+		this.fecha=fecha;
+	}
+	
+	public String getUsuario() {
+		return usuario;
+	}
+	
+	public void setUsuario(String usuario) {
+		this.usuario=usuario;
+	}
+	
+	public String getDetalle() {
+		return detalle;
+	}
+	
+	public void setDetalle(String detalle) {
+		this.detalle=detalle;
+	}
+	
+	public String getEquipo() {
+		return equipo;
+	}
+	
+	public void setEquipo(String equipo) {
+		this.equipo=equipo;
+	}
+	
+	public String getElemento() {
+		return elemento;
+	}
+	
+	public void setElemento(String elemento){
+		this.elemento=elemento;
 	}
 	
 	

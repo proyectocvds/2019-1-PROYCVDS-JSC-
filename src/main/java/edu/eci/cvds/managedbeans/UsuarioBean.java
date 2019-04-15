@@ -64,6 +64,6 @@ public class UsuarioBean extends BasePageBean{
 		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);
 		session.setAttribute("username",username);
 		session.setAttribute("contrasena",contrasena);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/usuario.xhtml");
+		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
 }

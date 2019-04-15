@@ -5,6 +5,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
@@ -18,6 +19,8 @@ public class ElementoBean extends BasePageBean{
 	private boolean disponible;
 	private String tipo;
 	private ServicesImpl servicesImpl;
+	private String username;
+	private String contrasena;
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	
@@ -55,11 +58,19 @@ public class ElementoBean extends BasePageBean{
 		
 	}
 	
+	public void irNovedad() throws IOException{
+		FacesContext.getCurrentInstance().getExternalContext().redirect("novedad.xhtml");
+	}
+	
 	public void irElemento() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("elemento.xhtml");
 	}
 	
 	public void logOut() throws IOException {
-		FacesContext.getCurrentInstance().getExternalContext().redirect("faces/usuario.xhtml");
+		FacesContext fc =FacesContext.getCurrentInstance();
+		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);
+		session.setAttribute("username",username);
+		session.setAttribute("contrasena",contrasena);
+		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
 }

@@ -18,6 +18,5 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	public void registrarElemento(String id, boolean disponible, String tipo) {
 		elementoMapper.registrarElemento(id, disponible, tipo);
 		
-		
 	}
 }
