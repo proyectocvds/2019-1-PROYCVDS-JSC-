@@ -50,7 +50,7 @@ public class ElementoBean extends BasePageBean{
 		
 	}
 	
-	public List<Elemento> getData() throws Exception {
+	public List<Elemento> getData() throws proyExcepcion {
 		return usuarioServices.listByElemento();
 	}
 	
