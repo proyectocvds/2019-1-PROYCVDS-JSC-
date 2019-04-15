@@ -49,13 +49,30 @@ public class ElementoBean extends BasePageBean{
 		
 	}
 	
+	public void setTipo(String tipo) {
+		this.tipo=tipo;
+	}
+	
+	public void setUserName(String username) {
+		this.username=username;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public String getContraseña() {
+		return contrasena;
+	}
+	
+	public void setContraseña(String contrasena) {
+		this.contrasena=contrasena;
+	}
+
 	public List<Elemento> getData() throws Exception {
 		return usuarioServices.listByElemento();
 	}
 	
-	public void setTipo(String tipo) {
-		this.tipo=tipo;
-	}
 	
 	public void registrarElemento() throws IOException {
 		Elemento elemento = new Elemento(id, disponible, tipo);

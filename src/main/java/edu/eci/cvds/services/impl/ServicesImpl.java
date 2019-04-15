@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
@@ -59,6 +60,10 @@ public class ServicesImpl implements Services{
 
 	public List<Elemento> listByElemento() {
 			return elementoDAO.consultarElementos();
+	}
+	
+	public List <Novedad> listByNovedad(){
+		return novedadDAO.consultarNovedad();
 	}
 	
 	

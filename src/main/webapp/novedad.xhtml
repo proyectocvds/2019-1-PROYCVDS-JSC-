@@ -38,7 +38,39 @@ xmlns:p="http://primefaces.org/ui">
         <br></br>
         <p:outputLabel>Elemento: </p:outputLabel>
         <h:inputText value="#{novedadBean.elemento}"></h:inputText>
-
+		<br></br>
+        <br></br>
+        <p:commandButton value="Registrar" update="elemento_form" actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
+		<br></br>
+        <br></br>
+        <br></br>
+       <p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.data}">
+       <p:column headerText="Id">
+       	<h:outputText value="#{novedad.id}"/>
+       </p:column>
+       <p:column headerText="Fecha">
+        <h:outputText value="#{novedad.fecha}"/>
+       </p:column>
+       <p:column headerText="Titulo">
+       	<h:outputText value="#{novedad.titulo}"/>
+       </p:column>
+       <p:column headerText="Usuario">
+       	<h:outputText value="#{novedad.usuario}"/>
+       </p:column>
+       <p:column headerText="Detalle">
+       	<h:column value="#{novedad.detalle}"/>
+       </p:column>
+       <p:column headerText="Equipo">
+       	<h:column value="#{novedad.equipo}"/>
+       </p:column>
+       <p:column headerText="Elemento">
+       	<h:column value="#{novedad.elemento}"/>
+       </p:column>
+       
+       </p:dataTable>
+		
+		
+		
 </center>
 
 </h:form>

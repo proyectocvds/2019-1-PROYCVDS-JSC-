@@ -2,6 +2,7 @@ package edu.eci.cvds.persistence.mybatisimpl;
 
 
 import java.util.Date;
+import java.util.List;
 
 import com.google.inject.Inject;
 
@@ -18,6 +19,11 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 	@Override 
 	public void registrarNovedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento) {
 		novedadMapper.registrarNovedad(id,fecha, titulo,  usuario,  detalle, equipo, elemento);
+	}
+
+	@Override
+	public List<Novedad> consultarNovedad() {
+		return novedadMapper.consultarNovedad();
 	}
 
 }

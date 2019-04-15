@@ -1,5 +1,7 @@
 package edu.eci.cvds.managedbeans;
+import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -84,8 +86,14 @@ public class NovedadBean extends BasePageBean{
 		this.elemento=elemento;
 	}
 	
+	public void registrarNovedad()throws IOException{
+		Novedad novedad= new Novedad(id,fecha,titulo,usuario,detalle,equipo,elemento);
+		usuarioServices.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
+	}
 	
-	
-	
+	public List<Novedad> getData() throws Exception{
+		return usuarioServices.listByNovedad();
+	}
+
 }
 
