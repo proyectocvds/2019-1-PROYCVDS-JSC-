@@ -8,6 +8,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -27,7 +28,7 @@ public class UsuarioBean extends BasePageBean{
 	
 	private ServicesImpl serImpl;
 	
-	public void validarUsuario () throws IOException {
+	public void validarUsuario () throws  proyExcepcion, IOException {
 		FacesContext fc =FacesContext.getCurrentInstance();
 		Usuario user= serImpl.consultarLogin(username, contrasena);
 		if(user!= null) {

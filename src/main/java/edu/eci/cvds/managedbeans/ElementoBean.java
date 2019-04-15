@@ -6,6 +6,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -49,7 +50,7 @@ public class ElementoBean extends BasePageBean{
 		this.tipo=tipo;
 	}
 	
-	public void registrarElemento() throws IOException {
+	public void registrarElemento() throws proyExcepcion {
 		Elemento elemento = new Elemento(id, disponible, tipo);
 		usuarioServices.registrarElemento(id, true, tipo);
 		

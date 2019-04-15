@@ -2,6 +2,8 @@ package edu.eci.cvds.services.impl;
 
 import com.google.inject.Inject;
 import java.sql.Date;
+
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
@@ -25,12 +27,12 @@ public class ServicesImpl implements Services{
 	private NovedadDAO novedadDAO;
 
 	
-	public Usuario getUsuario(String username) {
+	public Usuario getUsuario(String username) throws proyExcepcion {
 		return usuarioDAO.getUsuario(username);
 	}
 	
 	
-	public void registrarElemento(String id, boolean disponible, String tipo) {
+	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion  {
 		
 		elementoDAO.registrarElemento(id, disponible, tipo);
 		
@@ -38,18 +40,18 @@ public class ServicesImpl implements Services{
 	}
 	
 	
-	public void registrarEquipo(String id, boolean disponible) {
+	public void registrarEquipo(String id, boolean disponible) throws proyExcepcion {
 		equipoDAO.registrarEquipo(id, disponible);
 	}
 
 
 	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String usuario, String detalle,
-			String equipo, String elemento) {
+			String equipo, String elemento) throws proyExcepcion {
 		novedadDAO.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
 		
 	}
 	
-	public Usuario consultarLogin(String username, String contrasena) {
+	public Usuario consultarLogin(String username, String contrasena) throws proyExcepcion {
 		
 		return usuarioDAO.consultarLogin(username, contrasena);
 		

@@ -7,5 +7,5 @@ import edu.eci.cvds.entities.Equipo;
 
 public interface EquipoMapper {
 	public void registrarEquipo(@Param("id")String id, @Param("disponible")boolean disponible);
-	
+	public Equipo getEquipo(@Param("id") String id);
 }
