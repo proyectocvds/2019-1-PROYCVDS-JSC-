@@ -1,5 +1,6 @@
 package edu.eci.cvds.managedbeans;
 import java.io.IOException;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -46,6 +47,10 @@ public class ElementoBean extends BasePageBean{
 	public String getTipo() {
 		return tipo;
 		
+	}
+	
+	public List<Elemento> getData() throws Exception {
+		return usuarioServices.listByElemento();
 	}
 	
 	public void setTipo(String tipo) {
