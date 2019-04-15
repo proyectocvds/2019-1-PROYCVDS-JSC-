@@ -32,17 +32,22 @@
 		<br></br>
 		<p:commandButton value="Registrar" update="elemento_form" actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
 		<br></br>
-		<dataTable id="elemento_table" var="Elemento" value="#{elementoBean.data]">
-		<p: column headerText="Id">
+		<br></br>
+		<br></br>
+		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.data}">
+		<p:column headerText="Id">
 			<h:outputText value="#{elemento.id}"/>
 		</p:column>
-		<p: column headerText="Disponible">
+		<p:column headerText="Disponible">
 			<h:outputText value="#{elemento.disponible}"/>
 		</p:column>
-		<p: column headerText="TipoElemento">
-			<h:outputText value="#{elemento.tipoelemento}"/>
+		<p:column headerText="TipoElemento">
+			<h:outputText value="#{elemento.tipo}"/>
 		</p:column> 
+		</p:dataTable>
 		</h:form>
+
+
 </center>
 </h:body>
 </html>
