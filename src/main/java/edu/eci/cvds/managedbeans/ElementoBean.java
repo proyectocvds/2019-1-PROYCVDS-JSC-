@@ -8,6 +8,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -49,6 +50,7 @@ public class ElementoBean extends BasePageBean{
 		
 	}
 	
+
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}
@@ -69,12 +71,16 @@ public class ElementoBean extends BasePageBean{
 		this.contrasena=contrasena;
 	}
 
-	public List<Elemento> getData() throws Exception {
+	//public List<Elemento> getData() throws Exception {
+
+		
+	public List<Elemento> getData() throws proyExcepcion {
+
 		return usuarioServices.listByElemento();
 	}
 	
 	
-	public void registrarElemento() throws IOException {
+	public void registrarElemento() throws proyExcepcion {
 		Elemento elemento = new Elemento(id, disponible, tipo);
 		usuarioServices.registrarElemento(id, true, tipo);
 		

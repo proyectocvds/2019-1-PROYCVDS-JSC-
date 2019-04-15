@@ -6,6 +6,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
+
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -86,12 +88,12 @@ public class NovedadBean extends BasePageBean{
 		this.elemento=elemento;
 	}
 	
-	public void registrarNovedad()throws IOException{
+	public void registrarNovedad()throws proyExcepcion{
 		Novedad novedad= new Novedad(id,fecha,titulo,usuario,detalle,equipo,elemento);
 		usuarioServices.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
 	}
 	
-	public List<Novedad> getData() throws Exception{
+	public List<Novedad> getData() throws proyExcepcion{
 		return usuarioServices.listByNovedad();
 	}
 
