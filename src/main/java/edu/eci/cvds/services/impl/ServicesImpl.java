@@ -6,6 +6,7 @@ import java.sql.Date;
 import edu.eci.cvds.proyExcepcion;
 import java.util.List;
 import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
@@ -65,6 +66,10 @@ public class ServicesImpl implements Services{
 	
 	public List <Novedad> listByNovedad(){
 		return novedadDAO.consultarNovedad();
+	}
+	
+	public List<Equipo> listByEquipo(){
+		return equipoDAO.consultarEquipos();
 	}
 	
 	

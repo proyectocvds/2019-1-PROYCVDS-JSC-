@@ -1,8 +1,11 @@
 package edu.eci.cvds.managedbeans;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -33,6 +36,13 @@ public class EquipoBean extends BasePageBean{
 	public void setDisponible(boolean disponible) {
 		this.disponible=disponible;
 	}
+	
+	public List<Equipo> getData() throws proyExcepcion{
+		return usuarioServices.listByEquipo();
+	}
+	
+	
+	
 	
 	
 }

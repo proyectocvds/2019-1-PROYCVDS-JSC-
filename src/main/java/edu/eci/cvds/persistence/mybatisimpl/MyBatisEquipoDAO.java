@@ -1,6 +1,8 @@
 package edu.eci.cvds.persistence.mybatisimpl;
 
 
+import java.util.List;
+
 import com.google.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
@@ -24,6 +26,11 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		if(getEquipo(id)==null) throw new proyExcepcion("El equipo no debe ser nulo");
 		
 		equipoMapper.registrarEquipo(id,disponible);
+	}
+	
+	@Override
+	public List<Equipo> consultarEquipos(){
+		return equipoMapper.consultarEquipo();
 	}
 	
 

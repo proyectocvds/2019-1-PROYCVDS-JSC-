@@ -12,6 +12,14 @@
 </resultMap>
 	
 	<insert parameterType="map" id="registrarEquipo">
-		INSERT INTO EQUIPO VALUES(#{id},#{disponible});
+		INSERT INTO EQUIPO (id,disponible) VALUES(#{id},#{disponible});
 	</insert>
+	
+	<select id="consultarEquipo" resultMap="EquipoResult">
+		SELECT *
+		FROM ELEMENTO
+	</select>
+	
+	
+	
 </mapper>
