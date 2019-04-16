@@ -2,8 +2,10 @@ package edu.eci.cvds.managedbeans;
 
 import java.io.IOException;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -16,30 +18,38 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "usuarioBean")
 @RequestScoped
+@SessionScoped
+
 public class UsuarioBean extends BasePageBean{
-	
-	private String username;
-	private String contrasena;
-	
-	
-	private static final long serialVersionUID = 3594009161252782831L;
-	
-	@Inject 
-	
-	private ServicesImpl serImpl;
-	
-	public void validarUsuario () throws  proyExcepcion, IOException {
-		FacesContext fc =FacesContext.getCurrentInstance();
-		Usuario user= serImpl.consultarLogin(username, contrasena);
-		if(user!= null) {
-			HttpSession session=(HttpSession) fc.getExternalContext().getSession(true);
-			session.setAttribute("username",username);
-			session.setAttribute("contrasena",contrasena);
-			fc.getExternalContext().redirect("faces/menu.xhtml");
-			
-		}
-		
-	} 
+
+private String username;
+private String contrasena;
+
+
+private static final long serialVersionUID = 3594009161252782831L;
+
+@Inject 
+
+private ServicesImpl serImpl;
+
+public void validarUsuario () {
+ 
+ try {
+  FacesContext fc =FacesContext.getCurrentInstance();
+  Usuario user= serImpl.consultarLogin(username, contrasena);
+  if(user!= null) {
+   HttpSession session=(HttpSession) fc.getExternalContext().getSession(true);
+   session.setAttribute("username",username);
+   session.setAttribute("contrasena",contrasena);
+   fc.getExternalContext().redirect("faces/menu.xhtml");
+  }
+ }
+ catch(Exception e) {
+  FacesContext context = FacesContext.getCurrentInstance();
+  context.addMessage(null, new FacesMessage("ERROR", "Datos incorrectos para iniciar sesión, intentelo de nuevo!"));
+ }
+
+} 
 	
 	public String getUsername() {
 		return username;

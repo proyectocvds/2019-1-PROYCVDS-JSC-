@@ -28,3 +28,19 @@ CREATE TABLE public.usuario (
 	CONSTRAINT usuario_un UNIQUE (correo)
 );
 
+-- Drop table
+
+-- DROP TABLE public.novedad;
+
+CREATE TABLE public.novedad (
+	id varchar NOT NULL,
+	fecha date NOT NULL,
+	titulo varchar NOT NULL,
+	detalle varchar NOT NULL,
+	usuario varchar NOT NULL,
+	elemento varchar NOT NULL,
+	equipo varchar NOT NULL,
+	CONSTRAINT novedad_pk PRIMARY KEY (id)
+);
+
+

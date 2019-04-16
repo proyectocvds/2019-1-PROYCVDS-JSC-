@@ -12,7 +12,7 @@ public class Novedad {
 	private String equipo;
 	private String elemento;
 	
-	public Novedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento) {
+	public Novedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) {
 		super();
 		this.id=id;
 		this.titulo=titulo;
@@ -22,6 +22,8 @@ public class Novedad {
 		this.equipo=equipo;
 		this.elemento=elemento;
 	}
+	
+	public Novedad() {}
 	
 	public String getId() {
 		return id;

@@ -48,9 +48,8 @@ public class ServicesImpl implements Services{
 	}
 
 
-	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String usuario, String detalle,
-			String equipo, String elemento) throws proyExcepcion {
-		novedadDAO.registrarNovedad(id, fecha, titulo, usuario, detalle, equipo, elemento);
+	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) throws proyExcepcion {
+		novedadDAO.registrarNovedad(id, fecha, titulo,detalle, usuario, elemento,  equipo);
 		
 	}
 	

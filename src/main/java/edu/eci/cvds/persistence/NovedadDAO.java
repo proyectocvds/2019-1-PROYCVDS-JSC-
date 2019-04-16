@@ -14,7 +14,7 @@ public interface NovedadDAO {
 	
 	public List<Novedad> consultarNovedad();
 
-	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento) throws proyExcepcion;
+	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) throws proyExcepcion;
 
 	
 

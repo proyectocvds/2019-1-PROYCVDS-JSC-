@@ -9,6 +9,19 @@ xmlns:p="http://primefaces.org/ui">
 <title>Inicio de Sesion</title>
 </h:head>
 	<h:body style="margin:0px; padding:0px;">
+  <script type="text/javascript">
+   function handleLoginRequest(xhr,status,args){
+    if(args.validationFailed || !args.loggedIn){
+     PF('dlg').jq.effect("shake",{
+      times:5
+     },100);
+    }else{
+     PF('dlg').hide();
+     $('#loginLink').fadeOut();
+    }
+   }
+  
+  </script>
 	<center>
 		<img src="escuela.jpg" style="width:20%;"> </img>
 		<br></br>
@@ -24,11 +37,6 @@ xmlns:p="http://primefaces.org/ui">
 		<br></br>
 		<br></br>
 		<p:outputLabel> Contraseña: </p:outputLabel>
-
-
-
-
-		
 
 		<h:inputSecret value="#{usuarioBean.contrasena}"></h:inputSecret>
 		<br></br>
