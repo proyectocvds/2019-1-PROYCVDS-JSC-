@@ -6,6 +6,7 @@ import java.sql.Date;
 import edu.eci.cvds.proyExcepcion;
 import java.util.List;
 import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
@@ -65,6 +66,43 @@ public class ServicesImpl implements Services{
 	
 	public List <Novedad> listByNovedad(){
 		return novedadDAO.consultarNovedad();
+	}
+
+
+	@Override
+	public void nuevoElemento(Elemento elemento) throws proyExcepcion {
+		// TODO Auto-generated method stub
+		elementoDAO.save(elemento);
+		
+		
+	}
+
+
+	@Override
+	public void nuevoEquipo(Equipo equipo) throws proyExcepcion {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void nuevoNovedad(Novedad novedad) throws proyExcepcion {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void nuevoUsuario(Usuario usuario) throws proyExcepcion {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public List<Equipo> listByEquipo() throws proyExcepcion {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

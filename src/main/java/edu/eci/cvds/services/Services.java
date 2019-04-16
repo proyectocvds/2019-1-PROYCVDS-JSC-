@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.entities.Usuario;
 
@@ -28,6 +29,11 @@ public interface Services {
 	public void registrarNovedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento) throws proyExcepcion;
 	public List<Elemento> listByElemento() throws proyExcepcion;
 	public List<Novedad> listByNovedad() throws proyExcepcion;
+	public List<Equipo> listByEquipo() throws proyExcepcion;
+	public void nuevoElemento(Elemento elemento) throws proyExcepcion;
+	public void nuevoEquipo(Equipo equipo) throws proyExcepcion;
+	public void nuevoNovedad(Novedad novedad) throws proyExcepcion;
+	public void nuevoUsuario(Usuario usuario) throws proyExcepcion;
 
 
 

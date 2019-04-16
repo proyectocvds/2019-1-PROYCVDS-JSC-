@@ -11,6 +11,8 @@ public interface ElementoDAO {
 	Elemento getElemento(String id);
 
 	public List<Elemento> consultarElementos();
+	
+	public void save(Elemento elemento);
 
 
 

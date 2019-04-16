@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.*;
 import edu.eci.cvds.services.Services;
 
@@ -25,16 +26,17 @@ public class LaboratorioTest extends TestBase{
 	
 	@Inject 
 	Services services;
-	/**
+	
 	@Test
 	
-	public void pruebaCeroTest() throws SQLException, ServicesException{
-		qt().forAll(Generators.laboratorio()).check((equipo) -> {
+	public void pruebaCeroTest() throws SQLException,proyExcepcion{
+		qt().forAll(Generators.elementos()).check((elemento) -> {
 			try {
 				
-				services.registrarEquipo(id, disponible);
-				for(Equipo equi:services.listEquipos()) {
-					if(equi.getId().equals(equi.getId())) {
+				
+				services.nuevoElemento(elemento);
+				for(Elemento ele :services.listByElemento()) {
+					if(ele.getId().equals(ele.getId())) {
 						return true;
 					}
 				}
@@ -43,7 +45,7 @@ public class LaboratorioTest extends TestBase{
 				
 			}
 			
-			catch(ServicesException ex) {
+			catch(proyExcepcion ex) {
 				ex.printStackTrace();
 				return false;
 			}
@@ -51,7 +53,51 @@ public class LaboratorioTest extends TestBase{
 		});
 	
 	}
-	*/
+	
+	
+	public void pruebaUnoTest() throws SQLException,proyExcepcion{
+		qt().forAll(Generators.equipos()).check((equipo) ->  {
+			try {
+				
+				services.nuevoEquipo(equipo);
+				for(Equipo equi : services.listByEquipo()) {
+					if(equi.getId().equals(equi.getId())) {
+						return true;
+					}
+					
+				}
+					
+				return false; 
+			}
+			catch(proyExcepcion ex) {
+				ex.printStackTrace();
+				return false;
+			}
+		});
+	}
+	
+	
+	public void pruebaDosTest() throws SQLException,proyExcepcion{
+		qt().forAll(Generators.novedades()).check((novedad)-> {
+			try {
+				
+				services.nuevoNovedad(novedad);
+				for(Novedad nov :services.listByNovedad()) {
+					if(nov.getId().equals(nov.getId())) {
+						return true;
+					}
+				}
+					return false;
+				}
+				catch(proyExcepcion ex) {
+					ex.printStackTrace();
+					return false;
+				}
+			});
+		}
+	
+	}	
+	
 
 				
-}
+

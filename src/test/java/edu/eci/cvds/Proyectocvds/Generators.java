@@ -23,23 +23,33 @@ public class Generators {
 				});
 	}
 	
-	//Mas de  atributos
+	//Probar primeros atributos de novedad
 	
-	/*static public Gen<Novedad> novedades(){
+	static public Gen<Novedad> novedades(){
 		return strings().basicLatinAlphabet().ofLengthBetween(50, 100).zip(
 				dates().withMillisecondsBetween(0, 60), 
 				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
 				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
-				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
-				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
-				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
-				(id,fecha,titulo,usuario,detalle,equipo,elemento) -> {
-					return new Novedad(id,fecha,titulo,usuario,detalle,equipo,elemento);
+				
+				(id,fecha,titulo,usuario) -> {
+					return new Novedad(id,fecha,titulo,usuario,null,null,null);
 				});
 		
 				
 	}
-	*/
+	
+	// Probar mas tributos de novedad 
+	
+	static public Gen<Novedad>novedades2(){
+		return strings().basicLatinAlphabet().ofLengthBetween(50, 100).zip(
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				(detalle,equipo,elemento)->{
+					return new Novedad(null,null,null,null,detalle,equipo,elemento);
+				}
+				);
+	}
+	
 	
 	
 	static public Gen<Elemento> elementos(){
@@ -52,7 +62,21 @@ public class Generators {
 	}
 	
 	
+	static public Gen<Usuario> usuarios(){
+		return strings().basicLatinAlphabet().ofLengthBetween(50,100).zip(
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				strings().basicLatinAlphabet().ofLengthBetween(50,100),
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				strings().basicLatinAlphabet().ofLengthBetween(50,100),
+				(username,estado,correo,contrasena,informacion) -> {
+					return new Usuario(username,estado,correo,contrasena,informacion);
+				});
+		
+	}
+}
+	
+	
 	
 	
 
-}
+
