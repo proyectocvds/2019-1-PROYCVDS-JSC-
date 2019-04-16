@@ -4,6 +4,8 @@ import com.google.inject.Inject;
 import java.sql.Date;
 
 import edu.eci.cvds.proyExcepcion;
+
+import java.util.ArrayList;
 import java.util.List;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Equipo;
@@ -43,8 +45,8 @@ public class ServicesImpl implements Services{
 	}
 	
 	
-	public void registrarEquipo(String id, boolean disponible) throws proyExcepcion {
-		equipoDAO.registrarEquipo(id, disponible);
+	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion {
+		equipoDAO.registrarEquipo(id, disponible, elementos);
 	}
 
 
@@ -97,11 +99,15 @@ public class ServicesImpl implements Services{
 		
 	}
 
-
+	/*
 	@Override
 	public List<Equipo> listByEquipo() throws proyExcepcion {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	*/
+	public List<Equipo> listByEquipo(){
+		return equipoDAO.consultarEquipos();
 	}
 	
 	

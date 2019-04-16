@@ -54,7 +54,7 @@ public class LaboratorioTest extends TestBase{
 	
 	}
 	
-	
+	/*
 	public void pruebaUnoTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.equipos()).check((equipo) ->  {
 			try {
@@ -74,7 +74,7 @@ public class LaboratorioTest extends TestBase{
 				return false;
 			}
 		});
-	}
+	}*/
 	
 	
 	public void pruebaDosTest() throws SQLException,proyExcepcion{

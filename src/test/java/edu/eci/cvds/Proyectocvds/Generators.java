@@ -12,16 +12,16 @@ import static org.quicktheories.generators.SourceDSL.*;
 public class Generators {
 	
 	//static private String nextUserID = "";
-	
+	/*
 	static public Gen<Equipo> equipos(){
 		return strings().basicLatinAlphabet().ofLengthBetween(50,100).zip(
 				booleans().all(),
-				(id,disponible) -> {
+				(id,disponible, elementos) -> {
 					//nextUserID++;
-					return new Equipo(id,disponible);
+					return new Equipo(id,disponible,elementos);
 					
 				});
-	}
+	}*/
 	
 	//Probar primeros atributos de novedad
 	

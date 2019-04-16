@@ -71,8 +71,6 @@ public class ElementoBean extends BasePageBean{
 		this.contrasena=contrasena;
 	}
 
-	//public List<Elemento> getData() throws Exception {
-
 		
 	public List<Elemento> getData() throws proyExcepcion {
 
@@ -92,6 +90,10 @@ public class ElementoBean extends BasePageBean{
 	
 	public void irElemento() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("elemento.xhtml");
+	}
+	
+	public void irEquipo() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("equipo.xhtml");
 	}
 	
 	public void logOut() throws IOException {

@@ -1,5 +1,6 @@
 package edu.eci.cvds.services;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public interface Services {
 
 	public Usuario getUsuario(String username) throws proyExcepcion ;
 	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion;
-	public void registrarEquipo(String id, boolean disponible) throws proyExcepcion ;
+	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion ;
 	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) throws proyExcepcion;
 	public List<Elemento> listByElemento() throws proyExcepcion;
 	public List<Novedad> listByNovedad() throws proyExcepcion;
