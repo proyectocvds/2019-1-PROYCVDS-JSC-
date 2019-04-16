@@ -38,4 +38,12 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	public List<Elemento> consultarElementos() {
 		return elementoMapper.consultarElemento();
 	}
+
+
+
+	@Override
+	public void save(Elemento elemento) {
+		// TODO Auto-generated method stub
+		
+	}
 }

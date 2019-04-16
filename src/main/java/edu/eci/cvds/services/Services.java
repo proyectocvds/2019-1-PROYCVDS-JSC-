@@ -30,6 +30,13 @@ public interface Services {
 	public List<Elemento> listByElemento() throws proyExcepcion;
 	public List<Novedad> listByNovedad() throws proyExcepcion;
 	public List<Equipo> listByEquipo() throws proyExcepcion;
+<<<<<<< HEAD
+=======
+	public void nuevoElemento(Elemento elemento) throws proyExcepcion;
+	public void nuevoEquipo(Equipo equipo) throws proyExcepcion;
+	public void nuevoNovedad(Novedad novedad) throws proyExcepcion;
+	public void nuevoUsuario(Usuario usuario) throws proyExcepcion;
+>>>>>>> 465d7c716d8fa6b73cdb1229e3cd16123184a583
 
 
 
