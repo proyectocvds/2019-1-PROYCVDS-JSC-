@@ -26,4 +26,9 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 		return novedadMapper.consultarNovedad();
 	}
 
+	@Override
+	public List<Novedad> novedadEquipo(String equipo) {
+		return novedadMapper.novedadEquipo(equipo);
+	}
+
 }

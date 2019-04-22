@@ -14,4 +14,6 @@ public interface NovedadMapper {
 
 	public List<Novedad> consultarNovedad();
 
+	public List<Novedad> novedadEquipo(@Param("equipo")String equipo);
+
 }

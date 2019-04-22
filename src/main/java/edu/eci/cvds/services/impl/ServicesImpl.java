@@ -102,6 +102,12 @@ public class ServicesImpl implements Services{
 	public List<Equipo> listByEquipo(){
 		return equipoDAO.consultarEquipos();
 	}
+
+
+	@Override
+	public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion {
+		return novedadDAO.novedadEquipo(equipo);
+	}
 	
 	
 	

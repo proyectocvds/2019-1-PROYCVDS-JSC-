@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
@@ -17,6 +18,7 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 
 
 public class NovedadBean extends BasePageBean{
+	@ManagedProperty(value = "#{param.equipo}")
 	private String id;
 	private Date fecha;
 	private String titulo;
@@ -96,6 +98,9 @@ public class NovedadBean extends BasePageBean{
 	public List<Novedad> getData() throws proyExcepcion{
 		return usuarioServices.listByNovedad();
 	}
-
+	
+	public List<Novedad> novedadEquipo() throws proyExcepcion{
+		return usuarioServices.novedadEquipo(equipo);
+	}
 }
 

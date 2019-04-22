@@ -14,14 +14,19 @@
  	<result property='elemento' column='elemento'/>
 </resultMap>
 	
-	<insert parameterType="map" id="registrarNovedad">
-		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo) VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo});
-	</insert>
+		<insert parameterType="map" id="registrarNovedad">
+			INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo) VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo});
+		</insert>
 
 		<select id="consultarNovedad" parameterType="map" resultMap="NovedadResult">
 		SELECT *
+		FROM NOVEDAD;
+		</select>
+	
+		<select id="novedadEquipo" parameterType="map" resultMap="NovedadResult">
+		SELECT *
 		FROM NOVEDAD
-	</select>
-
+		WHERE equipo = #{equipo};
+		</select>
 </mapper>
   

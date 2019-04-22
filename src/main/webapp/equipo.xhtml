@@ -36,6 +36,11 @@
 		<p:column headerText="Disponible">
 			<h:outputText value="#{equipo.disponible}"/>
 		</p:column>
+		<p:column headerText="Novedad de Equipo:">
+		<p:button outcome="novedadEquipo" value="Ver Novedad" >
+			<f:param name="equipo" value ="#{equipo.id}" />
+		</p:button>
+		</p:column>
 
 </p:dataTable>
 </h:form>
