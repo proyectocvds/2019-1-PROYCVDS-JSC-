@@ -103,4 +103,5 @@ public class ElementoBean extends BasePageBean{
 		session.setAttribute("contrasena",contrasena);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
+	
 }

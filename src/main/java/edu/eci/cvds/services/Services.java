@@ -24,6 +24,7 @@ public interface Services {
 	public void nuevoNovedad(Novedad novedad) throws proyExcepcion;
 	public void nuevoUsuario(Usuario usuario) throws proyExcepcion;
 	public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion;
+	public List<Elemento> novedadElemento(String elemento)throws proyExcepcion;
 
 
 

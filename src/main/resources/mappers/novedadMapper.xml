@@ -28,5 +28,12 @@
 		FROM NOVEDAD
 		WHERE equipo = #{equipo};
 		</select>
+		
+		<select id="novedadElemento" parameterType="map" resultMap="NovedadResult">
+		SELECT *
+		FROM NOVEDAD
+		WHERE elemento = #{elemento};
+		</select>
+		
 </mapper>
   

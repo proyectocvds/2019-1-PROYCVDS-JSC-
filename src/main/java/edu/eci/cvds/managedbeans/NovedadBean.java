@@ -9,6 +9,7 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
+import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
@@ -101,6 +102,10 @@ public class NovedadBean extends BasePageBean{
 	
 	public List<Novedad> novedadEquipo() throws proyExcepcion{
 		return usuarioServices.novedadEquipo(equipo);
+	}
+	
+	public List<Elemento> novedadElemento() throws proyExcepcion{
+		return usuarioServices.novedadElemento(elemento);
 	}
 }
 

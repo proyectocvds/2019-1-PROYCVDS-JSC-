@@ -108,6 +108,12 @@ public class ServicesImpl implements Services{
 	public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion {
 		return novedadDAO.novedadEquipo(equipo);
 	}
+
+
+	@Override
+	public List<Elemento> novedadElemento(String elemento) {
+		return novedadDAO.novedadElemento(elemento);
+	}
 	
 	
 	
