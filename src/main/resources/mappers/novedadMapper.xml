@@ -18,7 +18,7 @@
 		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo) VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo});
 	</insert>
 
-		<select id="consultarNovedad" resultMap="NovedadResult">
+		<select id="consultarNovedad" parameterType="map" resultMap="NovedadResult">
 		SELECT *
 		FROM NOVEDAD
 	</select>

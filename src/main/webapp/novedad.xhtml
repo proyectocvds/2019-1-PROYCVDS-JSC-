@@ -38,6 +38,8 @@ xmlns:p="http://primefaces.org/ui">
 <br></br>
 <p:outputLabel>Equipo: </p:outputLabel>
 <h:inputText value="#{novedadBean.equipo}"></h:inputText>
+<br></br>
+<br></br>
 <p:commandButton value="Registrar" update="novedad_form" actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
 <br></br>
 <br></br>
@@ -53,16 +55,16 @@ xmlns:p="http://primefaces.org/ui">
 <h:outputText value="#{novedad.titulo}"/>
 </p:column>
 <p:column headerText="Detalle">
-<h:column value="#{novedad.detalle}"/>
+<h:outputText value="#{novedad.detalle}"/>
 </p:column>
 <p:column headerText="Usuario">
 <h:outputText value="#{novedad.usuario}"/>
 </p:column>
 <p:column headerText="Elemento">
-<h:column value="#{novedad.elemento}"/>
+<h:outputText value="#{novedad.elemento}"/>
 </p:column>
 <p:column headerText="Equipo">
-<h:column value="#{novedad.equipo}"/>
+<h:outputText value="#{novedad.equipo}"/>
 </p:column>
 
 </p:dataTable>
