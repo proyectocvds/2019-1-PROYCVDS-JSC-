@@ -18,7 +18,7 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 @RequestScoped
 
 public class EquipoBean extends BasePageBean{
-		private String id;
+	private String id;
 	private boolean disponible;
 	private ArrayList<Elemento> elementos;
 	

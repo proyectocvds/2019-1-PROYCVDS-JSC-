@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Equipo;
+import edu.eci.cvds.entities.Laboratorio;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.ElementoDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.persistence.EquipoDAO;
+import edu.eci.cvds.persistence.LaboratorioDAO;
 import edu.eci.cvds.persistence.NovedadDAO;
 
 public class ServicesImpl implements Services{
@@ -30,6 +32,9 @@ public class ServicesImpl implements Services{
 
 	@Inject 
 	private NovedadDAO novedadDAO;
+	
+	@Inject 
+	private LaboratorioDAO laboratorioDAO;
 
 	
 	public Usuario getUsuario(String username) throws proyExcepcion {
@@ -55,6 +60,11 @@ public class ServicesImpl implements Services{
 		
 	}
 	
+	
+	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
+		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos, novedad);
+	}
+	
 	public Usuario consultarLogin(String username, String contrasena) throws proyExcepcion {
 		
 		return usuarioDAO.consultarLogin(username, contrasena);
@@ -68,6 +78,10 @@ public class ServicesImpl implements Services{
 	public List <Novedad> listByNovedad(){
 		return novedadDAO.consultarNovedad();
 	}
+	
+	
+	
+	
 
 
 	@Override
@@ -98,6 +112,11 @@ public class ServicesImpl implements Services{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void nuevoLaboratorio(Laboratorio laboratorio) throws proyExcepcion{
+		// TODO Auto-generated method stub
+	}
 
 	public List<Equipo> listByEquipo(){
 		return equipoDAO.consultarEquipos();
@@ -113,6 +132,18 @@ public class ServicesImpl implements Services{
 	@Override
 	public List<Elemento> novedadElemento(String elemento) {
 		return novedadDAO.novedadElemento(elemento);
+	}
+	
+
+	@Override
+	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
+		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos, novedad);
+	}
+
+
+	@Override
+	public List<Laboratorio> listByLaboratorio() {
+		return laboratorioDAO.consultarLaboratorio();
 	}
 	
 	

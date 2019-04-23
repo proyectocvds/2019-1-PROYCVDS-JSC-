@@ -28,9 +28,9 @@ CREATE TABLE public.usuario (
 	CONSTRAINT usuario_un UNIQUE (correo)
 );
 
--- Drop table
 
--- DROP TABLE public.novedad;
+
+
 
 CREATE TABLE public.novedad (
 	id varchar NOT NULL,
@@ -38,9 +38,24 @@ CREATE TABLE public.novedad (
 	titulo varchar NOT NULL,
 	detalle varchar NOT NULL,
 	usuario varchar NOT NULL,
-	elemento varchar NOT NULL,
-	equipo varchar NOT NULL,
-	CONSTRAINT novedad_pk PRIMARY KEY (id)
+	elemento varchar NULL,
+	equipo varchar NULL,
+	CONSTRAINT novedad_pk PRIMARY KEY (id),
+	CONSTRAINT novedad_elemento_fk FOREIGN KEY (elemento) REFERENCES elemento(id),
+	CONSTRAINT novedad_equipo_fk FOREIGN KEY (equipo) REFERENCES equipo(id),
+	CONSTRAINT novedad_usuario_fk FOREIGN KEY (usuario) REFERENCES usuario(username)
 );
+
+
+
+CREATE TABLE public.laboratorio (
+	id varchar NOT NULL,
+	nombre varchar NOT NULL,
+	cupos int4 NOT NULL,
+	novedad varchar NOT NULL,
+	CONSTRAINT laboratorio_pk PRIMARY KEY (id),
+	CONSTRAINT laboratorio_novedad_fk FOREIGN KEY (novedad) REFERENCES novedad(id)
+);
+
 
 

@@ -96,6 +96,10 @@ public class ElementoBean extends BasePageBean{
 		FacesContext.getCurrentInstance().getExternalContext().redirect("equipo.xhtml");
 	}
 	
+	public void irLaboratorio() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("laboratorio.xhtml");
+	}
+	
 	public void logOut() throws IOException {
 		FacesContext fc =FacesContext.getCurrentInstance();
 		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);

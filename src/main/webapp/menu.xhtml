@@ -26,11 +26,12 @@ xmlns:p="http://primefaces.org/ui">
  	<h:form id="menu_form">
 	<div style="margin:0px; padding:5px; background:#A51717; width:100%">
 		<ul class="my_test">
-		<li>
-			<h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.irElemento()}" style="color:black;" ></h:commandLink></li>
+			<li><h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.irElemento()}" style="color:black;" ></h:commandLink></li>
 			<li><h:commandLink value="Registrar Equipo" actionListener="#{elementoBean.irEquipo()}" style="color:black;"></h:commandLink></li>
 			<li><h:commandLink value="Registrar Novedad" actionListener="#{elementoBean.irNovedad()}" style="color:black"></h:commandLink></li>
+			<li><h:commandLink value="Registrar Laboratorio" actionListener="#{elementoBean.irLaboratorio()}" style="color:black;"></h:commandLink></li>
 			<li><h:commandLink value="logOut" actionListener="#{elementoBean.logOut()}" style="color:black;"></h:commandLink></li>
+			
 		</ul>
 	</div>
 	</h:form>

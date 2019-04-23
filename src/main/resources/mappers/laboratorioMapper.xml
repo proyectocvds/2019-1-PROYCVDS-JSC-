@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.LaboratorioMapper">
+ 
+ <resultMap type='Laboratorio' id='LaboratorioResult'>
+ 	<id property='id' column='id'/>
+ 	<result property='nombre' column='nombre'/>
+ 	<result property='cupos' column='cupos'/>
+ 	<result property='novedad' column='novedad'/>
+</resultMap>
+	
+	<insert parameterType="map" id="registrarLaboratorio ">
+		INSERT INTO LABORATORIO (id,nombre,cupos,novedad) VALUES(#{id},#{nombre},#{cupos},#{novedad});
+	</insert>
+	
+	<select id="consultarLaboratorio" resultMap="LaboratorioResult">
+		SELECT *
+		FROM LABORATORIO
+	</select>
+	
+	
+	
+</mapper>
