@@ -12,18 +12,6 @@ import edu.eci.cvds.entities.Usuario;
 
 public interface Services {
 
-	/*public Usuario getUsuario(String username);
-	public void registrarElemento(String id, boolean disponible, String tipo);
-	public void registrarEquipo(String id, boolean disponible);
-	public void registrarNovedad(String id, Date fecha, String titulo, String usuario, String detalle, String equipo, String elemento);
-	public List<Elemento> listByElemento();
-	public List<Novedad> listByNovedad();
-	*/
-	
-	
-	//public void validarUsuario();
-	//public void consultarLogin(String username, String contrasena);
-
 	public Usuario getUsuario(String username) throws proyExcepcion ;
 	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion;
 	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion ;
@@ -35,6 +23,8 @@ public interface Services {
 	public void nuevoEquipo(Equipo equipo) throws proyExcepcion;
 	public void nuevoNovedad(Novedad novedad) throws proyExcepcion;
 	public void nuevoUsuario(Usuario usuario) throws proyExcepcion;
+	public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion;
+	public List<Elemento> novedadElemento(String elemento)throws proyExcepcion;
 
 
 

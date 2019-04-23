@@ -43,7 +43,12 @@
 		</p:column>
 		<p:column headerText="TipoElemento">
 			<h:outputText value="#{elemento.tipo}"/>
-		</p:column> 
+		</p:column>
+		<p:column headerText="Novedad Elemento">
+			<p:button outcome="novedadElemento" value="Ver Novedad" >
+			<f:param name="elemento" value ="#{elemento.id}" />
+		</p:button>
+		</p:column>
 		</p:dataTable>
 		</h:form>
 

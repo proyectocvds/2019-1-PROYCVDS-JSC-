@@ -99,15 +99,20 @@ public class ServicesImpl implements Services{
 		
 	}
 
-	/*
-	@Override
-	public List<Equipo> listByEquipo() throws proyExcepcion {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	*/
 	public List<Equipo> listByEquipo(){
 		return equipoDAO.consultarEquipos();
+	}
+
+
+	@Override
+	public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion {
+		return novedadDAO.novedadEquipo(equipo);
+	}
+
+
+	@Override
+	public List<Elemento> novedadElemento(String elemento) {
+		return novedadDAO.novedadElemento(elemento);
 	}
 	
 	

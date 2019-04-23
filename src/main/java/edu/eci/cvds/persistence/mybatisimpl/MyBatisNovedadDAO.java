@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.persistence.NovedadDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.NovedadMapper;
@@ -24,6 +25,16 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 	@Override
 	public List<Novedad> consultarNovedad() {
 		return novedadMapper.consultarNovedad();
+	}
+
+	@Override
+	public List<Novedad> novedadEquipo(String equipo) {
+		return novedadMapper.novedadEquipo(equipo);
+	}
+
+	@Override
+	public List<Elemento> novedadElemento(String elemento) {
+		return novedadMapper.novedadElemento(elemento);
 	}
 
 }
