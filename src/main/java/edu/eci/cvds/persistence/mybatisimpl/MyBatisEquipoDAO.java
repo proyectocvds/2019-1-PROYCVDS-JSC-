@@ -24,8 +24,8 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 	
 	@Override
 	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion {
-		if(getEquipo(id)!=null) throw new proyExcepcion("Ya existe el Equipo");
-		if(getEquipo(id)==null) throw new proyExcepcion("El equipo no debe ser nulo");
+		//if(getEquipo(id)!=null) throw new proyExcepcion("Ya existe el Equipo");
+		//if(getEquipo(id)==null) throw new proyExcepcion("El equipo no debe ser nulo");
 		
 		equipoMapper.registrarEquipo(id,disponible, elementos);
 	}

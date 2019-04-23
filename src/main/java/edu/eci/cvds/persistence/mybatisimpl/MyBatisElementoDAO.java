@@ -26,8 +26,8 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	@Override
 	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion {
 		
-		if(getElemento(id)==null) throw new proyExcepcion("El elemento no debe ser nulo");
-		if(getElemento(id)!=null) throw new proyExcepcion("El elemento ya existe");
+		//if(getElemento(id)==null) throw new proyExcepcion("El elemento no debe ser nulo");
+		//if(getElemento(id)!=null) throw new proyExcepcion("El elemento ya existe");
 		elementoMapper.registrarElemento(id, disponible, tipo);
 		
 	}

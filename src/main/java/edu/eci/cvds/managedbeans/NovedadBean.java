@@ -1,5 +1,6 @@
 package edu.eci.cvds.managedbeans;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 
 
 public class NovedadBean extends BasePageBean{
-	@ManagedProperty(value = "#{param.equipo}")
+	//@ManagedProperty(value = "#{param.equipo}")
 	private String id;
 	private Date fecha;
 	private String titulo;
@@ -28,6 +29,7 @@ public class NovedadBean extends BasePageBean{
 	private String equipo;
 	private String elemento;
 	private ServicesImpl servicesImpl;
+	//private Elemento elemAgreg;
 	
 	
 	private static final long serialVersionUID = 3594009161252782831L;
@@ -101,10 +103,14 @@ public class NovedadBean extends BasePageBean{
 	}
 	
 	public List<Novedad> novedadEquipo() throws proyExcepcion{
+		
 		return usuarioServices.novedadEquipo(equipo);
 	}
 	
 	public List<Elemento> novedadElemento() throws proyExcepcion{
+		//List<Elemento> novedadElem = new ArrayList();
+		//novedadElem.add(elemAgreg);
+		//System.out.println("NOVEDAD ELEMENTO"+ novedadElem);
 		return usuarioServices.novedadElemento(elemento);
 	}
 }
