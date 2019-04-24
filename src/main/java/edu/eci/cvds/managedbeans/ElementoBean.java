@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesElemento;
 import edu.eci.cvds.services.impl.ServicesImpl;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "elementoBean")
@@ -27,7 +28,7 @@ public class ElementoBean extends BasePageBean{
 	private static final long serialVersionUID = 3594009161252782831L;
 	
 	@Inject
-	private Services usuarioServices;
+	private ServicesElemento elementoServices;
 	
 	public String getId() {
 		return id;
@@ -74,13 +75,13 @@ public class ElementoBean extends BasePageBean{
 		
 	public List<Elemento> getData() throws proyExcepcion {
 
-		return usuarioServices.listByElemento();
+		return elementoServices.listByElemento();
 	}
 	
 	
 	public void registrarElemento() throws proyExcepcion {
 		Elemento elemento = new Elemento(id, disponible, tipo);
-		usuarioServices.registrarElemento(id, true, tipo);
+		elementoServices.registrarElemento(id, true, tipo);
 		
 	}
 	

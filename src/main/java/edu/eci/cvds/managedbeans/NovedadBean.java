@@ -13,6 +13,9 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesElemento;
+import edu.eci.cvds.services.ServicesEquipo;
+import edu.eci.cvds.services.ServicesNovedad;
 import edu.eci.cvds.services.impl.ServicesImpl;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "novedadBean")
@@ -35,7 +38,12 @@ public class NovedadBean extends BasePageBean{
 	private static final long serialVersionUID = 3594009161252782831L;
 
 	@Inject
-	private Services usuarioServices;
+	private ServicesNovedad novedadServices;
+	@Inject
+	private ServicesElemento elementoServices;
+	@Inject 
+	private ServicesEquipo equipoServices;
+
 	
 	public String getId() {
 		return id;
@@ -95,23 +103,19 @@ public class NovedadBean extends BasePageBean{
 	
 	public void registrarNovedad()throws proyExcepcion{
 		Novedad novedad= new Novedad(id,fecha,titulo,detalle,usuario,elemento,equipo);
-		usuarioServices.registrarNovedad(id, fecha, titulo, detalle, usuario,  elemento, equipo);
+		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario,  elemento, equipo);
 	}
 	
 	public List<Novedad> getData() throws proyExcepcion{
-		return usuarioServices.listByNovedad();
+		return novedadServices.listByNovedad();
 	}
 	
 	public List<Novedad> novedadEquipo() throws proyExcepcion{
-		
-		return usuarioServices.novedadEquipo(equipo);
+		return novedadServices.novedadEquipo(equipo);
 	}
 	
-	public List<Elemento> novedadElemento() throws proyExcepcion{
-		//List<Elemento> novedadElem = new ArrayList();
-		//novedadElem.add(elemAgreg);
-		//System.out.println("NOVEDAD ELEMENTO"+ novedadElem);
-		return usuarioServices.novedadElemento(elemento);
+	public List<Novedad> novedadElemento() throws proyExcepcion{
+		return novedadServices.novedadElemento(elemento);
 	}
 }
 

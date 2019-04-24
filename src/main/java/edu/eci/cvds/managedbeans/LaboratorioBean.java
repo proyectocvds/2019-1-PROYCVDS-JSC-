@@ -11,6 +11,7 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.entities.Laboratorio;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesLaboratorio;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "laboratorioBean")
@@ -25,7 +26,7 @@ public class LaboratorioBean extends BasePageBean {
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
-	private Services laboratorioServices;
+	private ServicesLaboratorio laboratorioServices;
 	
 	public String getId() {
 		return id;

@@ -14,6 +14,7 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.impl.ServicesImpl;
+import edu.eci.cvds.services.impl.ServicesImplUsuario;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "usuarioBean")
@@ -30,13 +31,13 @@ private static final long serialVersionUID = 3594009161252782831L;
 
 @Inject 
 
-private ServicesImpl serImpl;
+private ServicesImplUsuario serImplUsu;
 
 public void validarUsuario () {
  
  try {
   FacesContext fc =FacesContext.getCurrentInstance();
-  Usuario user= serImpl.consultarLogin(username, contrasena);
+  Usuario user= serImplUsu.consultarLogin(username, contrasena);
   if(user!= null) {
    HttpSession session=(HttpSession) fc.getExternalContext().getSession(true);
    session.setAttribute("username",username);

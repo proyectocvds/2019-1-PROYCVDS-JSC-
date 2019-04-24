@@ -12,6 +12,7 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesEquipo;
 import edu.eci.cvds.services.impl.ServicesImpl;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "equipoBean")
@@ -24,7 +25,7 @@ public class EquipoBean extends BasePageBean{
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
-	private Services equipoServices;
+	private ServicesEquipo equipoServices;
 	
 	public String getId() {
 		return id;

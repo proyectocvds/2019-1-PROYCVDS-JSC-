@@ -20,6 +20,11 @@ import edu.eci.cvds.persistence.mybatisimpl.MyBatisLaboratorioDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisNovedadDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUsuarioDAO;
 import edu.eci.cvds.services.impl.ServicesImpl;
+import edu.eci.cvds.services.impl.ServicesImplElemento;
+import edu.eci.cvds.services.impl.ServicesImplEquipo;
+import edu.eci.cvds.services.impl.ServicesImplLaboratorio;
+import edu.eci.cvds.services.impl.ServicesImplNovedad;
+import edu.eci.cvds.services.impl.ServicesImplUsuario;
 
 
 public class ServicesFactory {
@@ -35,9 +40,14 @@ public class ServicesFactory {
                 setEnvironmentId(env);
                 install(jdbcHelper);
                 setClassPathResource(pathResource);
-             
-                
+  
+   
 				bind(Services.class).to(ServicesImpl.class);
+				bind(ServicesElemento.class).to(ServicesImplElemento.class);
+				bind(ServicesEquipo.class).to(ServicesImplEquipo.class);
+				bind(ServicesNovedad.class).to(ServicesImplNovedad.class);
+				bind(ServicesUsuario.class).to(ServicesImplUsuario.class);
+				bind(ServicesLaboratorio.class).to(ServicesImplLaboratorio.class);
 				bind(UsuarioDAO.class).to(MyBatisUsuarioDAO.class);
 				bind(ElementoDAO.class).to(MyBatisElementoDAO.class);
 				bind(NovedadDAO.class).to(MyBatisNovedadDAO.class);
@@ -67,6 +77,12 @@ public class ServicesFactory {
 		
 		return optInjector.get().getInstance(Services.class);
 	}
+
+	
+	
+	
+	
+	
 	
 	public static ServicesFactory getInstance() {
 		return instance;

@@ -17,6 +17,6 @@ public interface NovedadMapper {
 
 	public List<Novedad> novedadEquipo(@Param("equipo")String equipo);
 
-	public List<Elemento> novedadElemento(@Param("elemento") String elemento);
+	public List<Novedad> novedadElemento(@Param("elemento") String elemento);
 
 }

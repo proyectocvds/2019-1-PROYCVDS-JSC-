@@ -18,7 +18,7 @@ public interface NovedadDAO {
 
 	public List<Novedad> novedadEquipo(String equipo);
 
-	public List<Elemento> novedadElemento(String elemento);
+	public List<Novedad> novedadElemento(String elemento);
 
 	
 

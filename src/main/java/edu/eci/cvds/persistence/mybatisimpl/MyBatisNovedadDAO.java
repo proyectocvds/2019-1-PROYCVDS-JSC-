@@ -33,7 +33,7 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 	}
 
 	@Override
-	public List<Elemento> novedadElemento(String elemento) {
+	public List<Novedad> novedadElemento(String elemento) {
 		return novedadMapper.novedadElemento(elemento);
 	}
 
