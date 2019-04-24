@@ -19,6 +19,11 @@ public class Elemento {
 		
 	}
 	
+	public Elemento() {
+		
+		
+	}
+	
 	public String getId() {
 		return id;
 	}
