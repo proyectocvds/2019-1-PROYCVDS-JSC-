@@ -15,7 +15,10 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.*;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.ServicesElemento;
+import edu.eci.cvds.services.ServicesEquipo;
+import edu.eci.cvds.services.ServicesLaboratorio;
 import edu.eci.cvds.services.ServicesNovedad;
+import edu.eci.cvds.services.ServicesUsuario;
 
 import org.quicktheories.core.Gen;
 
@@ -32,6 +35,12 @@ public class LaboratorioTest extends TestBase{
 	ServicesElemento servicesElemento;
 	@Inject 
 	ServicesNovedad servicesNovedad;
+	@Inject 
+	ServicesEquipo servicesEquipo;
+	@Inject 
+	ServicesLaboratorio servicesLaboratorio;
+	@Inject 
+	ServicesUsuario servicesUsuario;
 	
 	
 	@Test
