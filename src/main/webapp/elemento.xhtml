@@ -26,8 +26,17 @@
 		<h:inputText value="#{elementoBean.id}"></h:inputText>
 		<br></br>
 		<br></br>
-		<p:outputLabel>Tipo del Elemento: </p:outputLabel>
-		<h:inputText value="#{elementoBean.tipo}"></h:inputText>
+		<!-- <p:outputLabel>Tipo del Elemento: </p:outputLabel> -->
+		<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+			<p:outputLabel for="elemento" value="Tipo del Elemento"/>
+			<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}" style="width:125px">
+				<f:selectItem itemLabel="Seleccione un tipo" itemValue=""/>
+				<f:selectItem itemLabel="Torre" itemValue="Torre"/>
+				<f:selectItem itemLabel="Teclado" itemValue="Teclado"/>
+				<f:selectItem itemLabel="Mouse" itemValue="Mouse"/>
+				<f:selectItem itemLabel="Pantalla" itemValue="Pantalla"/>
+			</p:selectOneMenu>
+		</h:panelGrid>
 		<br></br>
 		<br></br>
 		<p:commandButton value="Registrar" update="elemento_form" actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>

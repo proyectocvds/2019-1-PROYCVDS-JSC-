@@ -12,6 +12,11 @@ public class Elemento {
 		this.tipo=tipo;
 	}
 	
+	public Elemento() {
+		
+		
+	}
+	
 	public String getId() {
 		return id;
 	}

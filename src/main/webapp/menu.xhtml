@@ -17,13 +17,29 @@ xmlns:p="http://primefaces.org/ui">
  	</style>
  </h:head>
  <h:body style="margin:0px; padding:0px;">
-
-
  <center>
  	<img src="escuela.jpg" style="width:20%;"> </img>
 	<h1>Menu</h1>
  	<br></br>
  	<h:form id="menu_form">
+ 	<!-- <p:tabView dynamic="true" cache="true" effect="fold">
+ 		<p:tab title="Registrar Elemento">
+ 			<h:panelGrid columns="2" cellpadding="10"/>
+     		</p:tab>
+ 		<p:tab title="Registrar Equipo">
+ 			<h:panelGrid columns="2" cellpadding="10"/>
+     		</p:tab>
+     	<p:tab title="Registrar Novedad">
+ 			<h:panelGrid columns="2" cellpadding="10"/>
+     		</p:tab>	
+     	<p:tab title="Registrar Laboratorio">
+ 			<h:panelGrid columns="2" cellpadding="10"/>
+     		</p:tab>
+     	<p:tab title="logOut">
+ 			<h:panelGrid columns="2" cellpadding="10"/>
+     		</p:tab>
+ 	</p:tabView> -->
+ 	
 	<div style="margin:0px; padding:5px; background:#A51717; width:100%">
 		<ul class="my_test">
 			<li><h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.irElemento()}" style="color:black;" ></h:commandLink></li>
@@ -33,9 +49,8 @@ xmlns:p="http://primefaces.org/ui">
 			<li><h:commandLink value="logOut" actionListener="#{elementoBean.logOut()}" style="color:black;"></h:commandLink></li>
 			
 		</ul>
-	</div>
-	</h:form>
-	<br></br>
+	</div> 
+</h:form>
 </center>
 </h:body>
 </html>
