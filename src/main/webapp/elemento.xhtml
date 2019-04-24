@@ -33,6 +33,8 @@
 		<p:commandButton value="Registrar" update="elemento_form" actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
 		<br></br>
 		<br></br>
+		<p:commandButton value="Registrar Elemento a Equipo" update="elemento_form" actionListener="#{elementoBean.irRegistrarElemento()}"></p:commandButton>
+		<br></br>
 		<br></br>
 		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.data}">
 		<p:column headerText="Id">
@@ -43,6 +45,9 @@
 		</p:column>
 		<p:column headerText="TipoElemento">
 			<h:outputText value="#{elemento.tipo}"/>
+		</p:column>
+		<p:column headerText="Equipo">
+			<h:outputText value="#{elemento.equipo}"/>
 		</p:column>
 		<p:column headerText="Novedad Elemento">
 			<p:button outcome="novedadElemento" value="Ver Novedad" >

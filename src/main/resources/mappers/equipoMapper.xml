@@ -9,6 +9,7 @@
  <resultMap type='Equipo' id='EquipoResult'>
  	<id property='id' column='id'/>
  	<result property='disponible' column='disponible'/>
+ 	<collection property="elementos" resultMap="edu.eci.cvds.persistence.mybatisimpl.mappers.ElementoMapper.ElementoResult"></collection>
 </resultMap>
 	
 	<insert parameterType="map" id="registrarEquipo">
@@ -19,6 +20,11 @@
 		SELECT *
 		FROM EQUIPO
 	</select>
+	
+	<update parameterType="map" id="registrarElementoAEquipo" >
+		UPDATE ELEMENTO SET equipo=#{equipo}
+		where id=#{elemento} 
+	</update>
 	
 	
 	

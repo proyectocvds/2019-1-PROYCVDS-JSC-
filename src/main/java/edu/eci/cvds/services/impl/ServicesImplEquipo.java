@@ -29,6 +29,11 @@ public class ServicesImplEquipo implements ServicesEquipo {
 	public List<Equipo> listByEquipo(){
 		return equipoDAO.consultarEquipos();
 	}
+
+	@Override
+	public void registrarElementoAEquipo(String idElemento, String id) {
+		equipoDAO.registrarElementoAEquipo(idElemento,id);
+	}
 	
 	
 

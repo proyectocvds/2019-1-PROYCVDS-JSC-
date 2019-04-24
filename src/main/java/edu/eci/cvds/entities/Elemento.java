@@ -4,12 +4,19 @@ public class Elemento {
 	private String id;
 	private boolean disponible;
 	private String tipo;
+	private String equipo;
 	
-	public Elemento(String id, boolean disponible, String tipo) {
+	public Elemento(String id, boolean disponible, String tipo,String equipo) {
 		super();
 		this.id=id;
 		this.disponible=disponible;
 		this.tipo=tipo;
+		this.equipo=equipo;
+		
+	}
+	
+	public Elemento() {
+		
 	}
 	
 	public String getId() {
@@ -34,6 +41,14 @@ public class Elemento {
 	
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
+	}
+
+	public String getEquipo() {
+		return equipo;
+	}
+
+	public void setEquipo(String equipo) {
+		this.equipo = equipo;
 	}
 	
 	

@@ -34,4 +34,10 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 	public List<Equipo> consultarEquipos(){
 		return equipoMapper.consultarEquipo();
 	}
+
+	@Override
+	public void registrarElementoAEquipo(String idElemento, String id) {
+		equipoMapper.registrarElementoAEquipo(idElemento,id);
+		
+	}
 }

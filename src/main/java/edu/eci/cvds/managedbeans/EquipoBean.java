@@ -22,6 +22,7 @@ public class EquipoBean extends BasePageBean{
 	private String id;
 	private boolean disponible;
 	private ArrayList<Elemento> elementos;
+	private String idElemento;
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
@@ -58,7 +59,19 @@ public class EquipoBean extends BasePageBean{
 	
 	public void registrarEquipo() throws proyExcepcion{
 		Equipo equipo = new Equipo(id, disponible,elementos);
-		equipoServices.registrarEquipo(id, disponible, elementos);
+		equipoServices.registrarEquipo(id, true, elementos);
+	}
+	
+	public void registrarElementoAEquipo() {
+		equipoServices.registrarElementoAEquipo(idElemento,id);
+	}
+
+	public String getIdElemento() {
+		return idElemento;
+	}
+
+	public void setIdElemento(String idElemento) {
+		this.idElemento = idElemento;
 	}
 	
 	

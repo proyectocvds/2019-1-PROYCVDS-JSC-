@@ -10,6 +10,7 @@
 	<id property='id' column='id'/>
 	<result property='disponible' column='disponible'/>
 	<result property='tipo' column='tipo'/>
+	<result property='equipo' column='equipo'/>
 </resultMap>
 	<insert parameterType="map" id="registrarElemento" >
 		INSERT INTO ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
