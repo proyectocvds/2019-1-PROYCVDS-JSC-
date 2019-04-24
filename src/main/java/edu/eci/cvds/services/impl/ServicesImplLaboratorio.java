@@ -16,7 +16,7 @@ public class ServicesImplLaboratorio implements ServicesLaboratorio{
 	private LaboratorioDAO laboratorioDAO;
 	
 	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
-		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos, novedad);
+		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos);
 	}
 	
 	@Override
@@ -26,8 +26,8 @@ public class ServicesImplLaboratorio implements ServicesLaboratorio{
 
 
 	@Override
-	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
-		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos, novedad);
+	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
+		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos);
 	}
 
 

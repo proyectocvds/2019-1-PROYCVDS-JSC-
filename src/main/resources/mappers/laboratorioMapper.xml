@@ -9,11 +9,11 @@
  	<id property='id' column='id'/>
  	<result property='nombre' column='nombre'/>
  	<result property='cupos' column='cupos'/>
- 	<result property='novedad' column='novedad'/>
+ 	
 </resultMap>
 	
 	<insert parameterType="map" id="registrarLaboratorio ">
-		INSERT INTO LABORATORIO (id,nombre,cupos,novedad) VALUES(#{id},#{nombre},#{cupos},#{novedad});
+		INSERT INTO LABORATORIO (id,nombre,cupos) VALUES(#{id},#{nombre},#{cupos});
 	</insert>
 	
 	<select id="consultarLaboratorio" resultMap="LaboratorioResult">

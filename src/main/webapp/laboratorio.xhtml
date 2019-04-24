@@ -8,6 +8,7 @@
 	<title>Registrar Laboratorio</title>
 </h:head>
 <h:body style="margin:0px; padding:0px;" >
+<p:button outcome="menu" value="Regresar al menu" />
 
 <center>
 <img src="escuela.jpg" style="width:20%;"> </img>
@@ -28,10 +29,6 @@
 			<br></br>
 			<p:outputLabel>Cupos: </p:outputLabel>
 			<h:inputText value="#{laboratorioBean.cupos}"></h:inputText>
-			<br></br>
-			<br></br>
-			<p:outputLabel>novedad: </p:outputLabel>
-			<h:inputText value="#{laboratorioBean.novedad}"></h:inputText>
 			<br></br>
 			<br></br>
 			<p:commandButton value="Registrar" update="laboratorio_form" actionListener="#{laboratorioBean.registrarLaboratorio()}"></p:commandButton>

@@ -22,7 +22,7 @@ public class LaboratorioBean extends BasePageBean {
 	private String nombre;
 	private ArrayList<Equipo> equipos;
 	private int cupos;
-	private String novedad;
+	
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
@@ -52,16 +52,11 @@ public class LaboratorioBean extends BasePageBean {
 	public void setCupos(int cupos) {
 		this.cupos = cupos;
 	}
-	public String getNovedad() {
-		return novedad;
-	}
-	public void setNovedad(String novedad) {
-		this.novedad = novedad;
-	}
+	
 
 	public void registrarLaboratorio() throws proyExcepcion{
-		Laboratorio laboratorio =new Laboratorio(id,nombre,equipos,cupos,novedad);
-		laboratorioServices.registarLaboratorio(id,nombre,equipos,cupos,novedad);
+		Laboratorio laboratorio =new Laboratorio(id,nombre,equipos,cupos);
+		laboratorioServices.registarLaboratorio(id,nombre,equipos,cupos);
 	}
 	
 	public List<Laboratorio> getData(){

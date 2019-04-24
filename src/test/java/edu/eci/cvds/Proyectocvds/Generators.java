@@ -12,16 +12,16 @@ import static org.quicktheories.generators.SourceDSL.*;
 public class Generators {
 	
 	//static private String nextUserID = "";
-	/*
+	
 	static public Gen<Equipo> equipos(){
 		return strings().basicLatinAlphabet().ofLengthBetween(50,100).zip(
 				booleans().all(),
-				(id,disponible, elementos) -> {
+				(id,disponible) -> {
 					//nextUserID++;
-					return new Equipo(id,disponible,elementos);
+					return new Equipo(id,disponible,null);
 					
 				});
-	}*/
+	}
 	
 	//Probar primeros atributos de novedad
 	
@@ -56,8 +56,9 @@ public class Generators {
 		return strings().basicLatinAlphabet().ofLengthBetween(50, 100).zip(
 				booleans().all(),
 				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
-				(id,disponible,tipo) -> {
-					return new Elemento(id,disponible,tipo);
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				(id,disponible,tipo,equipo) -> {
+					return new Elemento(id,disponible,tipo,equipo);
 				});
 	}
 	
@@ -72,6 +73,16 @@ public class Generators {
 					return new Usuario(username,estado,correo,contrasena,informacion);
 				});
 		
+	}
+	
+	static public Gen<Laboratorio> laboratorios(){
+		return strings().basicLatinAlphabet().ofLengthBetween(50,100).zip(
+				strings().basicLatinAlphabet().ofLengthBetween(50, 100),
+				integers().allPositive(),
+				(id,nombre,cupos)->{
+					return new Laboratorio(id,nombre,null,cupos);
+				});
+				
 	}
 }
 	

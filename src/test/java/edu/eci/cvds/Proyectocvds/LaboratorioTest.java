@@ -14,6 +14,8 @@ import com.google.inject.Inject;
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.*;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesElemento;
+import edu.eci.cvds.services.ServicesNovedad;
 
 import org.quicktheories.core.Gen;
 
@@ -26,6 +28,11 @@ public class LaboratorioTest extends TestBase{
 	
 	@Inject 
 	Services services;
+	@Inject 
+	ServicesElemento servicesElemento;
+	@Inject 
+	ServicesNovedad servicesNovedad;
+	
 	
 	@Test
 	
@@ -34,8 +41,8 @@ public class LaboratorioTest extends TestBase{
 			try {
 				
 				
-				services.nuevoElemento(elemento);
-				for(Elemento ele :services.listByElemento()) {
+				servicesElemento.nuevoElemento(elemento);
+				for(Elemento ele :servicesElemento.listByElemento()) {
 					if(ele.getId().equals(ele.getId())) {
 						return true;
 					}
@@ -81,8 +88,8 @@ public class LaboratorioTest extends TestBase{
 		qt().forAll(Generators.novedades()).check((novedad)-> {
 			try {
 				
-				services.nuevoNovedad(novedad);
-				for(Novedad nov :services.listByNovedad()) {
+				servicesNovedad.nuevoNovedad(novedad);
+				for(Novedad nov :servicesNovedad.listByNovedad()) {
 					if(nov.getId().equals(nov.getId())) {
 						return true;
 					}

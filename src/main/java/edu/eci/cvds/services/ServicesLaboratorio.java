@@ -11,7 +11,7 @@ public interface ServicesLaboratorio {
 void nuevoLaboratorio(Laboratorio laboratorio) throws proyExcepcion;
 	
 	
-	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad);
+	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos);
 	public List<Laboratorio> listByLaboratorio();
 
 }

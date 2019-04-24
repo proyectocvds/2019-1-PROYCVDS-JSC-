@@ -8,16 +8,16 @@ public class Laboratorio {
 	private String nombre;
 	private ArrayList<Equipo> equipos;
 	private int cupos;
-	private String novedad;
 	
 	
-	public Laboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
+	
+	public Laboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
 		super();
 		this.id=id;
 		this.nombre=nombre;
 		this.equipos=new ArrayList<Equipo>();
 		this.cupos=cupos;
-		this.novedad=novedad;
+		
 	}
 
 
@@ -61,12 +61,4 @@ public class Laboratorio {
 	}
 
 
-	public String getNovedad() {
-		return novedad;
-	}
-
-
-	public void setNovedad(String novedad) {
-		this.novedad = novedad;
-	}
 }
