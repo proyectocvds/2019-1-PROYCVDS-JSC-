@@ -22,19 +22,19 @@
 		<p:layoutUnit position="center" resizable="true" size="1500">
 		</p:layoutUnit>
 		</p:layout>	
-		<h1>Registrar Equipo a Elemento</h1>
+		<h1>Registrar Elemento a Equipo</h1>
 		<h:form id="registroElemento_form">
 		<br></br>
 		<br></br>
 		<p:outputLabel>Id del Elemento: </p:outputLabel>
-		<h:inputText value="#{equipoBean.idElemento}"></h:inputText>
+		<h:inputText value="#{elementoBean.id}"></h:inputText>
 		<br></br>
 		<br></br>
 		<p:outputLabel>Id del Equipo: </p:outputLabel>
-		<h:inputText value="#{equipoBean.id}"></h:inputText>
+		<h:inputText value="#{elementoBean.idEquipo}"></h:inputText>
 		<br></br>
 		<br></br>
-		<p:commandButton value="Registrar Elemento a Equipo" update="registroElemento_form" actionListener="#{equipoBean.registrarElementoAEquipo()}"></p:commandButton>
+		<p:commandButton value="Registrar Elemento a Equipo" update="registroElemento_form" actionListener="#{elementoBean.registrarElementoAEquipo()}"></p:commandButton>
 		<br></br>
 		<br></br>
 		</h:form>

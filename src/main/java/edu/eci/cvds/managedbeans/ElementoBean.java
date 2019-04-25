@@ -25,6 +25,7 @@ public class ElementoBean extends BasePageBean{
 	private String username;
 	private String contrasena;
 	private String equipo;
+	private String idEquipo;
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	
@@ -121,5 +122,20 @@ public class ElementoBean extends BasePageBean{
 	public void irRegistrarElemento() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("registroElemento.xhtml");
 	}
+	
+	public void registrarElementoAEquipo() {
+		elementoServices.registrarElementoAEquipo(id,idEquipo);
+	}
+
+	public String getIdEquipo() {
+		return idEquipo;
+	}
+
+	public void setIdEquipo(String idEquipo) {
+		this.idEquipo = idEquipo;
+	}
+	
+	
+	
 	
 }

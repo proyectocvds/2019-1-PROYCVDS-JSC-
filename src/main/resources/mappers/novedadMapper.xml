@@ -26,13 +26,13 @@
 		<select id="novedadEquipo" parameterType="map" resultMap="NovedadResult">
 		SELECT *
 		FROM NOVEDAD
-		WHERE equipo = #{equipo};
+		WHERE equipo = #{equipo}
 		</select>
 		
 		<select id="novedadElemento" parameterType="map" resultMap="NovedadResult">
 		SELECT *
 		FROM NOVEDAD
-		WHERE elemento = #{elemento};
+		WHERE elemento = #{elemento}
 		</select>
 		
 </mapper>

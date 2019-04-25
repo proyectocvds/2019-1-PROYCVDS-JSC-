@@ -16,9 +16,14 @@
 		INSERT INTO ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
 	</insert>
 	<select id="consultarElemento" resultMap="ElementoResult">
-		SELECT id,disponible,tipo
+		SELECT id,disponible,tipo,equipo
 		FROM ELEMENTO
 	</select>
+	
+	<update parameterType="map" id="registrarElementoAEquipo" >
+		UPDATE ELEMENTO SET idEquipo=#{equipo}
+		where id=#{id} 
+	</update>
 	
 </mapper>
 

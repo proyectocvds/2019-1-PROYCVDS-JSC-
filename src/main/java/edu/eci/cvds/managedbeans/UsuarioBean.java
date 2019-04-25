@@ -44,10 +44,14 @@ public void validarUsuario () {
    session.setAttribute("contrasena",contrasena);
    fc.getExternalContext().redirect("faces/menu.xhtml");
   }
+  
+ 
  }
+ 
  catch(Exception e) {
   FacesContext context = FacesContext.getCurrentInstance();
   context.addMessage(null, new FacesMessage("ERROR", "Datos incorrectos para iniciar sesión, intentelo de nuevo!"));
+  addMessage("System Error", "Please try again later.");
  }
 
 } 
@@ -75,7 +79,14 @@ public void validarUsuario () {
 		FacesContext fc =FacesContext.getCurrentInstance();
 		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);
 		session.setAttribute("username",username);
-		session.setAttribute("contrasena",contrasena);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+session.setAttribute("contrasena",contrasena);
+FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
+	
+	public void addMessage(String mensaje, String detalle) {
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, mensaje, detalle);
+        FacesContext.getCurrentInstance().addMessage(null, message);
+	}
+	
+	
 }

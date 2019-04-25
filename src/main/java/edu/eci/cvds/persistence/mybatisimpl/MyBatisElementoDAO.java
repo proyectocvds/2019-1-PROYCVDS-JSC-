@@ -46,4 +46,12 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	@Override
+	public void registrarElementoAEquipo(String id, String idEquipo) {
+		elementoMapper.registrarElementoAEquipo(id, idEquipo);
+		
+	}
 }

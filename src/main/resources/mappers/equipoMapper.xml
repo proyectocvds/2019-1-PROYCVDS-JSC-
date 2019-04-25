@@ -20,12 +20,4 @@
 		SELECT *
 		FROM EQUIPO
 	</select>
-	
-	<update parameterType="map" id="registrarElementoAEquipo" >
-		UPDATE ELEMENTO SET equipo=#{equipo}
-		where id=#{elemento} 
-	</update>
-	
-	
-	
 </mapper>

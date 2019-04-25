@@ -15,6 +15,10 @@ public class Elemento {
 		
 	}
 	
+	public Elemento(String id, boolean disponible, String tipo) {
+		
+	}
+	
 	public Elemento() {
 		
 	}

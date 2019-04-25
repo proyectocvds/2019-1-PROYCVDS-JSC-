@@ -27,6 +27,12 @@ public class ServicesImplElemento implements ServicesElemento{
 		elementoDAO.save(elemento);
 	}
 
+	@Override
+	public void registrarElementoAEquipo(String id, String idEquipo) {
+		elementoDAO.registrarElementoAEquipo(id, idEquipo);
+		
+	}
+
   
 }
 
