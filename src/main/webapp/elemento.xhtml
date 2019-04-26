@@ -48,21 +48,23 @@
 		<p:commandButton value="Registrar Elemento a Equipo" update="elemento_form" actionListener="#{elementoBean.irRegistrarElemento()}"></p:commandButton>
 		<br></br>
 		<br></br>
-		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.data}">
+		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.data}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                rowsPerPageTemplate="5,10,15" currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
 		<p:column headerText="Id">
-			<h:outputText value="#{elemento.id}"/>
+			<h:outputText value="#{elemento.id}"  style="center" />
 		</p:column>
-		<p:column headerText="Disponible">
-			<h:outputText value="#{elemento.disponible}"/>
+ 		<p:column headerText="Disponible">
+			<h:outputText value="#{elemento.disponible}" style="center"/>
 		</p:column>
 		<p:column headerText="TipoElemento">
-			<h:outputText value="#{elemento.tipo}"/>
+			<h:outputText value="#{elemento.tipo}" style="center"/>
 		</p:column>
 		<p:column headerText="Equipo">
-			<h:outputText value="#{elemento.equipo}"/>
+			<h:outputText value="#{elemento.equipo}" style="center"/>
 		</p:column>
 		<p:column headerText="Novedad Elemento">
-			<p:button outcome="novedadElemento" value="Ver Novedad" >
+			<p:button outcome="novedadElemento" value="Ver Novedad" icon="pi pi-search">
 			<f:param name="elemento" value ="#{elemento.id}" />
 		</p:button>
 		</p:column>

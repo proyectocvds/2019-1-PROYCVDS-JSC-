@@ -14,7 +14,7 @@
     </resultMap>
     
     <select id="consultarLogin" parameterType="map" resultMap="UsuarioResult">
-    SELECT * FROM usuario WHERE username=#{username} and contrasena=#{contrasena};
+    SELECT * FROM usuario WHERE username=#{username} and contrasena=md5(#{contrasena});
     </select>
     
 </mapper>
