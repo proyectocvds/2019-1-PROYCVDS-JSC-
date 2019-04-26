@@ -27,12 +27,15 @@
         <br></br>
         <h1>Novedad de Elemento</h1>
         <h1>#{elementoBean.id}</h1>
-
+        
+        <h:commandLink>
+			<h:graphicImage url="/src/main/webapp/excel.png"/>
+			<p:dataExporter type="xls" target="novedadElemento_table" fileName="ExcelNovedades"/>
+		</h:commandLink>
         <p:dataTable
           id="novedadElemento_table"
           var="novedadElemento"
-          value="#{novedadBean.novedadElemento()}"
-        >
+          value="#{novedadBean.novedadElemento()}">
           <p:column headerText="Id">
             <h:outputText value="#{novedadElemento.id}" />
           </p:column>

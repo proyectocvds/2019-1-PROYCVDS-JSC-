@@ -35,6 +35,10 @@
         <br></br>
         <br></br>
         <br></br>
+        <h:commandLink>
+			<h:graphicImage url="/src/main/webapp/excel.png"/>
+			<p:dataExporter type="xls" target="equipo_table" fileName="ExcelEquipo"/>
+		</h:commandLink>
         <p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}">
           <p:column headerText="Id">
             <h:outputText value="#{equipo.id}" />

@@ -58,6 +58,11 @@
         ></p:commandButton>
         <br></br>
         <br></br>
+        
+        <h:commandLink>
+			<h:graphicImage url="/src/main/webapp/excel.png"/>
+			<p:dataExporter type="xls" target="elemento_table" fileName="ExcelElementos"/>
+		</h:commandLink>
         <p:dataTable
           id="elemento_table"
           var="elemento"

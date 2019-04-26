@@ -22,7 +22,10 @@
 			<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
         <br></br>
         <h1>Novedad de Equipo #{equipoBean.id}</h1>
-
+		<h:commandLink>
+			<h:graphicImage url="/src/main/webapp/excel.png"/>
+			<p:dataExporter type="xls" target="novedadEquipo_table" fileName="ExcelNovedades"/>
+		</h:commandLink>
         <p:dataTable
           id="novedadEquipo_table"
           var="novedadEquipo"
