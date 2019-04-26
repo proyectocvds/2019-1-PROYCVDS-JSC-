@@ -18,10 +18,11 @@
 	<select id="consultarElemento" resultMap="ElementoResult">
 		SELECT id,disponible,tipo,equipo
 		FROM ELEMENTO
+		ORDER BY id DESC
 	</select>
 	
 	<update parameterType="map" id="registrarElementoAEquipo" >
-		UPDATE ELEMENTO SET idEquipo=#{equipo}
+		UPDATE ELEMENTO SET equipo=#{idEquipo}
 		where id=#{id} 
 	</update>
 	

@@ -136,6 +136,8 @@ public class ElementoBean extends BasePageBean{
 	}
 	
 	
-	
+	public void irNovedadElemento() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("novedadElemento.xhtml");
+	}
 	
 }

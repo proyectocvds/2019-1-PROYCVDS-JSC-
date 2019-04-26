@@ -7,6 +7,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
@@ -114,7 +115,7 @@ public class NovedadBean extends BasePageBean{
 		return novedadServices.novedadEquipo(equipo);
 	}
 	
-	public List<Novedad> novedadElemento() throws proyExcepcion{
+	public List<Novedad> novedadElemento() throws proyExcepcion, IOException{
 		return novedadServices.novedadElemento(elemento);
 	}
 }

@@ -79,8 +79,8 @@ public void validarUsuario () {
 		FacesContext fc =FacesContext.getCurrentInstance();
 		HttpSession session=(HttpSession) fc.getExternalContext().getSession(false);
 		session.setAttribute("username",username);
-session.setAttribute("contrasena",contrasena);
-FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+		session.setAttribute("contrasena",contrasena);
+		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
 	
 	public void addMessage(String mensaje, String detalle) {
