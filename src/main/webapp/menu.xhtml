@@ -1,30 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:p="http://primefaces.org/ui">
- <h:head><title>Menu</title>
- 	<style type="text/css">
- 		.my_test li{
- 			display:inline;
- 			padding:20px;
- 			margin:20px;
- 		}
- 		.my_test li:hover{
- 			background:#A51717  ;
- 		}
- 	</style>
- </h:head>
- <h:body style="margin:0px; padding:0px;">
- <center>
- 	<img src="escuela.jpg" style="width:20%;"> </img>
-	<h1>Menu</h1>
- 	<br></br>
- 	<h:form id="menu_form">
-
- 	
- 	<!-- <p:tabView dynamic="true" cache="true" effect="fold">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+>
+  <h:head>
+    <title>Menu</title>
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <style type="text/css">
+      .my_test li {
+		   display: inline;
+		    padding: 7px 20px 17px 20px;
+			 margin: 20px;
+		    } .my_test
+      li:hover { background:#0074D9; text-decoration: none; }
+    </style>
+  </h:head>
+  <h:body style="margin:0px; padding:0px;">
+    <center>
+      <img
+        src="logo.png"
+        style="width: 120px;height:120px;border-radius: 60px "
+      >
+      </img>
+      <br></br>
+      <h1>Menu</h1>
+      <br></br>
+      <h:form id="menu_form">
+        <!-- <p:tabView dynamic="true" cache="true" effect="fold">
  		<p:tab title="Registrar Elemento">
  			<h:panelGrid columns="2" cellpadding="10"/>
      		</p:tab>
@@ -41,20 +49,49 @@ xmlns:p="http://primefaces.org/ui">
  			<h:panelGrid columns="2" cellpadding="10"/>
      		</p:tab>
  	</p:tabView> -->
- 	
- 	
- 	
-		<div style="margin:0px; padding:5px; background:#A51717; width:100%">
-		<ul class="my_test">
-			<li><h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.irElemento()}" style="color:white;" ></h:commandLink></li>
-			<li><h:commandLink value="Registrar Equipo" actionListener="#{elementoBean.irEquipo()}" style="color:white;"></h:commandLink></li>
-			<li><h:commandLink value="Registrar Novedad" actionListener="#{elementoBean.irNovedad()}" style="color:white"></h:commandLink></li>
-			<li><h:commandLink value="Registrar Laboratorio" actionListener="#{elementoBean.irLaboratorio()}" style="color:white;"></h:commandLink></li>
-			<li><h:commandLink value="logOut" actionListener="#{elementoBean.logOut()}" style="color:white;"></h:commandLink></li>
-			
-		</ul>
-	</div> 
-</h:form>
-</center>
-</h:body>
+
+        <div
+          style="margin: 0px; padding: 5px; background: #001f3f; width: 60%"
+        >
+          <ul class="my_test">
+            <li
+              ><h:commandLink
+                value="Registrar Elemento"
+                actionListener="#{elementoBean.irElemento()}"
+                style="color:white;"
+              ></h:commandLink
+            ></li>
+            <li
+              ><h:commandLink
+                value="Registrar Equipo"
+                actionListener="#{elementoBean.irEquipo()}"
+                style="color:white;"
+              ></h:commandLink
+            ></li>
+            <li
+              ><h:commandLink
+                value="Registrar Novedad"
+                actionListener="#{elementoBean.irNovedad()}"
+                style="color:white"
+              ></h:commandLink
+            ></li>
+            <li
+              ><h:commandLink
+                value="Registrar Laboratorio"
+                actionListener="#{elementoBean.irLaboratorio()}"
+                style="color:white;"
+              ></h:commandLink
+            ></li>
+            <li
+              ><h:commandLink
+                value="Log Out"
+                actionListener="#{elementoBean.logOut()}"
+                style="color:white;"
+              ></h:commandLink
+            ></li>
+          </ul>
+        </div>
+      </h:form>
+    </center>
+  </h:body>
 </html>
