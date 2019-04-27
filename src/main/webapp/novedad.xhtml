@@ -49,7 +49,7 @@ xmlns:p="http://primefaces.org/ui">
 <h:graphicImage url="/src/main/webapp/excel.png"/>
 <p:dataExporter type="xls" target="novedad_table" fileName="ExcelNovedades"/>
 </h:commandLink>
-<p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.data}">
+<p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.data}" paginator="true" rows="10"  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" currentPageReportTemplate="Página: ({currentPage} de {totalPages})" >
 <p:column headerText="Id">
 <h:outputText value="#{novedad.id}"/>
 </p:column>

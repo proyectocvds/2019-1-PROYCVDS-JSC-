@@ -39,7 +39,9 @@
 			<h:graphicImage url="/src/main/webapp/excel.png"/>
 			<p:dataExporter type="xls" target="equipo_table" fileName="ExcelEquipo"/>
 		</h:commandLink>
-        <p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}">
+        <p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+          rowsPerPageTemplate="5,10,15"
+          currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
           <p:column headerText="Id">
             <h:outputText value="#{equipo.id}" />
           </p:column>

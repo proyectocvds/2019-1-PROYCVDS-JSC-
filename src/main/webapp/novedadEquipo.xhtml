@@ -30,6 +30,11 @@
           id="novedadEquipo_table"
           var="novedadEquipo"
           value="#{novedadBean.novedadEquipo()}"
+          paginator="true"
+          rows="10"
+          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+          rowsPerPageTemplate="5,10,15"
+          currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
         >
           <p:column headerText="Id">
             <h:outputText value="#{novedadEquipo.id}" />

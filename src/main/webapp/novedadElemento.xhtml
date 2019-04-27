@@ -27,7 +27,6 @@
         <br></br>
         <h1>Novedad de Elemento</h1>
         <h1>#{elementoBean.id}</h1>
-        
         <h:commandLink>
 			<h:graphicImage url="/src/main/webapp/excel.png"/>
 			<p:dataExporter type="xls" target="novedadElemento_table" fileName="ExcelNovedades"/>
@@ -35,7 +34,13 @@
         <p:dataTable
           id="novedadElemento_table"
           var="novedadElemento"
-          value="#{novedadBean.novedadElemento()}">
+          value="#{novedadBean.novedadElemento()}"
+          paginator="true"
+          rows="10"
+          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+          rowsPerPageTemplate="5,10,15"
+          currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
+          >
           <p:column headerText="Id">
             <h:outputText value="#{novedadElemento.id}" />
           </p:column>
