@@ -1,8 +1,11 @@
 package edu.eci.cvds.managedbeans;
+
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
@@ -12,42 +15,47 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Equipo;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesElemento;
 import edu.eci.cvds.services.ServicesEquipo;
 import edu.eci.cvds.services.impl.ServicesImpl;
+
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "equipoBean")
 @RequestScoped
 
-public class EquipoBean extends BasePageBean{
+public class EquipoBean extends BasePageBean {
 	private String id;
 	private boolean disponible;
 	private ArrayList<Elemento> elementos;
 	private String idElemento;
-	
+	private Date fecha;
+	private String tipo;
+
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
 	private ServicesEquipo equipoServices;
-	
+	private ServicesElemento elementoServices;
+
 	public String getId() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
-		this.id=id;
+		this.id = id;
 	}
-	
+
 	public boolean getDisponible() {
 		return disponible;
 	}
-	
+
 	public void setDisponible(boolean disponible) {
-		this.disponible=disponible;
+		this.disponible = disponible;
 	}
-	
-	public List<Equipo> getData() throws proyExcepcion{
+
+	public List<Equipo> getData() throws proyExcepcion {
 		return equipoServices.listByEquipo();
 	}
-	
+
 	public ArrayList<Elemento> getElementos() {
 		return elementos;
 	}
@@ -55,24 +63,56 @@ public class EquipoBean extends BasePageBean{
 	public void setElementos(ArrayList<Elemento> elementos) {
 		this.elementos = elementos;
 	}
-	
-	
-	public void registrarEquipo() throws proyExcepcion{
-		Equipo equipo = new Equipo(id, disponible,elementos);
-		equipoServices.registrarEquipo(id, true, elementos);
+
+	public void registrarEquipo() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		try {
+			if (elementos.size() < 4)
+				throw new proyExcepcion("Hacen falta mas elementos para registrar el equipo");
+			for (Elemento e : elementos) {
+				equipoServices.registrarElementoAEquipo(idElemento, id);
+			}
+			context.addMessage(null, new FacesMessage("Succesfull", "Equipo Insertado."));
+		} catch (Exception e) {
+			context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+
 	}
-	
+
 	public void registrarElementoAEquipo() {
-		equipoServices.registrarElementoAEquipo(idElemento,id);
+		equipoServices.registrarElementoAEquipo(idElemento, id);
 	}
 
 	public String getIdElemento() {
 		return idElemento;
 	}
 
+	public ArrayList<Elemento> getElementos(String tipo) {
+		return equipoServices.getElementos(tipo);
+	}
+
 	public void setIdElemento(String idElemento) {
 		this.idElemento = idElemento;
 	}
-	
-	
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public void add(Elemento elemento) {
+		elementos.add(elemento);
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 }

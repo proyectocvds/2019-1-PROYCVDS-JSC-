@@ -40,4 +40,9 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		equipoMapper.registrarElementoAEquipo(idElemento,id);
 		
 	}
+
+	@Override
+	public ArrayList<Elemento> getElementos(String tipo) {
+		return equipoMapper.getElementos(tipo);
+	}
 }

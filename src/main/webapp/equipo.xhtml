@@ -1,60 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:p="http://primefaces.org/ui"
->
-  <h:head>
-    <title>Registrar Equipo</title>
-    <link
-      rel="stylesheet"
-      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-    />
-  </h:head>
-  <h:body style="margin:0px; padding:0px;">
-    <p:button outcome="menu" value="Regresar al menu" />
-    <center>
-			<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
-      <br></br>
-      <h1>Registrar equipo</h1>
-      <h:form id="equipo_form">
-        <p:outputLabel>Ingrese el equipo que desea registrar: </p:outputLabel>
-        <br></br>
-        <br></br>
-        <p:outputLabel>Id del Equipo: </p:outputLabel>
-        <h:inputText value="#{equipoBean.id}"></h:inputText>
-        <br></br>
-        <br></br>
-        <p:commandButton
-          value="Registrar"
-          update="equipo_form"
-          actionListener="#{equipoBean.registrarEquipo()}"
-        ></p:commandButton>
-        <br></br>
-        <br></br>
-        <br></br>
-        <h:commandLink>
-			<h:graphicImage url="/src/main/webapp/excel.png"/>
-			<p:dataExporter type="xls" target="equipo_table" fileName="ExcelEquipo"/>
-		</h:commandLink>
-        <p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-          rowsPerPageTemplate="5,10,15"
-          currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
-          <p:column headerText="Id">
-            <h:outputText value="#{equipo.id}" />
-          </p:column>
-          <p:column headerText="Disponible">
-            <h:outputText value="#{equipo.disponible}" />
-          </p:column>
-          <p:column headerText="Novedad de Equipo:">
-            <p:button outcome="novedadEquipo" value="Ver Novedad">
-              <f:param name="equipo" value="#{equipo.id}" />
-            </p:button>
-          </p:column>
-        </p:dataTable>
-      </h:form>
-    </center>
-  </h:body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Registrar Equipo</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+<h:body style="margin:0px; padding:0px;">
+	<p:button outcome="menu" value="Regresar al menu" />
+	<center>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+		<br></br>
+		<h1>Registrar equipo</h1>
+		<h:form id="equipo_form">
+			<p:outputLabel>Ingrese el equipo que desea registrar: </p:outputLabel>
+			<br></br>
+			<br></br>
+			<p:outputLabel>Id del Equipo: </p:outputLabel>
+			<h:inputText value="#{equipoBean.id}"></h:inputText>
+			<br></br>
+			<p:outputLabel>Fecha del Equipo: </p:outputLabel>
+			<p:calendar value="#{equipoBean.fecha}">
+			</p:calendar>
+			<br></br>
+			<p:commandButton value="Registrar" update="equipo_form"
+				actionListener="#{equipoBean.registrarEquipo()}"></p:commandButton>
+			<br></br>
+			<br></br>
+			<br></br>
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<br></br>
+				<p:dataExporter type="xls" target="equipo_table"
+					fileName="ExcelEquipo" />
+			</h:commandLink>
+			<br></br>
+			<br></br>
+			<h1>Para Registrar este debe contener todos los elementos:</h1>
+			<p:dataTable value="#{equipoBean.getElementos()}" var="tipo">
+				<p:column headerText="Id">${tipo.getId()}</p:column>
+				<p:column headerText="Disponible">${tipo.getDisponible()}</p:column>
+				<p:column headerText="Tipo">${tipo.getTipo()}</p:column>
+			</p:dataTable>
+			<br></br>
+			<p:selectOneMenu id="tipoEquipo" value="#{equipoBean.tipo}"
+				style="width:150px">
+				<f:selectItem itemLabel="Torre" itemValue="Torre"
+					noSelectionOption="true" />
+				<f:selectItem itemLabel="Pantalla" itemValue="Pantalla"
+					noSelectionOption="true" />
+				<f:selectItem itemLabel="Mouse" itemValue="Mouse"
+					noSelectionOption="true" />
+				<f:selectItem itemLabel="Teclado" itemValue="Teclado"
+					noSelectionOption="true" />
+			</p:selectOneMenu>
+			<h:commandButton value="Buscar elementos:" update="@form"></h:commandButton>
+			<br></br>
+			<br></br>
+			<p:dataTable value="#{equipoBean.getElementos(equipoBean.getTipo())}"
+				var="elemento">
+				<p:column headerText="Id">${elemento.getId()}</p:column>
+				<p:column headerText="Disponible">${elemento.getDisponible()}</p:column>
+				<p:column headerText="Tipo">${elemento.getTipo()}</p:column>
+				<p:column headerText="Asociar">
+					<h:commandLink value="Asociar"
+						actionListener="#{equipoBean.add(elemento)}" update="@form">
+					</h:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</center>
+</h:body>
 </html>
