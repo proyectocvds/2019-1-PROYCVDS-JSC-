@@ -14,10 +14,7 @@ import edu.eci.cvds.services.ServicesLaboratorio;
 public class ServicesImplLaboratorio implements ServicesLaboratorio{
 	@Inject 
 	private LaboratorioDAO laboratorioDAO;
-	
-	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos, String novedad) {
-		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos);
-	}
+
 	
 	@Override
 	public void nuevoLaboratorio(Laboratorio laboratorio) throws proyExcepcion{
@@ -25,15 +22,25 @@ public class ServicesImplLaboratorio implements ServicesLaboratorio{
 	}
 
 
-	@Override
-	public void registarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
-		laboratorioDAO.registarLaboratorio(id, nombre, equipos, cupos);
-	}
+
 
 
 	@Override
 	public List<Laboratorio> listByLaboratorio() {
 		return laboratorioDAO.consultarLaboratorio();
 	}
+
+
+
+
+
+	@Override
+	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
+		laboratorioDAO.registrarLaboratorio(id, nombre, equipos, cupos);
+		
+	}
+
+
+	
 
 }

@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Usuario;
@@ -49,9 +50,14 @@ public void validarUsuario () {
  }
  
  catch(Exception e) {
+  
   FacesContext context = FacesContext.getCurrentInstance();
   context.addMessage(null, new FacesMessage("ERROR", "Datos incorrectos para iniciar sesión, intentelo de nuevo!"));
   addMessage("System Error", "Please try again later.");
+
+	/*FacesMessage javaTextMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR,"ds" ,null);
+	FacesContext.getCurrentInstance().addMessage("componentForm:javaText", javaTextMsg);*/
+  
  }
 
 } 
