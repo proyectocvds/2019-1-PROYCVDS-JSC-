@@ -20,7 +20,8 @@
 
 		<select id="consultarNovedad" parameterType="map" resultMap="NovedadResult">
 		SELECT *
-		FROM NOVEDAD;
+		FROM NOVEDAD
+		ORDER BY FECHA;
 		</select>
 	
 		<select id="novedadEquipo" parameterType="map" resultMap="NovedadResult">

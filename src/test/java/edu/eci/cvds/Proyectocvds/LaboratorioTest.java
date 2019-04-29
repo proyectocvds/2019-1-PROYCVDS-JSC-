@@ -42,22 +42,24 @@ public class LaboratorioTest extends TestBase{
 	@Inject 
 	ServicesUsuario servicesUsuario;
 	
-	
+	/* Pruebas cero uno dos y tres probar que no se puede registar un equipo, elemento, novedad 
+	 * y laboratorio con un id repetido 
+	 */
 	@Test
 	
 	public void pruebaCeroTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.elementos()).check((elemento) -> {
 			try {
 				
-				
+				Elemento elep =new Elemento("8787",true,"Torre","dsad");
 				servicesElemento.nuevoElemento(elemento);
 				for(Elemento ele :servicesElemento.listByElemento()) {
-					if(ele.getId().equals(ele.getId())) {
-						return true;
+					if(elep.getId().equals(ele.getId())) {
+						return false;
 					}
 				}
 				
-				return false;
+				return true;
 				
 			}
 			
@@ -70,40 +72,40 @@ public class LaboratorioTest extends TestBase{
 	
 	}
 	
-	/*
+	
 	public void pruebaUnoTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.equipos()).check((equipo) ->  {
 			try {
-				
-				services.nuevoEquipo(equipo);
-				for(Equipo equi : services.listByEquipo()) {
-					if(equi.getId().equals(equi.getId())) {
-						return true;
+				Equipo equip=new Equipo("dsad",true,null);
+				servicesEquipo.nuevoEquipo(equipo);
+				for(Equipo equi : servicesEquipo.listByEquipo()) {
+					if(equip.getId().equals(equi.getId())) {
+						return false;
 					}
 					
 				}
 					
-				return false; 
+				return true; 
 			}
 			catch(proyExcepcion ex) {
 				ex.printStackTrace();
 				return false;
 			}
 		});
-	}*/
+	}
 	
 	
 	public void pruebaDosTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.novedades()).check((novedad)-> {
 			try {
-				
+				Novedad novep=new Novedad("abc",null,"wd","de","juliana.garzon","dede","loi");
 				servicesNovedad.nuevoNovedad(novedad);
 				for(Novedad nov :servicesNovedad.listByNovedad()) {
-					if(nov.getId().equals(nov.getId())) {
-						return true;
+					if(novep.getId().equals(nov.getId())) {
+						return false;
 					}
 				}
-					return false;
+					return true;
 				}
 				catch(proyExcepcion ex) {
 					ex.printStackTrace();
@@ -111,9 +113,31 @@ public class LaboratorioTest extends TestBase{
 				}
 			});
 		}
-	
+}
+	/*public void pruebaTresTest() throws SQLException,proyExcepcion{
+		qt().forAll(Generators.laboratorios()).check((laboratorio)->{
+			try {
+				Laboratorio labp=new Laboratorio("abc",null,"wd","de","juliana.garzon","dede","loi");
+				servicesLaboratorio.nuevoLaboratorio(laboratorio);
+				for(Laboratorio lab :servicesLaboratorio.listByLaboratorio()) {
+					if(labp.getId().equals(lab.getId())) {
+						return false;
+					}
+				}
+					return true;
+				}
+				catch(proyExcepcion ex) {
+					ex.printStackTrace();
+					return false;
+				}
+			});
+		}
+		}
+		
+	}
 	}	
 	
+*/
 
 				
 
