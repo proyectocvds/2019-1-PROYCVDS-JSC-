@@ -36,25 +36,25 @@
           rowsPerPageTemplate="5,10,15"
           currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
         >
-          <p:column headerText="Id" filterBy="#{novedadEquipo.id}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Id" sortBy="#{row.Id}" filterBy="#{novedadEquipo.id}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.id}" />
           </p:column>
-          <p:column headerText="Fecha" filterBy="#{novedadEquipo.fecha}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Fecha" sortBy="#{row.Fecha}"filterBy="#{novedadEquipo.fecha}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.fecha}" />
           </p:column>
-          <p:column headerText="Titulo" filterBy="#{novedadEquipo.titulo}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Titulo" sortBy="#{row.Titulo}" filterBy="#{novedadEquipo.titulo}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.titulo}" />
           </p:column>
-          <p:column headerText="Detalle" filterBy="#{novedadEquipo.detalle}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Detalle" sortBy="#{row.Detalle}" filterBy="#{novedadEquipo.detalle}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.detalle}" />
           </p:column>
-          <p:column headerText="Usuario" filterBy="#{novedadEquipo.usuario}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Usuario" sortBy="#{row.Usuario}" filterBy="#{novedadEquipo.usuario}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.usuario}" />
           </p:column>
-          <p:column headerText="Elemento" filterBy="#{novedadEquipo.elemento}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Elemento"  sortBy="#{row.Elemento}" filterBy="#{novedadEquipo.elemento}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.elemento}" />
           </p:column>
-          <p:column headerText="Equipo" filterBy="#{novedadEquipo.equipo}" filterStyle="width:100px;" filterMatchMode="contains">
+          <p:column headerText="Equipo" sortBy="#{row.Equipo}" filterBy="#{novedadEquipo.equipo}" filterStyle="width:100px;" filterMatchMode="contains">
             <h:outputText value="#{novedadEquipo.equipo}" />
           </p:column>
         </p:dataTable>
