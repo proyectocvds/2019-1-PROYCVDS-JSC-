@@ -1,7 +1,9 @@
 package edu.eci.cvds.entities;
 
-import java.sql.Date;
+//import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Equipo {
 	

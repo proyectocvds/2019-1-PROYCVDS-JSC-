@@ -41,8 +41,4 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		
 	}
 
-	@Override
-	public ArrayList<Elemento> getElementos(String tipo) {
-		return equipoMapper.getElementos(tipo);
-	}
 }

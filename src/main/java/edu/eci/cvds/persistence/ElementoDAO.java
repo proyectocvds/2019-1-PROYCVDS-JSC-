@@ -16,7 +16,7 @@ public interface ElementoDAO {
 	
 	public void save(Elemento elemento);
 
-	public void registrarElementoAEquipo(String id, String idEquipo);
+	public void registrarElementoAEquipo(String id, String idElemento);
 
 
 

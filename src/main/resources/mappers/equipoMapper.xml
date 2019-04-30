@@ -21,15 +21,4 @@
 		FROM EQUIPO
 	</select>
 	
-	<update parameterType="map" id="registrarElementoAEquipo">
-		UPDATE ELEMENTO SET id=#{equipo}
-		where id=#{idElemento}
-	</update>
-	
-	<select id="getElementos" parameterType="map" resultMap="EquipoResult">
-		SELECT id,disponible,tipo
-		FROM ELEMENTO
-		WHERE tipo=#{tipo}
-	</select>
-	
 </mapper>

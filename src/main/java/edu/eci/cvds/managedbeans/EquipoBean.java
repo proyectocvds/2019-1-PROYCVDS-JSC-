@@ -1,8 +1,9 @@
 package edu.eci.cvds.managedbeans;
 
 import java.io.IOException;
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -29,11 +30,15 @@ public class EquipoBean extends BasePageBean {
 	private ArrayList<Elemento> elementos;
 	private String idElemento;
 	private Date fecha;
-	private String tipo;
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
 	private ServicesEquipo equipoServices;
+	@Inject ServicesElemento elementoServices;
+	
+	public EquipoBean() {
+		elementos = new ArrayList<Elemento>();
+	}
 
 	public String getId() {
 		return id;
@@ -69,7 +74,7 @@ public class EquipoBean extends BasePageBean {
 			if (elementos.size() < 4)
 				throw new proyExcepcion("Hacen falta mas elementos para registrar el equipo");
 			for (Elemento e : elementos) {
-				equipoServices.registrarElementoAEquipo(idElemento, id);
+				elementoServices.registrarElementoAEquipo(id, idElemento);
 			}
 			context.addMessage(null, new FacesMessage("Succesfull", "Equipo Insertado."));
 		} catch (Exception e) {
@@ -86,14 +91,6 @@ public class EquipoBean extends BasePageBean {
 		return idElemento;
 	}
 
-	public ArrayList<Elemento> getElementos(String tipo) {
-		return equipoServices.getElementos(tipo);
-	}
-
-	public void setIdElemento(String idElemento) {
-		this.idElemento = idElemento;
-	}
-
 	public Date getFecha() {
 		return fecha;
 	}
@@ -104,14 +101,6 @@ public class EquipoBean extends BasePageBean {
 
 	public void add(Elemento elemento) {
 		elementos.add(elemento);
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 
 }

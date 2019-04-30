@@ -13,9 +13,7 @@ public interface ServicesEquipo {
 	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion ;
 	public List<Equipo> listByEquipo() throws proyExcepcion;
 	public void nuevoEquipo(Equipo equipo) throws proyExcepcion;
-	//public List<Novedad> novedadEquipo(String equipo) throws proyExcepcion;
 	public void registrarElementoAEquipo(String idElemento, String id);
-	public ArrayList<Elemento> getElementos(String tipo);
 	
 
 }

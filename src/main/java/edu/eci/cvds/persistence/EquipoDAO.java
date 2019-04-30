@@ -16,6 +16,4 @@ public interface EquipoDAO {
 	public List<Equipo> consultarEquipos();
 
 	public void registrarElementoAEquipo(String idElemento, String id);
-
-	public ArrayList<Elemento> getElementos(String tipo);
 }

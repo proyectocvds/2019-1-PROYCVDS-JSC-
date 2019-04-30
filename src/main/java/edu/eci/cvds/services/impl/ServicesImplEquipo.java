@@ -34,14 +34,4 @@ public class ServicesImplEquipo implements ServicesEquipo {
 	public void registrarElementoAEquipo(String idElemento, String id) {
 		equipoDAO.registrarElementoAEquipo(idElemento,id);
 	}
-
-	@Override
-	public ArrayList<Elemento> getElementos(String tipo) {
-		return equipoDAO.getElementos(tipo);
-	}
-	
-	
-
-
-
 }
