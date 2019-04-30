@@ -21,4 +21,12 @@
 		FROM EQUIPO
 	</select>
 	
+	<select id="equiposActivos" resultMap="EquipoResult">
+		SELECT id,fecha
+		FROM EQUIPO 
+		WHERE disponible=#{valor};
+		
+	</select>
+	
+	
 </mapper>

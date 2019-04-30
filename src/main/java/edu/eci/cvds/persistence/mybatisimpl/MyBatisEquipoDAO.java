@@ -41,4 +41,11 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		
 	}
 
+	@Override
+	public List<Equipo> equiposActivos(boolean valor) {
+		return equipoMapper.equiposActivos(valor);
+	}
+	
+	
+
 }

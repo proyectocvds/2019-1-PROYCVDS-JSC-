@@ -13,7 +13,24 @@ xmlns:p="http://primefaces.org/ui">
 <h1>Novedad</h1>
 <br></br>
 <br></br>
-<p:outputLabel>Id de la Novedad: </p:outputLabel>
+<h:panelGrid columns="2" cellspacing="5px">
+	<label>Id Novedad: </label>
+	<p:inputText  value="#{novedadBean.id}"/> <br/>
+	<label>Fecha: </label>
+	<p:calendar value="#{novedadBean.fecha}"/> <br/>
+	<label>Titulo:  </label>
+	<p:inputText  value="#{novedadBean.titulo}"/> <br/>
+	<label>Detalle: </label>
+	<p:inputText value="#{novedadBean.detalle}"/> <br/>
+	<label>Usuario: </label>
+	<p:inputText  value="#{novedadBean.usuario}"/> <br/>
+	<label>Elemento: </label>
+	<p:inputText  value="#{novedadBean.elemento}"/> <br/>
+	<label>Equipo: </label>
+	<p:inputText  value="#{novedadBean.equipo}"/> <br/>
+</h:panelGrid>
+
+<!-- <p:outputLabel>Id de la Novedad: </p:outputLabel>
 <h:inputText value="#{novedadBean.id}"></h:inputText>
 <br></br>
 <br></br>
@@ -40,14 +57,15 @@ xmlns:p="http://primefaces.org/ui">
 <p:outputLabel>Equipo: </p:outputLabel>
 <h:inputText value="#{novedadBean.equipo}"></h:inputText>
 <br></br>
-<br></br>
+<br></br> -->
+
 <p:commandButton value="Registrar" update="novedad_form" actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
 <br></br>
 <br></br>
 <br></br>
-<h:commandLink>
-<h:graphicImage url="/src/main/webapp/excel.png"/>
-<p:dataExporter type="xls" target="novedad_table" fileName="ExcelNovedades"/>
+ <h:commandLink>
+	<img src="excel.png" style="width: 30px;height:30px;border-radius: 60px "> </img> <br></br>
+	<p:dataExporter type="xls" target="elemento_table" fileName="ExcelElementos"/>
 </h:commandLink>
 <p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.data}" paginator="true" rows="10"  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" currentPageReportTemplate="Página: ({currentPage} de {totalPages})" >
 <p:column headerText="Id"  sortBy="#{row.Id}" filterBy="#{novedad.id}" filterStyle="width:100px;" filterMatchMode="contains">

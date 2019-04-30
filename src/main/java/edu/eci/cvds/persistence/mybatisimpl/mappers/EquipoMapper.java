@@ -14,4 +14,5 @@ public interface EquipoMapper {
 	public Equipo getEquipo(@Param("id") String id);
 	public List<Equipo> consultarEquipo();
 	public void registrarElementoAEquipo(@Param("idElemento")String idElemento,@Param("id") String id);
+	public List<Equipo> equiposActivos(@Param("valor")boolean valor);
 }

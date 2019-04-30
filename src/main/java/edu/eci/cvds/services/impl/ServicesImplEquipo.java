@@ -34,4 +34,9 @@ public class ServicesImplEquipo implements ServicesEquipo {
 	public void registrarElementoAEquipo(String idElemento, String id) {
 		equipoDAO.registrarElementoAEquipo(idElemento,id);
 	}
+
+	@Override
+	public List<Equipo> equiposActivos(boolean valor) {
+		return equipoDAO.equiposActivos(valor);
+	}
 }

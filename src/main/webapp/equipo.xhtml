@@ -30,6 +30,8 @@
 			<br></br>
 			<br></br>
 			<h:commandLink>
+			
+
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
 				<br></br>
@@ -40,14 +42,14 @@
 			<br></br>
 			<h1>Para Registrar este debe contener todos los elementos:</h1>
 			<p:dataTable value="#{equipoBean.getElementos()}" var="elemento">
-				<p:column headerText="Id">
-					<h:outputText value="#{elemento.id}"></h:outputText>
+				<p:column headerText="Id"><center>
+					<h:outputText value="#{elemento.id}"></h:outputText></center>
 				</p:column>
-				<p:column headerText="Disponible">
-					<h:outputText value="#{elemento.disponible}"></h:outputText>
+				<p:column headerText="Disponible"><center>
+					<h:outputText value="#{elemento.disponible}"></h:outputText></center>
 				</p:column>
-				<p:column headerText="Tipo">
-					<h:outputText value="#{elemento.tipo}"></h:outputText>
+				<p:column headerText="Tipo"><center>
+					<h:outputText value="#{elemento.tipo}"></h:outputText></center>
 				</p:column>
 			</p:dataTable>
 			<br></br>
@@ -57,15 +59,16 @@
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
 				var="elemento">
-				<p:column headerText="Id">${elemento.getId()}</p:column>
+				
+				<p:column headerText="Id"><center>${elemento.getId()}</center></p:column>
 				<p:column headerText="Tipo" filterBy="#{elemento.tipo}"
-					filterStyle="width:100px;" filterMatchMode="contains">${elemento.getTipo()}</p:column>
-				<p:column headerText="Id" >${elemento.getId()}</p:column>
-				<p:column headerText="Tipo">${elemento.getTipo()}</p:column>
+					filterStyle="width:100px;" filterMatchMode="contains"><center>${elemento.getTipo()}</center></p:column>
 				<p:column headerText="Asociar">
-					<h:commandLink value="Asociar"
+					<center>
+					<h:commandButton value="Asociar"
 						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">
-					</h:commandLink>
+					</h:commandButton>
+					</center>
 				</p:column>
 			</p:dataTable>
 			<br></br>
@@ -75,6 +78,13 @@
 					actionListener="#{equipoBean.registrarEquipo()}"
 					update="equipo_form"></h:commandButton>
 			</center>
+			<div align="right">
+				<h:commandButton value="Ver equipos Activos"
+					actionListener="#{equipoBean.irEquiposActivos()}"
+					update="equipo_form"></h:commandButton>
+
+			</div>
+
 		</h:form>
 	</center>
 </h:body>

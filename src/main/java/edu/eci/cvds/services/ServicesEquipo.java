@@ -14,6 +14,7 @@ public interface ServicesEquipo {
 	public List<Equipo> listByEquipo() throws proyExcepcion;
 	public void nuevoEquipo(Equipo equipo) throws proyExcepcion;
 	public void registrarElementoAEquipo(String idElemento, String id);
+	public List<Equipo> equiposActivos(boolean valor);
 	
 
 }

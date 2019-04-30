@@ -30,6 +30,7 @@ public class EquipoBean extends BasePageBean {
 	private ArrayList<Elemento> elementos;
 	private String idElemento;
 	private Date fecha;
+	
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
@@ -38,6 +39,7 @@ public class EquipoBean extends BasePageBean {
 	
 	public EquipoBean() {
 		elementos = new ArrayList<Elemento>();
+		
 	}
 
 	public String getId() {
@@ -101,6 +103,14 @@ public class EquipoBean extends BasePageBean {
 
 	public void add(Elemento elemento) {
 		elementos.add(elemento);
+	}
+	
+	public void irEquiposActivos() throws IOException {
+		FacesContext.getCurrentInstance().getExternalContext().redirect("equiposActivos.xhtml");
+	}
+	
+	public List<Equipo> equiposActivos(){
+		return equipoServices.equiposActivos(true);
 	}
 
 }
