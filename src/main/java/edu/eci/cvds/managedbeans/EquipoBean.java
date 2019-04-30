@@ -12,6 +12,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import com.google.inject.Injector;
+
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.entities.Equipo;
@@ -26,20 +28,21 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 
 public class EquipoBean extends BasePageBean {
 	private String id;
+	private Injector injector;
 	private boolean disponible;
-	private ArrayList<Elemento> elementos;
+	private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
 	private String idElemento;
 	private Date fecha;
-	
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
 	private ServicesEquipo equipoServices;
-	@Inject ServicesElemento elementoServices;
-	
+	@Inject
+	ServicesElemento elementoServices;
+
 	public EquipoBean() {
-		elementos = new ArrayList<Elemento>();
-		
+		elementos = new ArrayList<Elemento>() {
+		};
 	}
 
 	public String getId() {
@@ -73,10 +76,10 @@ public class EquipoBean extends BasePageBean {
 	public void registrarEquipo() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		try {
-			if (elementos.size() < 4)
+			if (elementos.size() <= 4)
 				throw new proyExcepcion("Hacen falta mas elementos para registrar el equipo");
 			for (Elemento e : elementos) {
-				elementoServices.registrarElementoAEquipo(id, idElemento);
+				elementoServices.registrarElementoAEquipo(id, e.getId());
 			}
 			context.addMessage(null, new FacesMessage("Succesfull", "Equipo Insertado."));
 		} catch (Exception e) {
@@ -104,12 +107,12 @@ public class EquipoBean extends BasePageBean {
 	public void add(Elemento elemento) {
 		elementos.add(elemento);
 	}
-	
+
 	public void irEquiposActivos() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("equiposActivos.xhtml");
 	}
-	
-	public List<Equipo> equiposActivos(){
+
+	public List<Equipo> equiposActivos() {
 		return equipoServices.equiposActivos(true);
 	}
 

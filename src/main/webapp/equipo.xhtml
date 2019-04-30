@@ -38,8 +38,8 @@
 			</h:commandLink>
 			<br></br>
 			<br></br>
-			<h1>Para Registrar este debe contener todos los elementos:</h1>
-			<p:dataTable value="#{equipoBean.getElementos()}" var="elemento">
+			<h1>Para Registrar este Equipo debe contener todos los elementos:</h1>
+			<p:dataTable value="#{equipoBean.elementos}" var="elemento" class="perso">
 				<p:column headerText="Id"><center>
 					<h:outputText value="#{elemento.id}"></h:outputText></center>
 				</p:column>
@@ -64,7 +64,7 @@
 				<p:column headerText="Asociar">
 					<center>
 					<h:commandButton value="Asociar"
-						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">
+						actionListener="#{equipoBean.add(elemento)}" update="@form">
 					</h:commandButton>
 					</center>
 				</p:column>
