@@ -42,37 +42,30 @@
 			<br></br>
 			<br></br>
 			<h1>Para Registrar este debe contener todos los elementos:</h1>
-			<p:dataTable value="#{equipoBean.getElementos()}" var="tipo">
-				<p:column headerText="Id">${tipo.getId()}</p:column>
-				<p:column headerText="Disponible">${tipo.getDisponible()}</p:column>
-				<p:column headerText="Tipo">${tipo.getTipo()}</p:column>
-			</p:dataTable>
-			<br></br>
-			<p:selectOneMenu id="tipoEquipo" value="#{equipoBean.tipo}"
-				style="width:150px">
-				<f:selectItem itemLabel="Torre" itemValue="Torre"
-					noSelectionOption="true" />
-				<f:selectItem itemLabel="Pantalla" itemValue="Pantalla"
-					noSelectionOption="true" />
-				<f:selectItem itemLabel="Mouse" itemValue="Mouse"
-					noSelectionOption="true" />
-				<f:selectItem itemLabel="Teclado" itemValue="Teclado"
-					noSelectionOption="true" />
-			</p:selectOneMenu>
-			<h:commandButton value="Buscar elementos:" update="@form"></h:commandButton>
-			<br></br>
-			<br></br>
-			<p:dataTable value="#{equipoBean.getElementos(equipoBean.getTipo())}"
-				var="elemento">
+			<p:dataTable value="#{equipoBean.getElementos()}" var="elemento" class="perso">
 				<p:column headerText="Id">${elemento.getId()}</p:column>
 				<p:column headerText="Disponible">${elemento.getDisponible()}</p:column>
 				<p:column headerText="Tipo">${elemento.getTipo()}</p:column>
+			</p:dataTable>
+			<br></br>
+			<br></br>
+			<p:dataTable value="#{elementoBean.data}"
+			paginator="true"
+          rows="10" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+          rowsPerPageTemplate="5,10,15"
+          currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
+				var="elemento">
+				<p:column headerText="Id">${elemento.getId()}</p:column>
+				<p:column headerText="Tipo">${elemento.getTipo()}</p:column>
 				<p:column headerText="Asociar">
-					<h:commandLink value="Asociar"
-						actionListener="#{equipoBean.add(elemento)}" update="@form">
-					</h:commandLink>
+					<h:commandButton value="Asociar"
+						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">
+					</h:commandButton>
 				</p:column>
 			</p:dataTable>
+			<br></br>
+			<br></br>
+		<center><h:commandButton value="Registrar equipo" actionListener="#{equipoBean.registrarEquipo()}" update="equipo_form"></h:commandButton></center>
 		</h:form>
 	</center>
 </h:body>

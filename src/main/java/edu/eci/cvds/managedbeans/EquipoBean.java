@@ -34,7 +34,6 @@ public class EquipoBean extends BasePageBean {
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
 	private ServicesEquipo equipoServices;
-	private ServicesElemento elementoServices;
 
 	public String getId() {
 		return id;
