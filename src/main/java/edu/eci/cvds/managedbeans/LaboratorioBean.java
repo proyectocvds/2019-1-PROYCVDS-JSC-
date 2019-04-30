@@ -59,7 +59,7 @@ public class LaboratorioBean extends BasePageBean {
 		laboratorioServices.registrarLaboratorio(id,nombre,equipos,cupos);
 	}
 	
-	public List<Laboratorio> getData(){
+	public List<Laboratorio> getData() throws proyExcepcion{
 		return laboratorioServices.listByLaboratorio();
 	}
 	
