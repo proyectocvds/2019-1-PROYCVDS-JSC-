@@ -21,7 +21,7 @@
 		<select id="consultarNovedad" parameterType="map" resultMap="NovedadResult">
 		SELECT *
 		FROM NOVEDAD
-		ORDER BY FECHA;
+		ORDER BY FECHA DESC;
 		</select>
 	
 		<select id="novedadEquipo" parameterType="map" resultMap="NovedadResult">
