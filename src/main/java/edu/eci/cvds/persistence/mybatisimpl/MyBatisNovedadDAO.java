@@ -15,9 +15,8 @@ public class MyBatisNovedadDAO implements NovedadDAO {
 	NovedadMapper novedadMapper;
 
 	@Override
-	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento,
-			String equipo) {
-		novedadMapper.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo);
+	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento,String equipo,String laboratorio) {
+		novedadMapper.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo,laboratorio);
 	}
 
 	@Override
