@@ -50,25 +50,25 @@ xmlns:p="http://primefaces.org/ui">
 <p:dataExporter type="xls" target="novedad_table" fileName="ExcelNovedades"/>
 </h:commandLink>
 <p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.data}" paginator="true" rows="10"  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" currentPageReportTemplate="Página: ({currentPage} de {totalPages})" >
-<p:column headerText="Id">
+<p:column headerText="Id" filterBy="#{novedad.id}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.id}"/>
 </p:column>
-<p:column headerText="Fecha">
+<p:column headerText="Fecha" filterBy="#{novedad.fecha}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.fecha}"/>
 </p:column>
-<p:column headerText="Titulo">
+<p:column headerText="Titulo" filterBy="#{novedad.titulo}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.titulo}"/>
 </p:column>
-<p:column headerText="Detalle">
+<p:column headerText="Detalle" filterBy="#{novedad.detalle}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.detalle}"/>
 </p:column>
-<p:column headerText="Usuario">
+<p:column headerText="Usuario" filterBy="#{novedad.usuario}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.usuario}"/>
 </p:column>
-<p:column headerText="Elemento">
+<p:column headerText="Elemento" filterBy="#{novedad.elemento}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.elemento}"/>
 </p:column>
-<p:column headerText="Equipo">
+<p:column headerText="Equipo" filterBy="#{novedad.equipo}" filterStyle="width:100px;" filterMatchMode="contains">
 <h:outputText value="#{novedad.equipo}"/>
 </p:column>
 
