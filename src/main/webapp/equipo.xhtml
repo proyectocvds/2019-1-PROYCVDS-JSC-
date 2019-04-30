@@ -60,6 +60,8 @@
 				<p:column headerText="Id">${elemento.getId()}</p:column>
 				<p:column headerText="Tipo" filterBy="#{elemento.tipo}"
 					filterStyle="width:100px;" filterMatchMode="contains">${elemento.getTipo()}</p:column>
+				<p:column headerText="Id" >${elemento.getId()}</p:column>
+				<p:column headerText="Tipo">${elemento.getTipo()}</p:column>
 				<p:column headerText="Asociar">
 					<h:commandLink value="Asociar"
 						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">

@@ -19,6 +19,8 @@ public class Laboratorio {
 		this.cupos=cupos;
 		
 	}
+	
+	public Laboratorio() {}
 
 
 	public String getId() {
