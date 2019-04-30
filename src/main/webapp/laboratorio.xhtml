@@ -42,16 +42,23 @@
 				<p:dataExporter type="xls" target="equipo_table"
 					fileName="ExcelEquipo" />
 			</h:commandLink>
-			<p:dataTable id="laboratorio_table" var="laboratorio" value="#{laboratorioBean.data}">
-				<p:column headerText="Id">
+			<p:dataTable id="laboratorio_table" var="laboratorio" value="#{laboratorioBean.data}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+          rowsPerPageTemplate="5,10,15"
+          currentPageReportTemplate="Página: ({currentPage} de {totalPages})" >
+				<p:column headerText="Id" sortBy="#{row.Id}" filterBy="#{laboratorio.id}" filterStyle="width:100px;" filterMatchMode="contains">
 				<h:outputText value="#{laboratorio.id}"/>
 				</p:column>
-				<p:column headerText="Nombre">
+				<p:column headerText="Nombre"  sortBy="#{row.Nombre}" filterBy="#{laboratorio.nombre}" filterStyle="width:100px;" filterMatchMode="contains">
 				<h:outputText value="#{laboratorio.nombre}"/>
 				</p:column>
-				<p:column headerText="Cupos">
+				<p:column headerText="Cupos"  sortBy="#{row.cupos}" filterBy="#{laboratorio.cupos}" filterStyle="width:100px;" filterMatchMode="contains">
 				<h:outputText value="#{laboratorio.cupos}"/>
 				</p:column>
+				<p:column headerText="Novedad Laboratorio">
+            <p:button outcome="novedadLaboratorio" value="Ver Novedad">
+              <f:param name="laboratorio" value="#{laboratorio.id}" />
+            </p:button>
+          </p:column>
 						
 			</p:dataTable>
 		
