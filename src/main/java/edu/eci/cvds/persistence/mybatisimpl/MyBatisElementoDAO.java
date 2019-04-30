@@ -55,4 +55,16 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		elementoMapper.registrarElementoAEquipo(id, idElemento);
 		
 	}
+
+
+
+	@Override
+	public void eliminarElemento(String id) {
+		elementoMapper.eliminarElemento(id);
+		
+	}
+	
+	
+	
+	
 }

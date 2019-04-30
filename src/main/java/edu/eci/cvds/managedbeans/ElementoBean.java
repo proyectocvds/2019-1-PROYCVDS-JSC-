@@ -140,4 +140,9 @@ public class ElementoBean extends BasePageBean{
 		FacesContext.getCurrentInstance().getExternalContext().redirect("novedadElemento.xhtml");
 	}
 	
+	
+	
+	public void eliminarElemento() {
+		elementoServices.eliminarElemento(id);
+	}
 }

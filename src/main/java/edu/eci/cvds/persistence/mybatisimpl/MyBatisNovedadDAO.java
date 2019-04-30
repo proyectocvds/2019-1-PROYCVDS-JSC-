@@ -1,6 +1,5 @@
 package edu.eci.cvds.persistence.mybatisimpl;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -11,15 +10,14 @@ import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.persistence.NovedadDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.NovedadMapper;
 
-
-
-public class MyBatisNovedadDAO implements NovedadDAO{
-	@Inject 
+public class MyBatisNovedadDAO implements NovedadDAO {
+	@Inject
 	NovedadMapper novedadMapper;
-	
-	@Override 
-	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) {
-		novedadMapper.registrarNovedad(id,fecha, titulo, detalle, usuario, elemento, equipo);
+
+	@Override
+	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento,
+			String equipo) {
+		novedadMapper.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo);
 	}
 
 	@Override
@@ -39,7 +37,7 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 
 	@Override
 	public List<Novedad> novedadLaboratorio(String laboratorio) {
-		
+
 		return novedadMapper.novedadLaboratorio(laboratorio);
 	}
 

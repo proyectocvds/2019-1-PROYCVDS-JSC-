@@ -1,96 +1,101 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:p="http://primefaces.org/ui"
->
-  <h:head>
-    <title>Registrar Elemento</title>
-    <link
-      rel="stylesheet"
-      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-  </h:head>
-  <h:body style="margin:0px; padding:0px;">
-    <br></br>
-    <p:button outcome="menu" value="Regresar al menu" />
-    <center>
-			<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Registrar Elemento</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+<h:body style="margin:0px; padding:0px;">
+	<br></br>
+	<p:button outcome="menu" value="Regresar al menu" />
+	<center>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 
-      <h1>Registrar elemento</h1>
-      <h:form id="elemento_form">
-        <p:outputLabel>Ingrese el elemento que desea registrar: </p:outputLabel>
-        <br></br>
-        <br></br>
-        <p:outputLabel>Id del Elemento: </p:outputLabel>
-        <h:inputText value="#{elementoBean.id}"></h:inputText>
-        <br></br>
-        <br></br>
-    
-        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-          <p:outputLabel for="elemento" value="Tipo del Elemento" />
-          <p:selectOneMenu
-            id="elemento"
-            value="#{elementoBean.tipo}"
-            style="width:125px"
-          >
-            <f:selectItem itemLabel="Seleccione un tipo" itemValue="" />
-            <f:selectItem itemLabel="Torre" itemValue="Torre" />
-            <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
-            <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
-            <f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
-          </p:selectOneMenu>
-        </h:panelGrid>
-        <br></br>
-        <br></br>
-        <p:commandButton
-          value="Registrar"
-          update="elemento_form"
-          actionListener="#{elementoBean.registrarElemento()}"
-        ></p:commandButton>
-        <br></br>
-        <br></br>
-        <p:commandButton
-          value="Registrar Elemento a Equipo"
-          update="elemento_form"
-          actionListener="#{elementoBean.irRegistrarElemento()}"
-        ></p:commandButton>
-        <br></br>
-        <br></br>
-        
-        <h:commandLink>
-			<img src="excel.png" style="width: 30px;height:30px;border-radius: 60px "> </img> <br></br>
-			<p:dataExporter type="xls" target="elemento_table" fileName="ExcelElementos"/>
-		</h:commandLink>
-        <p:dataTable
-          id="elemento_table"
-          var="elemento"
-          value="#{elementoBean.data}"
-          paginator="true"
-          rows="10"
-          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-          rowsPerPageTemplate="5,10,15"
-          currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
-          <p:column headerText="Id" sortBy="#{row.Id}" filterBy="#{elemento.id}" filterStyle="width:100px;" filterMatchMode="contains">
-            <h:outputText value="#{elemento.id}" style="center" />
-          </p:column>
-          <p:column headerText="Disponible" sortBy="#{row.Disponible}" filterBy="#{elemento.disponible}" filterStyle="width:100px;" filterMatchMode="contains">
-            <h:outputText value="#{elemento.disponible}" style="center" />
-          </p:column>
-          <p:column headerText="Tipo de Elemento" sortBy="#{row.tipo}" filterBy="#{elemento.tipo}" filterStyle="width:100px;" filterMatchMode="contains">
-            <h:outputText value="#{elemento.tipo}" style="center" />
-          </p:column>
-          <p:column headerText="Equipo" sortBy="#{row.equipo}" filterBy="#{elemento.equipo}" filterStyle="width:100px;" filterMatchMode="contains">
-            <h:outputText value="#{elemento.equipo}" style="center" />
-          </p:column>
-          <p:column headerText="Novedad Elemento">
-            <p:button outcome="novedadElemento" value="Ver Novedad">
-              <f:param name="elemento" value="#{elemento.id}" />
-            </p:button>
-          </p:column>
-        </p:dataTable>
-      </h:form>
-    </center>
-  </h:body>
+		<h1>Registrar elemento</h1>
+		<h:form id="elemento_form">
+			<p:outputLabel>Ingrese el elemento que desea registrar: </p:outputLabel>
+			<br></br>
+			<br></br>
+			<p:outputLabel>Id del Elemento: </p:outputLabel>
+			<h:inputText value="#{elementoBean.id}"></h:inputText>
+			<br></br>
+			<br></br>
+
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+				<p:outputLabel for="elemento" value="Tipo del Elemento" />
+				<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}"
+					style="width:125px">
+					<f:selectItem itemLabel="Seleccione un tipo" itemValue="" />
+					<f:selectItem itemLabel="Torre" itemValue="Torre" />
+					<f:selectItem itemLabel="Teclado" itemValue="Teclado" />
+					<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
+					<f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			<br></br>
+			<br></br>
+			<p:commandButton value="Registrar" update="elemento_form"
+				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
+			<br></br>
+			<br></br>
+			<p:commandButton value="Registrar Elemento a Equipo"
+				update="elemento_form"
+				actionListener="#{elementoBean.irRegistrarElemento()}"></p:commandButton>
+			<br></br>
+			<br></br>
+
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<br></br>
+				<p:dataExporter type="xls" target="elemento_table"
+					fileName="ExcelElementos" />
+			</h:commandLink>
+			<p:dataTable id="elemento_table" var="elemento"
+				value="#{elementoBean.data}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{elemento.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.id}" style="center" />
+				</p:column>
+				<p:column headerText="Disponible" sortBy="#{row.Disponible}"
+					filterBy="#{elemento.disponible}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.disponible}" style="center" />
+				</p:column>
+				<p:column headerText="Tipo de Elemento" sortBy="#{row.tipo}"
+					filterBy="#{elemento.tipo}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.tipo}" style="center" />
+				</p:column>
+				<p:column headerText="Equipo" sortBy="#{row.equipo}"
+					filterBy="#{elemento.equipo}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.equipo}" style="center" />
+				</p:column>
+				<p:column headerText="Novedad Elemento">
+					<p:commandButton value="Ver Novedad del Elemento"
+						actionListener="#{elementoBean.irNovedadElemento()}"
+						update="elemento_form">
+					</p:commandButton>
+				</p:column>
+				<p:column headerText="Eliminar">
+					<p:commandButton value="Dar de baja"
+						actionListener="#{elementoBean.eliminarElemento()}"
+						update="elemento_form">
+						
+				</p:commandButton>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</center>
+</h:body>
 </html>

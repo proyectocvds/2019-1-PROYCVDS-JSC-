@@ -13,5 +13,6 @@ public interface ServicesElemento {
 	public void nuevoElemento(Elemento elemento) throws proyExcepcion;
 	//public List<Elemento> novedadElemento(String novedadElem)throws proyExcepcion;
 	public void registrarElementoAEquipo(String id, String idElemento);
+	public void eliminarElemento(String id);
 
 }

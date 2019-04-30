@@ -1,4 +1,5 @@
 package edu.eci.cvds.managedbeans;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,13 +20,12 @@ import edu.eci.cvds.services.ServicesElemento;
 import edu.eci.cvds.services.ServicesEquipo;
 import edu.eci.cvds.services.ServicesNovedad;
 import edu.eci.cvds.services.impl.ServicesImpl;
+
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "novedadBean")
 @RequestScoped
 
-
-public class NovedadBean extends BasePageBean{
-	//@ManagedProperty(value = "#{param.equipo}")
+public class NovedadBean extends BasePageBean {
 	private String id;
 	private Date fecha;
 	private String titulo;
@@ -35,102 +35,98 @@ public class NovedadBean extends BasePageBean{
 	private String elemento;
 	private ServicesImpl servicesImpl;
 	private String laboratorio;
-	//private Elemento elemAgreg;
-	
-	
+
 	private static final long serialVersionUID = 3594009161252782831L;
 
 	@Inject
 	private ServicesNovedad novedadServices;
 	@Inject
 	private ServicesElemento elementoServices;
-	@Inject 
+	@Inject
 	private ServicesEquipo equipoServices;
 
-	
 	public String getId() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
-		this.id=id;
+		this.id = id;
 	}
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
-	
+
 	public void setTitulo(String titulo) {
-		this.titulo=titulo;
+		this.titulo = titulo;
 	}
-	
+
 	public Date getFecha() {
 		return fecha;
 	}
-	
+
 	public void setFecha(Date fecha) {
-		this.fecha=fecha;
+		this.fecha = fecha;
 	}
-	
+
 	public String getUsuario() {
 		return usuario;
 	}
-	
+
 	public void setUsuario(String usuario) {
-		this.usuario=usuario;
+		this.usuario = usuario;
 	}
-	
+
 	public String getDetalle() {
 		return detalle;
 	}
-	
+
 	public void setDetalle(String detalle) {
-		this.detalle=detalle;
+		this.detalle = detalle;
 	}
-	
+
 	public String getEquipo() {
 		return equipo;
 	}
-	
+
 	public void setEquipo(String equipo) {
-		this.equipo=equipo;
+		this.equipo = equipo;
 	}
-	
+
 	public String getElemento() {
 		return elemento;
 	}
-	
-	public void setElemento(String elemento){
-		this.elemento=elemento;
+
+	public void setElemento(String elemento) {
+		this.elemento = elemento;
 	}
-	
+
 	public String getLaboratorio() {
 		return laboratorio;
 	}
-	
-	public void setLaboratorio(String laboratorio){
-		this.laboratorio=laboratorio;
+
+	public void setLaboratorio(String laboratorio) {
+		this.laboratorio = laboratorio;
 	}
-	
-	public void registrarNovedad()throws proyExcepcion{
-		Novedad novedad= new Novedad(id,fecha,titulo,detalle,usuario,elemento,equipo);
-		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario,  elemento, equipo);
+
+	public void registrarNovedad() throws proyExcepcion {
+		Novedad novedad = new Novedad(id, fecha, titulo, detalle, usuario, elemento, equipo);
+		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo);
 	}
-	
-	public List<Novedad> getData() throws proyExcepcion{
+
+	public List<Novedad> getData() throws proyExcepcion {
 		return novedadServices.listByNovedad();
 	}
-	
-	public List<Novedad> novedadEquipo() throws proyExcepcion{
+
+	public List<Novedad> novedadEquipo() throws proyExcepcion {
 		return novedadServices.novedadEquipo(equipo);
 	}
-	
-	public List<Novedad> novedadElemento() throws proyExcepcion, IOException{
+
+	public List<Novedad> novedadElemento() throws proyExcepcion, IOException {
 		return novedadServices.novedadElemento(elemento);
 	}
-	
-	public List<Novedad> novedadLaboratorio() throws proyExcepcion, IOException{
+
+	public List<Novedad> novedadLaboratorio() throws proyExcepcion, IOException {
 		return novedadServices.novedadLaboratorio(laboratorio);
 	}
 }
-

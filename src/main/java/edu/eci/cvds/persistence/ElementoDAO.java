@@ -18,6 +18,8 @@ public interface ElementoDAO {
 
 	public void registrarElementoAEquipo(String id, String idElemento);
 
+	public void eliminarElemento(String id);
+
 
 
 

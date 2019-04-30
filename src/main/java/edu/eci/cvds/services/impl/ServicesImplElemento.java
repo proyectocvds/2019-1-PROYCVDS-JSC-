@@ -34,6 +34,11 @@ public class ServicesImplElemento implements ServicesElemento{
 		
 	}
 
+	@Override
+	public void eliminarElemento(String id) {
+		elementoDAO.eliminarElemento(id);
+	}
+
   
 }
 

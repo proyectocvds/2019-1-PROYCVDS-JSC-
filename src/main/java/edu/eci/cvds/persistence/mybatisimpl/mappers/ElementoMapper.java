@@ -17,4 +17,6 @@ public interface ElementoMapper {
 
 	public void registrarElementoAEquipo(@Param("id")String id, @Param("idElemento")String idElemento);
 
+	public void eliminarElemento(@Param ("id") String id);
+
 }
