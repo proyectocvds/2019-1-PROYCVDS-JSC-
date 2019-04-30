@@ -37,12 +37,12 @@
      
       <h1>Inicio de Sesion</h1>
       <br></br>
-      <h:form id="usuario_form">
-        <p:outputLabel> Usuario: </p:outputLabel>
+ <h:form id="usuario_form">
+        <p:outputLabel> Usuario:    </p:outputLabel>
         <h:inputText value="#{usuarioBean.username}"></h:inputText>
         <br></br>
         <br></br>
-        <p:outputLabel> Contraseña: </p:outputLabel>
+        <p:outputLabel> Contraseña:   </p:outputLabel>
 
         <h:inputSecret value="#{usuarioBean.contrasena}"></h:inputSecret>
         <br></br>
@@ -52,7 +52,7 @@
           update="usuario_form"
           actionListener="#{usuarioBean.validarUsuario()}"
         ></p:commandButton>
-      </h:form>
+      </h:form> 
     </center>
   </h:body>
 </html>
