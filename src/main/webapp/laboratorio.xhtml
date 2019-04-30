@@ -35,6 +35,13 @@
 			<br></br>
 			<br></br>
 			<br></br>
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<br></br>
+				<p:dataExporter type="xls" target="equipo_table"
+					fileName="ExcelEquipo" />
+			</h:commandLink>
 			<p:dataTable id="laboratorio_table" var="laboratorio" value="#{laboratorioBean.data}">
 				<p:column headerText="Id">
 				<h:outputText value="#{laboratorio.id}"/>
@@ -45,9 +52,7 @@
 				<p:column headerText="Cupos">
 				<h:outputText value="#{laboratorio.cupos}"/>
 				</p:column>
-				<p:column headerText="novedad">
-				<h:outputText value="#{laboratorio.novedad}"/>
-				</p:column>			
+						
 			</p:dataTable>
 		
 		
