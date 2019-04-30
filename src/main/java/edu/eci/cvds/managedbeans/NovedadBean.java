@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Laboratorio;
 import edu.eci.cvds.entities.Novedad;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.ServicesElemento;
@@ -33,6 +34,7 @@ public class NovedadBean extends BasePageBean{
 	private String equipo;
 	private String elemento;
 	private ServicesImpl servicesImpl;
+	private String laboratorio;
 	//private Elemento elemAgreg;
 	
 	
@@ -102,6 +104,14 @@ public class NovedadBean extends BasePageBean{
 		this.elemento=elemento;
 	}
 	
+	public String getLaboratorio() {
+		return laboratorio;
+	}
+	
+	public void setLaboratorio(String laboratorio){
+		this.laboratorio=laboratorio;
+	}
+	
 	public void registrarNovedad()throws proyExcepcion{
 		Novedad novedad= new Novedad(id,fecha,titulo,detalle,usuario,elemento,equipo);
 		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario,  elemento, equipo);
@@ -117,6 +127,10 @@ public class NovedadBean extends BasePageBean{
 	
 	public List<Novedad> novedadElemento() throws proyExcepcion, IOException{
 		return novedadServices.novedadElemento(elemento);
+	}
+	
+	public List<Novedad> novedadLaboratorio() throws proyExcepcion, IOException{
+		return novedadServices.novedadLaboratorio(laboratorio);
 	}
 }
 

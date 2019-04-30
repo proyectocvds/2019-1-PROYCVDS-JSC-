@@ -36,5 +36,11 @@
 		WHERE elemento = #{elemento}
 		</select>
 		
+		<select id="novedadLaboratorio" parameterType="map" resultMap="NovedadResult">
+		SELECT *
+		FROM NOVEDAD
+		
+		</select>
+		
 </mapper>
   
