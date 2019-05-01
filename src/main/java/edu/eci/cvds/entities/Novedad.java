@@ -11,8 +11,9 @@ public class Novedad {
 	private String detalle;
 	private String equipo;
 	private String elemento;
+	private String laboratorio;
 	
-	public Novedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) {
+	public Novedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo,String laboratorio) {
 		super();
 		this.id=id;
 		this.titulo=titulo;
@@ -21,6 +22,8 @@ public class Novedad {
 		this.detalle=detalle;
 		this.equipo=equipo;
 		this.elemento=elemento;
+		this.laboratorio=laboratorio;
+		
 	}
 	
 	public Novedad() {}
@@ -79,6 +82,13 @@ public class Novedad {
 	
 	public void setElemento(String elemento){
 		this.elemento=elemento;
+	}
+	public String getLaboratorio() {
+		return laboratorio;
+	}
+	
+	public void setLaboratorio(String laboratorio){
+		this.laboratorio=laboratorio;
 	}
 	
 }

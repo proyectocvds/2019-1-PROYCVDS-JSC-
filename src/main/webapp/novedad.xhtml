@@ -28,6 +28,8 @@ xmlns:p="http://primefaces.org/ui">
 	<p:inputText  value="#{novedadBean.elemento}"/> <br/>
 	<label>Equipo: </label>
 	<p:inputText  value="#{novedadBean.equipo}"/> <br/>
+	<label>Laboratorio: </label>
+	<p:inputText  value="#{novedadBean.laboratorio}"/> <br/>
 </h:panelGrid>
 
 <!-- <p:outputLabel>Id de la Novedad: </p:outputLabel>
@@ -90,7 +92,9 @@ xmlns:p="http://primefaces.org/ui">
 <p:column headerText="Equipo" sortBy="#{row.Equipo}" filterBy="#{novedad.equipo}" filterStyle="width:100px;" filterMatchMode="contains"><center>
 <h:outputText value="#{novedad.equipo}"/></center>
 </p:column>
-
+<p:column headerText="Laboratorio" sortBy="#{row.Laboratorio}" filterBy="#{novedad.Laboratorio}" filterStyle="width:100px;" filterMatchMode="contains"><center>
+<h:outputText value="#{novedad.laboratorio}"/></center>
+</p:column>
 </p:dataTable>
 
 

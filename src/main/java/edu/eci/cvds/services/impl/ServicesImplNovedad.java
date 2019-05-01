@@ -14,8 +14,8 @@ public class ServicesImplNovedad implements ServicesNovedad {
 	@Inject 
 	private NovedadDAO novedadDAO;
 	
-	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) throws proyExcepcion {
-		novedadDAO.registrarNovedad(id, fecha, titulo,detalle, usuario, elemento,  equipo);
+	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo,String laboratorio) throws proyExcepcion {
+		novedadDAO.registrarNovedad(id, fecha, titulo,detalle, usuario, elemento, equipo,laboratorio);
 	}
 	
 	public List <Novedad> listByNovedad(){

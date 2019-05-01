@@ -8,7 +8,7 @@ import edu.eci.cvds.entities.Novedad;
 
 public interface ServicesNovedad {
 	
-	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo) throws proyExcepcion;
+	public void registrarNovedad(String id, Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo, String laboratorio) throws proyExcepcion;
 	
 	public List<Novedad> listByNovedad() throws proyExcepcion;
 	public void nuevoNovedad(Novedad novedad) throws proyExcepcion;

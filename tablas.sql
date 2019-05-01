@@ -40,10 +40,12 @@ CREATE TABLE public.novedad (
 	usuario varchar NOT NULL,
 	elemento varchar NULL,
 	equipo varchar NULL,
+	laboratorio varchar NULL,
 	CONSTRAINT novedad_pk PRIMARY KEY (id),
 	CONSTRAINT novedad_elemento_fk FOREIGN KEY (elemento) REFERENCES elemento(id),
 	CONSTRAINT novedad_equipo_fk FOREIGN KEY (equipo) REFERENCES equipo(id),
 	CONSTRAINT novedad_usuario_fk FOREIGN KEY (usuario) REFERENCES usuario(username)
+	CONSTRAINT novedad_laboratorio_fk FOREIGN KEY (laboratorio) REFERENCES usuario(id)
 );
 
 
@@ -52,9 +54,8 @@ CREATE TABLE public.laboratorio (
 	id varchar NOT NULL,
 	nombre varchar NOT NULL,
 	cupos int4 NOT NULL,
-	novedad varchar NOT NULL,
 	CONSTRAINT laboratorio_pk PRIMARY KEY (id),
-	CONSTRAINT laboratorio_novedad_fk FOREIGN KEY (novedad) REFERENCES novedad(id)
+	
 );
 
 
