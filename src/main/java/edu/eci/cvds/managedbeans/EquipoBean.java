@@ -28,9 +28,8 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 
 public class EquipoBean extends BasePageBean {
 	private String id;
-	private Injector injector;
 	private boolean disponible;
-	private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+	private ArrayList<Elemento> elementos;
 	private String idElemento;
 	private Date fecha;
 
@@ -39,12 +38,25 @@ public class EquipoBean extends BasePageBean {
 	private ServicesEquipo equipoServices;
 	@Inject
 	ServicesElemento elementoServices;
-
+	
+	/**
 	public EquipoBean() {
 		elementos = new ArrayList<Elemento>() {
+			public boolean add(Elemento e) {
+				if(e.getTipo()==null) {
+					ArrayList<Elemento> el = new ArrayList();
+					for(int i=0;i<size();i++) {
+						if(get(i).getTipo().equals(e.getTipo())) el.add(get(i));
+					}for(Elemento ele:el) {
+						remove(ele);
+					}return super.add(e);
+				}else {
+					return false;
+				}
+			}
 		};
-	}
-
+	}*/
+	
 	public String getId() {
 		return id;
 	}
@@ -105,6 +117,7 @@ public class EquipoBean extends BasePageBean {
 	}
 
 	public void add(Elemento elemento) {
+		System.out.println(elementos.size());
 		elementos.add(elemento);
 	}
 

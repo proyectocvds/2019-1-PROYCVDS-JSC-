@@ -39,20 +39,18 @@
 			<br></br>
 			<br></br>
 			<h1>Para Registrar este Equipo debe contener todos los elementos:</h1>
-			<p:dataTable value="#{equipoBean.elementos}" var="elemento" class="perso">
-				<p:column headerText="Id"><center>
-					<h:outputText value="#{elemento.id}"></h:outputText></center>
+			<p:dataTable value="#{equipoBean.getElementos()}" var="elemento">
+				<p:column headerText="Id">${elemento.id}
 				</p:column>
-				<p:column headerText="Disponible"><center>
-					<h:outputText value="#{elemento.disponible}"></h:outputText></center>
+				<p:column headerText="Disponible">${elemento.disponible}
 				</p:column>
-				<p:column headerText="Tipo"><center>
-					<h:outputText value="#{elemento.tipo}"></h:outputText></center>
+				<p:column headerText="Tipo">${elemento.tipo}
 				</p:column>
+				
 			</p:dataTable>
 			<br></br>
 			<br></br>
-			<p:dataTable value="#{elementoBean.data}" paginator="true" rows="10"
+			<p:dataTable value="#{elementoBean.data}" paginator="true" rows="10" id="tabla"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
@@ -64,7 +62,7 @@
 				<p:column headerText="Asociar">
 					<center>
 					<h:commandButton value="Asociar"
-						actionListener="#{equipoBean.add(elemento)}" update="@form">
+						actionListener="${equipoBean.add(elemento)}" update="tabla">
 					</h:commandButton>
 					</center>
 				</p:column>
