@@ -50,7 +50,7 @@
 			</p:dataTable>
 			<br></br>
 			<br></br>
-			<p:dataTable value="#{elementoBean.data}" paginator="true" rows="10" id="tabla"
+			<p:dataTable value="#{elementoBean.data}" paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
@@ -62,7 +62,7 @@
 				<p:column headerText="Asociar">
 					<center>
 					<h:commandButton value="Asociar"
-						actionListener="${equipoBean.add(elemento)}" update="tabla">
+						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">
 					</h:commandButton>
 					</center>
 				</p:column>

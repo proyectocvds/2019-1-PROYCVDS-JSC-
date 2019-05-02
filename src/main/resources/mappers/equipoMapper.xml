@@ -25,7 +25,6 @@
 		SELECT id,fecha
 		FROM EQUIPO 
 		WHERE disponible=#{valor};
-		
 	</select>
 	
 	

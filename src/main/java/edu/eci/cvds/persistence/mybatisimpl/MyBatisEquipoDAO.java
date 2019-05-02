@@ -45,6 +45,8 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 	public List<Equipo> equiposActivos(boolean valor) {
 		return equipoMapper.equiposActivos(valor);
 	}
+
+
 	
 	
 

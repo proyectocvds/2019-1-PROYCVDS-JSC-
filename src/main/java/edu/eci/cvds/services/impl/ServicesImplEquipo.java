@@ -39,4 +39,6 @@ public class ServicesImplEquipo implements ServicesEquipo {
 	public List<Equipo> equiposActivos(boolean valor) {
 		return equipoDAO.equiposActivos(valor);
 	}
+
+
 }

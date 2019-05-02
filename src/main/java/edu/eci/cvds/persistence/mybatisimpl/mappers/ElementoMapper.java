@@ -19,4 +19,5 @@ public interface ElementoMapper {
 
 	public void eliminarElemento(@Param ("id") String id);
 
+
 }
