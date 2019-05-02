@@ -9,15 +9,21 @@
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
+
+
+<f:metadata>
+	<f:viewParam name="elemento" value="#{novedadBean.elemento}" />
+</f:metadata>
+
+
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="menu" value="Regresar al menu" />
 	<p:button outcome="elemento" value="Regresar a elemento" />
-
-	<h:form id="novedadElemento_form">
+	<h:form id="elementoNovedad_form">
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
-			<h1>Novedad de Elemento</h1>
+			<h1>Novedad de Elemento: </h1>
 			<h1>#{elementoBean.id}</h1>
 			<h:commandLink>
 				<img src="excel.png"

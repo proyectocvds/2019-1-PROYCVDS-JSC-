@@ -33,17 +33,12 @@ public class NovedadBean extends BasePageBean {
 	private String detalle;
 	private String equipo;
 	private String elemento;
-	private ServicesImpl servicesImpl;
 	private String laboratorio;
 
 	private static final long serialVersionUID = 3594009161252782831L;
 
 	@Inject
 	private ServicesNovedad novedadServices;
-	@Inject
-	private ServicesElemento elementoServices;
-	@Inject
-	private ServicesEquipo equipoServices;
 
 	public String getId() {
 		return id;
@@ -110,7 +105,6 @@ public class NovedadBean extends BasePageBean {
 	}
 
 	public void registrarNovedad() throws proyExcepcion {
-		Novedad novedad = new Novedad(id, fecha, titulo, detalle, usuario, elemento, equipo,laboratorio);
 		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo,laboratorio);
 	}
 
