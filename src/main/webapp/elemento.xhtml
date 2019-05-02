@@ -15,6 +15,7 @@
 </f:metadata>
 
 
+
 <h:body style="margin:0px; padding:0px;">
 	<br></br>
 	<p:button outcome="menu" value="Regresar al menu" />
@@ -46,7 +47,7 @@
 			</h:panelGrid>
 			<br></br>
 			<br></br>
-			<p:commandButton value="Registrar" update="elemento_form"
+			<p:commandButton value="Registrar" update="@form"
 				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
 			<br></br>
 			<br></br>
@@ -87,19 +88,17 @@
 					filterBy="#{elemento.equipo}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.equipo}" style="center" />
-				</p:column>
+				</p:column>	
 				<p:column headerText="Novedad Elemento">
 					<p:button outcome="novedadElemento"
 						value="Ver Novedad del Elemento"
 						actionListener="#{novedadBean.elemento()}">
-						<f:param name="elemento" value="#{elementoBean.id}"></f:param>
+						<f:param name="elemento" value="#{elemento.id}"></f:param>
 					</p:button>
 				</p:column>
 				<p:column headerText="Eliminar">
 					<p:commandButton value="Dar de baja"
-						actionListener="#{elementoBean.eliminarElemento()}"
-						update="elemento_form">
-
+						actionListener="#{elementoBean.eliminarElemento}" update="@form">
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>

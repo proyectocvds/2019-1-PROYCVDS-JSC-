@@ -10,6 +10,10 @@
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
 
+<f:metadata>
+	<f:viewParam name="id" value="#{laboratorioBean.id}" />
+</f:metadata>
+
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="menu" value="Regresar al menu" />
 	<p:button outcome="laboratorio" value="Regresar al laboratorio" />
@@ -18,16 +22,17 @@
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 			<br></br>
-			<h1>Novedad Laboratorio #{laboratorio.id}</h1>
+			<h1>Novedad Laboratorio #{laboratorioBean.id}</h1>
 			<h:commandLink>
-			<img src="excel.png"
+				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				
+
 				<p:dataExporter type="xls" target="novedadLaboratorio_table"
 					fileName="ExcelNovedades" />
 			</h:commandLink>
 			<p:dataTable id="novedadLaboratorio_table" var="novedadLaboratorio"
-				value="#{novedadBean.novedadLaboratorio()}" paginator="true" rows="10"
+				value="#{novedadBean.novedadLaboratorio()}" paginator="true"
+				rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
@@ -57,8 +62,8 @@
 					<h:outputText value="#{novedadLaboratorio.usuario}" />
 				</p:column>
 				<p:column headerText="Elemento" sortBy="#{row.Elemento}"
-					filterBy="#{novedadLaboratorio.elemento}" filterStyle="width:100px;"
-					filterMatchMode="contains">
+					filterBy="#{novedadLaboratorio.elemento}"
+					filterStyle="width:100px;" filterMatchMode="contains">
 					<h:outputText value="#{novedadLaboratorio.elemento}" />
 				</p:column>
 				<p:column headerText="Equipo" sortBy="#{row.Equipo}"

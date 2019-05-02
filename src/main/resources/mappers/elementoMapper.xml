@@ -13,6 +13,7 @@
 		<result property='tipo' column='tipo' />
 		<result property='equipo' column='equipo' />
 	</resultMap>
+	
 	<insert parameterType="map" id="registrarElemento">
 		INSERT INTO
 		ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
@@ -29,11 +30,12 @@
 		where id=#{idElemento}
 	</update>
 	
-	<update parameterType="map" id="eliminarElemento" >
-		UPDATE ELEMENTO set id=now()
+	<delete parameterType="map" id="eliminarElemento" >
+		DELETE
+		FROM ELEMENTO
 		WHERE id=#{id}
 		
-	</update>
+	</delete>
 
 </mapper>
 
