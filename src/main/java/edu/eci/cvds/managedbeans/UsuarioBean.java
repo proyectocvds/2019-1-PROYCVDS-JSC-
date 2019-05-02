@@ -8,12 +8,19 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.crypto.hash.Sha256Hash;
+
 import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
 
 import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.Services;
+import edu.eci.cvds.services.ServicesUsuario;
 import edu.eci.cvds.services.impl.ServicesImpl;
 import edu.eci.cvds.services.impl.ServicesImplUsuario;
 
@@ -26,6 +33,8 @@ public class UsuarioBean extends BasePageBean{
 
 private String username;
 private String contrasena;
+private Usuario user;
+private ServicesUsuario servicio;
 
 
 private static final long serialVersionUID = 3594009161252782831L;
@@ -37,17 +46,25 @@ private ServicesImplUsuario serImplUsu;
 public void validarUsuario () {
  
  try {
+  /*Subject currentUser =SecurityUtils.getSubject();
+  String hex =new Sha256Hash(contrasena).toHex();
+  UsernamePasswordToken token=new UsernamePasswordToken(username,hex);
+  token.setRememberMe(true);
+  currentUser.login(token);*/
   FacesContext fc =FacesContext.getCurrentInstance();
+
   Usuario user= serImplUsu.consultarLogin(username, contrasena);
   if(user!= null) {
    HttpSession session=(HttpSession) fc.getExternalContext().getSession(true);
    session.setAttribute("username",username);
    session.setAttribute("contrasena",contrasena);
    fc.getExternalContext().redirect("faces/menu.xhtml");
-  }
+  
+	}
+ }
   
  
- }
+ 
  
  catch(Exception e) {
   

@@ -40,15 +40,16 @@
       <h1>Inicio de Sesion</h1>
       <br></br>
  <h:form id="usuario_form">
-        <p:outputLabel> Usuario:    </p:outputLabel>
-        <h:inputText value="#{usuarioBean.username}"></h:inputText>
+        <h:panelGrid columns="2" cellspacing="5px">
+        <label> Usuario:    </label>
+        <p:inputText value="#{usuarioBean.username}"></p:inputText>
         <br></br>
         <br></br>
-        <p:outputLabel> Contraseña:   </p:outputLabel>
-
+        <label> Contraseña:   </label>
         <h:inputSecret value="#{usuarioBean.contrasena}"></h:inputSecret>
         <br></br>
         <br></br>
+        </h:panelGrid>
         <p:commandButton
           value="Login"
           update="usuario_form"
