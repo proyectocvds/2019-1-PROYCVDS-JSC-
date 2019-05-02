@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html, body{
+	background:url(src/main/webapp/escuela.jpg) no-repeat center center fixed;
+	background-color: #0080ff26160244;
+	font-family: 'Numans', sans-serif;
+	color:white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+
+
+
