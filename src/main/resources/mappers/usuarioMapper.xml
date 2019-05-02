@@ -17,7 +17,7 @@
 	<select id="consultarLogin" parameterType="map"
 		resultMap="UsuarioResult">
 		SELECT * FROM usuario WHERE username=#{username} and
-		contrasena=#{contrasena}
+		contrasena=(CRYPT(#{contrasena}, contrasena));
 	</select>
 
 </mapper>
