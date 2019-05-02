@@ -78,6 +78,8 @@ public void validarUsuario () {
  }
 
 } 
+
+
 	
 	public String getUsername() {
 		return username;
