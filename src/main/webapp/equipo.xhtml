@@ -17,18 +17,20 @@
 		<br></br>
 		<h1>Registrar equipo</h1>
 		<h:form id="equipo_form">
+		    
 			<p:outputLabel>Ingrese el equipo que desea registrar: </p:outputLabel>
 			<br></br>
 			<br></br>
-			<p:outputLabel>Id del Equipo: </p:outputLabel>
-			<h:inputText value="#{equipoBean.id}"></h:inputText>
-			<br></br>
-			<p:outputLabel>Fecha del Equipo: </p:outputLabel>
-			<p:calendar value="#{equipoBean.fecha}">
-			</p:calendar>
-			<br></br>
-			<br></br>
-			<br></br>
+			<h:panelGrid columns="2" cellspacing="5px">
+				<label>Id del Equipo: </label>
+				<p:inputText value="#{equipoBean.id}" />
+				<br />
+				<label>Fecha del Equipo: </label>
+				<p:calendar value="#{equipoBean.fecha}" />
+				<br />
+				
+			</h:panelGrid>
+			
 			<h:commandLink>
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>

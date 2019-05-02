@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Registrar Laboratorio</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" 
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
 <h:body style="margin:0px; padding:0px;" >
 <p:button outcome="menu" value="Regresar al menu" />
@@ -18,19 +19,20 @@
 		</p:layoutUnit>
 		</p:layout>	
 		<h1>Registrar Laboratorio</h1>
+		
 		<h:form id="laboratorio_form">
-			<p:outputLabel>Id de Laboratorio: </p:outputLabel>
-			<h:inputText value="#{laboratorioBean.id}"></h:inputText>
-			<br></br>
-			<br></br>
-			<p:outputLabel>Nombre del Laboratorio: </p:outputLabel>
-			<h:inputText value="#{laboratorioBean.nombre}"></h:inputText>
-			<br></br>
-			<br></br>
-			<p:outputLabel>Cupos: </p:outputLabel>
-			<h:inputText value="#{laboratorioBean.cupos}"></h:inputText>
-			<br></br>
-			<br></br>
+		<h:panelGrid columns="2" cellspacing="5px">
+				<label>Id de Laboratorio: </label>
+				<p:inputText value="#{laboratorioBean.id}" />
+				<br />
+				<label>Nombre del Laboratorio: </label>
+				<p:inputText value="#{laboratorioBean.nombre}" />
+				<br />
+				<label>Cupos: </label>
+				<p:inputText value="#{laboratorioBean.cupos}" />
+				<br />
+				
+			</h:panelGrid>
 			<p:commandButton value="Registrar" update="laboratorio_form" actionListener="#{laboratorioBean.registrarLaboratorio()}"></p:commandButton>
 			<br></br>
 			<br></br>
