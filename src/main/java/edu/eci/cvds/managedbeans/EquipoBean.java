@@ -108,5 +108,9 @@ public class EquipoBean extends BasePageBean {
 	public List<Equipo> EquiposSinElementos(){
 		return equipoServices.EquiposSinElementos();
 	}
+	
+	public void registrarEquipoALaboratorio() {
+		equipoServices.registrarEquipoALaboratorio(id,laboratorio);
+	}
 
 }

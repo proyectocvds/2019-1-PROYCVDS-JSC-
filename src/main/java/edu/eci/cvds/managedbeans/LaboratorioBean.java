@@ -55,8 +55,8 @@ public class LaboratorioBean extends BasePageBean {
 	
 
 	public void registrarLaboratorio() throws proyExcepcion{
-		Laboratorio laboratorio =new Laboratorio(id,nombre,equipos,cupos);
-		laboratorioServices.registrarLaboratorio(id,nombre,equipos,cupos);
+		
+		laboratorioServices.registrarLaboratorio(id,nombre,cupos);
 	}
 	
 	public List<Laboratorio> getData() throws proyExcepcion{

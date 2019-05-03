@@ -44,8 +44,10 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		return equipoMapper.EquiposSinElementos();
 	}
 
-
-	
-	
+	@Override
+	public void registrarEquipoALaboratorio(String id, String laboratorio) {
+		equipoMapper.registrarEquipoALaboratorio(id,laboratorio);
+		
+	}
 
 }

@@ -35,8 +35,8 @@ public class ServicesImplLaboratorio implements ServicesLaboratorio{
 
 
 	@Override
-	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
-		laboratorioDAO.registrarLaboratorio(id, nombre, equipos, cupos);
+	public void registrarLaboratorio(String id, String nombre, int cupos) {
+		laboratorioDAO.registrarLaboratorio(id, nombre, cupos);
 		
 	}
 
