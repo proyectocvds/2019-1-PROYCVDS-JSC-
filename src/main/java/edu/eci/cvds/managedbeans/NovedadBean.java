@@ -120,7 +120,9 @@ public class NovedadBean extends BasePageBean {
 	}
 
 	public List<Novedad> novedadElemento() throws proyExcepcion, IOException {
+		
 		return novedadServices.novedadElemento(elemento);
+
 	}
 
 	public List<Novedad> novedadLaboratorio() throws proyExcepcion, IOException {

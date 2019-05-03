@@ -13,6 +13,7 @@
 		<result property='tipo' column='tipo' />
 		<result property='equipo' column='equipo' />
 		<result property='fecha' column='fecha' />
+		<result property='marca' column='marca' />
 	</resultMap>
 	
 	<insert parameterType="map" id="registrarElemento">
@@ -21,9 +22,9 @@
 	</insert>
 	<select id="consultarElemento" resultMap="ElementoResult">
 		SELECT
-		id,disponible,tipo,equipo
+		id,disponible,tipo,equipo,fecha,marca
 		FROM ELEMENTO
-		ORDER BY id DESC
+		ORDER BY fecha DESC
 	</select>
 
 	<update parameterType="map" id="registrarElementoAEquipo">

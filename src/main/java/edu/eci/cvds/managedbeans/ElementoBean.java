@@ -30,6 +30,7 @@ public class ElementoBean extends BasePageBean {
 	private String equipo;
 	private String idEquipo;
 	private Date fecha;
+	private String marca;
 
 	public Date getFecha() {
 		return fecha;
@@ -100,7 +101,7 @@ public class ElementoBean extends BasePageBean {
 
 	public void registrarElemento() throws proyExcepcion {
 		elementoServices.registrarElemento(id, true, tipo);
-
+		
 	}
 
 	public void irNovedad() throws IOException {
@@ -154,4 +155,14 @@ public class ElementoBean extends BasePageBean {
 	public List<Elemento> elementosSinEquipo() {
 		return elementoServices.elementosSinEquipo();
 	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	
+	
 }

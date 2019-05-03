@@ -19,7 +19,7 @@
 	</insert>
 	
 	<select id="consultarEquipo" resultMap="EquipoResult">
-		SELECT *
+		SELECT id, disponible,fecha,laboratorio
 		FROM EQUIPO
 		ORDER BY FECHA DESC;
 	</select>

@@ -89,6 +89,16 @@
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.equipo}" style="center" />
 				</p:column>	
+				<p:column headerText="Fecha" sortBy="#{row.equipo}"
+					filterBy="#{elemento.fecha}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.fecha}" style="center" />
+				</p:column>	
+				<p:column headerText="Marca" sortBy="#{row.equipo}"
+					filterBy="#{elemento.marca}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.marca}" style="center" />
+				</p:column>	
 				<p:column headerText="Novedad Elemento">
 					<p:button outcome="novedadElemento"
 						value="Ver Novedad del Elemento"
@@ -96,6 +106,7 @@
 						<f:param name="elemento" value="#{elemento.id}"></f:param>
 					</p:button>
 				</p:column>
+				
 				<p:column headerText="Eliminar">
 					<p:commandButton value="Dar de baja"
 						actionListener="#{elementoBean.eliminarElemento}" update="elemento_table">

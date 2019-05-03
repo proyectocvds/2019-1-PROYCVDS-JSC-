@@ -1,6 +1,5 @@
 package edu.eci.cvds.entities;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Elemento {
@@ -9,15 +8,16 @@ public class Elemento {
 	private String tipo;
 	private String equipo;
 	private Date fecha;
+	private String marca;
 
-	public Elemento(String id, boolean disponible, String tipo,String equipo , Date fecha ) {
+	public Elemento(String id, boolean disponible, String tipo,String equipo , Date fecha, String marca ) {
 		super();
 		this.id=id;
 		this.disponible=disponible;
 		this.tipo=tipo;
 		this.equipo=equipo;
 		this.fecha=fecha;
-		
+		this.marca=marca;
 		
 		
 	}
@@ -69,6 +69,14 @@ public class Elemento {
 
 	public void setEquipo(String equipo) {
 		this.equipo = equipo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 	
 
