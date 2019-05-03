@@ -1,4 +1,4 @@
-package edu.eci.cvds.Proyectocvds;
+/*package edu.eci.cvds.Proyectocvds;
 
 import java.sql.SQLException;
 import java.util.Hashtable;
@@ -45,7 +45,9 @@ public class LaboratorioTest extends TestBase{
 	/* Pruebas cero uno dos y tres probar que no se puede registar un equipo, elemento, novedad 
 	 * y laboratorio con un id repetido 
 	 */
-	@Test
+/*	
+@Test
+	
 	
 	public void pruebaCeroTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.elementos()).check((elemento) -> {
@@ -114,6 +116,7 @@ public class LaboratorioTest extends TestBase{
 			});
 		}
 }
+*/
 	/*public void pruebaTresTest() throws SQLException,proyExcepcion{
 		qt().forAll(Generators.laboratorios()).check((laboratorio)->{
 			try {

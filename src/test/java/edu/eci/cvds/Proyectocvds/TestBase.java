@@ -1,4 +1,4 @@
-package edu.eci.cvds.Proyectocvds;
+/*package edu.eci.cvds.Proyectocvds;
 
 
 import org.junit.Before;
@@ -41,7 +41,7 @@ public class TestBase {
 	
 	
 }
-
+*/
 	
 
 

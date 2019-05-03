@@ -28,11 +28,11 @@
     </environments>
 
     <mappers>
-        <mapper resource="mappers/UsuarioMapper.xml"></mapper>  
-        <mapper resource="mappers/ElementoMapper.xml"></mapper>      
-        <mapper resource="mappers/NovedadMapper.xml"></mapper>
-        <mapper resource="mappers/EquipoMapper.xml"></mapper>
-        <mapper resource="mappers/LaboratorioMapper.xml"></mapper>      
+        <mapper resource="mappers/usuarioMapper.xml"></mapper>  
+        <mapper resource="mappers/elementoMapper.xml"></mapper>      
+        <mapper resource="mappers/novedadMapper.xml"></mapper>
+        <mapper resource="mappers/equipoMapper.xml"></mapper>
+        <mapper resource="mappers/laboratorioMapper.xml"></mapper>      
     </mappers> 
         
         

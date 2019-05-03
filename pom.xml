@@ -115,17 +115,17 @@
 			<version>1.4.0</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.apache.poi</groupId>
-    		<artifactId>poi</artifactId>
-   			<version>4.1.0</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.glassfish.web/el-impl -->
-		 <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.faces</artifactId>
-            <version>2.2.7</version>
-        </dependency>
-		
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.2.7</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -161,6 +161,10 @@
 					</dependency>
 				</dependencies>
 				<configuration>
+					<appName>proycvds</appName>
+					<processTypes>
+						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+					</processTypes>
 					<driver>org.h2.Driver</driver>
 					<url>jdbc:h2:file:./target/db/testdb;MODE=MYSQL</url>
 					<username>anonymous</username>
@@ -168,7 +172,7 @@
 					<autocommit>false</autocommit>
 					<skip>${maven.test.skip}</skip>
 				</configuration>
-				<executions>
+			    <executions>
 					<execution>
 						<id>create-db</id>
 						<phase>process-test-resources</phase>
@@ -180,10 +184,15 @@
 								<srcFile>tables.sql</srcFile>
 							</srcFiles>
 						</configuration>
-					</execution>
+					</execution> 
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>2.0.8</version>
+			</plugin>
+	
 
 
 			<plugin>
@@ -242,38 +251,38 @@
 					<path>/</path>
 				</configuration>
 			</plugin>
-			
+
 			<!-- Plugin configuration for Heroku compatibility -->
 			<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.1</version>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>copy</goal>
-                    </goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>com.github.jsimone</groupId>
-                                <artifactId>webapp-runner</artifactId>
-                                <version>8.0.30.2</version>
-                                <destFileName>webapp-runner.jar</destFileName>
-                            </artifactItem>
-                        </artifactItems>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>8.0.30.2</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
 
-                    </configuration>
-                </execution>
+						</configuration>
+					</execution>
 
-            </executions>
-        </plugin>
-            <plugin>
-          		<groupId>org.apache.maven.plugins</groupId>
-          		<artifactId>maven-surefire-plugin</artifactId>
-          		<version>3.0.0-M3</version>
-        	</plugin>            
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
+			</plugin>
 
 
 		</plugins>
