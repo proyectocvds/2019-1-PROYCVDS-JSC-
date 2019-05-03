@@ -29,14 +29,20 @@ public class ServicesImplElemento implements ServicesElemento{
 	}
 
 	@Override
-	public void registrarElementoAEquipo(String id, String idElemento) {
-		elementoDAO.registrarElementoAEquipo(id, idElemento);
+	public void registrarElementoAEquipo(String id, String equipo) {
+		elementoDAO.registrarElementoAEquipo(id, equipo);
 		
 	}
 
 	@Override
 	public void eliminarElemento(String id) {
 		elementoDAO.eliminarElemento(id);
+	}
+
+	@Override
+	public List<Elemento> elementosSinEquipo() {
+		return elementoDAO.elementosSinEquipo();
+		
 	}
 
 

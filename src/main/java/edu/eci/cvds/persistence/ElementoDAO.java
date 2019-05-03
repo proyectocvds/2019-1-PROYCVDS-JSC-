@@ -16,9 +16,11 @@ public interface ElementoDAO {
 	
 	public void save(Elemento elemento);
 
-	public void registrarElementoAEquipo(String id, String idElemento);
+	public void registrarElementoAEquipo(String id, String equipo);
 
 	public void eliminarElemento(String id);
+
+	public List<Elemento> elementosSinEquipo();
 
 
 

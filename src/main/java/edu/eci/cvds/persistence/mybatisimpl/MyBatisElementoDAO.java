@@ -51,8 +51,8 @@ public class MyBatisElementoDAO implements ElementoDAO {
 
 
 	@Override
-	public void registrarElementoAEquipo(String id, String idElemento) {
-		elementoMapper.registrarElementoAEquipo(id, idElemento);
+	public void registrarElementoAEquipo(String id, String equipo) {
+		elementoMapper.registrarElementoAEquipo(id, equipo);
 		
 	}
 
@@ -61,6 +61,14 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	@Override
 	public void eliminarElemento(String id) {
 		elementoMapper.eliminarElemento(id);
+		
+	}
+
+
+
+	@Override
+	public List<Elemento> elementosSinEquipo() {
+		return elementoMapper.elementosSinEquipo();
 		
 	}
 

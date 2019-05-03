@@ -27,7 +27,16 @@
 				<br />
 				<label>Fecha del Equipo: </label>
 				<p:calendar value="#{equipoBean.fecha}" />
+				<br></br>
+				<center>
+				<h:commandButton value="Registrar equipo"
+					actionListener="#{equipoBean.registrarEquipo()}"
+					update="equipo_form"></h:commandButton>
+				</center>
 				<br />
+				<br />
+				<h1>Si desea Registrar un Elemento a un Equipo: </h1>
+				<p:button outcome="registroElemento" value="Registrar Elemento a Equipo" />
 				
 			</h:panelGrid>
 			
@@ -38,44 +47,22 @@
 				<p:dataExporter type="xls" target="equipo_table"
 					fileName="ExcelEquipo" />
 			</h:commandLink>
-			<br></br>
-			<br></br>
-			<h1>Para Registrar este Equipo debe contener todos los elementos:</h1>
-			<p:dataTable value="#{equipoBean.getElementos()}" var="elemento">
-				<p:column headerText="Id">${elemento.id}
-				</p:column>
-				<p:column headerText="Disponible">${elemento.disponible}
-				</p:column>
-				<p:column headerText="Tipo">${elemento.tipo}
-				</p:column>
-				
-			</p:dataTable>
-			<br></br>
-			<br></br>
-			<p:dataTable value="#{elementoBean.data}" paginator="true" rows="10"
+			<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"
+			paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
-				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
-				var="elemento">
-				
-				<p:column headerText="Id"><center>${elemento.getId()}</center></p:column>
-				<p:column headerText="Tipo" filterBy="#{elemento.tipo}"
-					filterStyle="width:100px;" filterMatchMode="contains"><center>${elemento.getTipo()}</center></p:column>
-				<p:column headerText="Asociar">
-					<center>
-					<h:commandButton value="Asociar"
-						actionListener="#{equipoBean.add(elemento)}" update="equipo_form">
-					</h:commandButton>
-					</center>
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+			<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{equipo.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{equipo.id}" style="center" />
+				</p:column>
+				<p:column headerText="Fecha">
+					<h:outputText value="#{equipo.fecha}" style="center" />
 				</p:column>
 			</p:dataTable>
 			<br></br>
 			<br></br>
-			<center>
-				<h:commandButton value="Registrar equipo"
-					actionListener="#{equipoBean.registrarEquipo()}"
-					update="equipo_form"></h:commandButton>
-			</center>
 			<div align="right">
 				<h:commandButton value="Ver equipos Activos"
 					actionListener="#{equipoBean.irEquiposActivos()}"

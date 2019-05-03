@@ -2,6 +2,7 @@ package edu.eci.cvds.persistence.mybatisimpl;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -23,11 +24,9 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 	}
 	
 	@Override
-	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion {
-		//if(getEquipo(id)!=null) throw new proyExcepcion("Ya existe el Equipo");
-		//if(getEquipo(id)==null) throw new proyExcepcion("El equipo no debe ser nulo");
+	public void registrarEquipo(String id, boolean disponible, Date fecha) throws proyExcepcion {
 		
-		equipoMapper.registrarEquipo(id,disponible, elementos);
+		equipoMapper.registrarEquipo(id,disponible, fecha);
 	}
 	
 	@Override
@@ -36,14 +35,13 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 	}
 
 	@Override
-	public void registrarElementoAEquipo(String idElemento, String id) {
-		equipoMapper.registrarElementoAEquipo(idElemento,id);
-		
+	public List<Equipo> equiposActivos(boolean valor) {
+		return equipoMapper.equiposActivos(valor);
 	}
 
 	@Override
-	public List<Equipo> equiposActivos(boolean valor) {
-		return equipoMapper.equiposActivos(valor);
+	public List<Equipo> EquiposSinElementos() {
+		return equipoMapper.EquiposSinElementos();
 	}
 
 

@@ -26,16 +26,22 @@
 	</select>
 
 	<update parameterType="map" id="registrarElementoAEquipo">
-		UPDATE ELEMENTO SET EQUIPO=#{id}
-		where id=#{idElemento}
+		UPDATE ELEMENTO SET EQUIPO=#{equipo}
+		where id=#{id}
 	</update>
 	
 	<delete parameterType="map" id="eliminarElemento" >
 		DELETE
 		FROM ELEMENTO
 		WHERE id=#{id}
-		
 	</delete>
+	
+	<select id="elementosSinEquipo" resultMap="ElementoResult">
+		SELECT id, tipo
+		FROM elemento
+		WHERE equipo is null;
+	
+	</select>
 
 </mapper>
 

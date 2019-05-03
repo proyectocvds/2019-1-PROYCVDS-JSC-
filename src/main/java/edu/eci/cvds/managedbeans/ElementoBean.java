@@ -24,7 +24,6 @@ public class ElementoBean extends BasePageBean {
 	private String id;
 	private boolean disponible;
 	private String tipo;
-	private ServicesImpl servicesImpl;
 	private String username;
 	private String contrasena;
 	private String equipo;
@@ -123,7 +122,7 @@ public class ElementoBean extends BasePageBean {
 	}
 
 	public void registrarElementoAEquipo() {
-		elementoServices.registrarElementoAEquipo(id, idEquipo);
+		elementoServices.registrarElementoAEquipo(id, equipo);
 	}
 
 	public String getIdEquipo() {
@@ -140,5 +139,9 @@ public class ElementoBean extends BasePageBean {
 
 	public void eliminarElemento() {
 		elementoServices.eliminarElemento(id);
+	}
+	
+	public List<Elemento> elementosSinEquipo() {
+		return elementoServices.elementosSinEquipo();
 	}
 }

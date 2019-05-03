@@ -15,9 +15,11 @@ public interface ElementoMapper {
 
 	public List<Elemento> consultarElemento();
 
-	public void registrarElementoAEquipo(@Param("id")String id, @Param("idElemento")String idElemento);
+	public void registrarElementoAEquipo(@Param("id")String id, @Param("equipo")String equipo);
 
 	public void eliminarElemento(@Param ("id") String id);
+
+	public List<Elemento> elementosSinEquipo();
 
 
 }

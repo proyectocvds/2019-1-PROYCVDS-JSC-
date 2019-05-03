@@ -68,23 +68,9 @@ public class EquipoBean extends BasePageBean {
 		this.elementos = elementos;
 	}
 
-	public void registrarEquipo() {
+	public void registrarEquipo() throws proyExcepcion {
 		FacesContext context = FacesContext.getCurrentInstance();
-		try {
-			if (elementos.size() <= 4)
-				throw new proyExcepcion("Hacen falta mas elementos para registrar el equipo");
-			for (Elemento e : elementos) {
-				elementoServices.registrarElementoAEquipo(id, e.getId());
-			}
-			context.addMessage(null, new FacesMessage("Succesfull", "Equipo Insertado."));
-		} catch (Exception e) {
-			context.addMessage(null, new FacesMessage("Error", e.getMessage()));
-		}
-
-	}
-
-	public void registrarElementoAEquipo() {
-		equipoServices.registrarElementoAEquipo(idElemento, id);
+		equipoServices.registrarEquipo(id, false, fecha);
 	}
 
 	public String getIdElemento() {
@@ -110,6 +96,10 @@ public class EquipoBean extends BasePageBean {
 
 	public List<Equipo> equiposActivos() {
 		return equipoServices.equiposActivos(true);
+	}
+	
+	public List<Equipo> EquiposSinElementos(){
+		return equipoServices.EquiposSinElementos();
 	}
 
 }

@@ -1,6 +1,7 @@
 package edu.eci.cvds.services.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -16,8 +17,8 @@ public class ServicesImplEquipo implements ServicesEquipo {
 	@Inject 
 	private EquipoDAO equipoDAO;
 	
-	public void registrarEquipo(String id, boolean disponible, ArrayList<Elemento> elementos) throws proyExcepcion {
-		equipoDAO.registrarEquipo(id, disponible, elementos);
+	public void registrarEquipo(String id, boolean disponible, Date fecha) throws proyExcepcion {
+		equipoDAO.registrarEquipo(id, disponible, fecha);
 	}
 	
 	@Override
@@ -30,14 +31,15 @@ public class ServicesImplEquipo implements ServicesEquipo {
 		return equipoDAO.consultarEquipos();
 	}
 
-	@Override
-	public void registrarElementoAEquipo(String idElemento, String id) {
-		equipoDAO.registrarElementoAEquipo(idElemento,id);
-	}
 
 	@Override
 	public List<Equipo> equiposActivos(boolean valor) {
 		return equipoDAO.equiposActivos(valor);
+	}
+
+	@Override
+	public List<Equipo> EquiposSinElementos() {
+		return equipoDAO.EquiposSinElementos();
 	}
 
 

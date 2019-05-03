@@ -9,22 +9,30 @@
  <resultMap type='Equipo' id='EquipoResult'>
  	<id property='id' column='id'/>
  	<result property='disponible' column='disponible'/>
+ 	<result property='fecha' column='fecha'/>
  	<collection property="elementos" resultMap="edu.eci.cvds.persistence.mybatisimpl.mappers.ElementoMapper.ElementoResult"></collection>
 </resultMap>
 	
 	<insert parameterType="map" id="registrarEquipo">
-		INSERT INTO EQUIPO (id,disponible) VALUES(#{id},#{disponible});
+		INSERT INTO EQUIPO (id,disponible, fecha) VALUES(#{id},#{disponible},#{fecha});
 	</insert>
 	
 	<select id="consultarEquipo" resultMap="EquipoResult">
 		SELECT *
 		FROM EQUIPO
+		ORDER BY FECHA DESC;
 	</select>
 	
 	<select id="equiposActivos" resultMap="EquipoResult">
 		SELECT id,fecha
 		FROM EQUIPO 
 		WHERE disponible=#{valor};
+	</select>
+	
+	<select id="EquiposSinElementos" resultMap="EquipoResult">
+		SELECT id,fecha
+		FROM EQUIPO 
+		WHERE disponible=false;
 	</select>
 	
 	

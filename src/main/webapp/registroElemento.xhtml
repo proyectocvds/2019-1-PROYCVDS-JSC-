@@ -28,12 +28,35 @@
 		<br></br>
 		<br></br>
 		<p:outputLabel>Id del Equipo: </p:outputLabel>
-		<h:inputText value="#{elementoBean.idEquipo}"></h:inputText>
+		<h:inputText value="#{elementoBean.equipo}"></h:inputText>
 		<br></br>
 		<br></br>
 		<p:commandButton value="Registrar Elemento a Equipo" update="registroElemento_form" actionListener="#{elementoBean.registrarElementoAEquipo()}"></p:commandButton>
 		<br></br>
 		<br></br>
+		<h1>Elementos Activos</h1>
+			<p:dataTable value="#{elementoBean.elementosSinEquipo()}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
+				var="elemento">
+				
+				<p:column headerText="Id"><center>${elemento.getId()}</center></p:column>
+				<p:column headerText="Tipo" filterBy="#{elemento.tipo}"
+					filterStyle="width:100px;" filterMatchMode="contains"><center>${elemento.getTipo()}</center></p:column>
+			</p:dataTable>
+			
+			<h1>Equipos Activos</h1>
+			
+			<p:dataTable value="#{equipoBean.EquiposSinElementos()}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
+				var="equipo">
+				
+				<p:column headerText="Id"><center>${equipo.getId()}</center></p:column>
+				<p:column headerText="Fecha"><center>${equipo.getFecha()}</center></p:column>
+			</p:dataTable>
 		</h:form>
 		
 </center>
