@@ -42,5 +42,11 @@ public class ServicesImplEquipo implements ServicesEquipo {
 		return equipoDAO.EquiposSinElementos();
 	}
 
+	@Override
+	public void registrarEquipoALaboratorio(String id, String laboratorio) {
+		equipoDAO.registrarEquipoALaboratorio(id, laboratorio);
+		
+	}
+
 
 }

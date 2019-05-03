@@ -24,6 +24,11 @@
 		ORDER BY FECHA DESC;
 	</select>
 	
+	<update parameterType="map" id="registrarEquipoALaboratorio">
+		UPDATE EQUIPO SET LABORATORIO=#{laboratorio}
+		where id=#{id}
+	</update>
+	
 	<select id="equiposActivos" resultMap="EquipoResult">
 		SELECT id,fecha
 		FROM EQUIPO 

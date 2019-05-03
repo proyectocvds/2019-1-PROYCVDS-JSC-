@@ -11,7 +11,7 @@ import edu.eci.cvds.entities.Laboratorio;
 
 
 public interface LaboratorioMapper {
-	public void registrarLaboratorio(@Param("id")String id,@Param("nombre") String nombre,@Param("equipos") ArrayList<Equipo> equipos,@Param("cupos") int cupos);
+	public void registrarLaboratorio(@Param("id")String id,@Param("nombre") String nombre,@Param("cupos") int cupos);
 
 	public List<Laboratorio> consultarLaboratorio();
 	

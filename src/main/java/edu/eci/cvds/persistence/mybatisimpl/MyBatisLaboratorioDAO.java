@@ -22,8 +22,8 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
 	}
 
 	@Override
-	public void registrarLaboratorio(String id, String nombre, ArrayList<Equipo> equipos, int cupos) {
-		laboratorioMapper.registrarLaboratorio(id,nombre,equipos,cupos);
+	public void registrarLaboratorio(String id, String nombre, int cupos) {
+		laboratorioMapper.registrarLaboratorio(id,nombre,cupos);
 		
 	}
 

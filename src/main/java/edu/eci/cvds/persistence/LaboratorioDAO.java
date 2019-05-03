@@ -8,7 +8,7 @@ import edu.eci.cvds.entities.Laboratorio;
 
 public interface LaboratorioDAO {
 	
-	public void registrarLaboratorio(String id , String nombre, ArrayList<Equipo> equipos, int cupos );
+	public void registrarLaboratorio(String id , String nombre, int cupos );
 
 	public List<Laboratorio> consultarLaboratorio();
 
