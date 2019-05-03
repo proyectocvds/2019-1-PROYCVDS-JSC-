@@ -10,6 +10,7 @@
  	<id property='id' column='id'/>
  	<result property='disponible' column='disponible'/>
  	<result property='fecha' column='fecha'/>
+ 	<result property='laboratorio' column='laboratorio'/>
  	<collection property="elementos" resultMap="edu.eci.cvds.persistence.mybatisimpl.mappers.ElementoMapper.ElementoResult"></collection>
 </resultMap>
 	

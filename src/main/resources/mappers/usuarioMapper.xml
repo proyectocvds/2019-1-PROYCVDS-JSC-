@@ -12,6 +12,8 @@
 		<result property='correo' column='correo' />
 		<result property='contrasena' column='contrasena' />
 		<result property='informacion' column='informacion' />
+		<result property='nombre' column='nombre' />
+		<result property='apellido' column='apellido' />
 	</resultMap>
 
 	<select id="consultarLogin" parameterType="map"

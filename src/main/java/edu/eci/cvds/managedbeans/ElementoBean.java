@@ -1,6 +1,7 @@
 package edu.eci.cvds.managedbeans;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -28,6 +29,15 @@ public class ElementoBean extends BasePageBean {
 	private String contrasena;
 	private String equipo;
 	private String idEquipo;
+	private Date fecha;
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 
 	private static final long serialVersionUID = 3594009161252782831L;
 

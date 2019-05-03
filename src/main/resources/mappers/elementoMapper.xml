@@ -12,6 +12,7 @@
 		<result property='disponible' column='disponible' />
 		<result property='tipo' column='tipo' />
 		<result property='equipo' column='equipo' />
+		<result property='fecha' column='fecha' />
 	</resultMap>
 	
 	<insert parameterType="map" id="registrarElemento">

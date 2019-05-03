@@ -30,8 +30,9 @@ public class EquipoBean extends BasePageBean {
 	private String id;
 	private boolean disponible;
 	private ArrayList<Elemento> elementos= new ArrayList<Elemento>();
-	private String idElemento;
+	private String laboratorio;
 	private Date fecha;
+	
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
@@ -73,9 +74,7 @@ public class EquipoBean extends BasePageBean {
 		equipoServices.registrarEquipo(id, false, fecha);
 	}
 
-	public String getIdElemento() {
-		return idElemento;
-	}
+	
 
 	public Date getFecha() {
 		return fecha;
@@ -98,6 +97,14 @@ public class EquipoBean extends BasePageBean {
 		return equipoServices.equiposActivos(true);
 	}
 	
+	public String getLaboratorio() {
+		return laboratorio;
+	}
+
+	public void setLaboratorio(String laboratorio) {
+		this.laboratorio = laboratorio;
+	}
+
 	public List<Equipo> EquiposSinElementos(){
 		return equipoServices.EquiposSinElementos();
 	}

@@ -13,15 +13,26 @@ public class Equipo {
 	private boolean disponible;
 	private ArrayList<Elemento> elementos;
 	private Date fecha;
+	private String laboratorio;
 	
-	public Equipo (String id, boolean disponible, ArrayList<Elemento> elementos, Date fecha) {
+	public Equipo (String id, boolean disponible, ArrayList<Elemento> elementos, Date fecha , String laboratorio) {
 		super();
 		this.id=id;
 		this.disponible=disponible;
 		this.elementos = new ArrayList<Elemento>();
 		this.fecha = fecha;
+		this.laboratorio=laboratorio;
+		
 	}
 	
+	public String getLaboratorio() {
+		return laboratorio;
+	}
+
+	public void setLaboratorio(String laboratorio) {
+		this.laboratorio = laboratorio;
+	}
+
 	public Equipo() {
 		
 	}
