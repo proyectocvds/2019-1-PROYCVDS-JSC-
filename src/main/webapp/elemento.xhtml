@@ -28,13 +28,22 @@
 			<p:outputLabel>Ingrese el elemento que desea registrar: </p:outputLabel>
 			<br></br>
 			<br></br>
-			
-			<p:outputLabel>Id del Elemento: </p:outputLabel>
-			<h:inputText value="#{elementoBean.id}"></h:inputText>
-			<br></br>
-			<br></br>
+			<h:panelGrid columns="3" cellspacing="5px">
+				<p:outputLabel>Id del Elemento: </p:outputLabel>
+				<h:inputText value="#{elementoBean.id}"></h:inputText>
+				<br></br>
+				<br></br>
+				<p:outputLabel>Marca: </p:outputLabel>
+				<h:inputText value="#{elementoBean.marca}"></h:inputText>
+				<br></br>
+				<br></br>
+				<p:outputLabel>Fecha: </p:outputLabel>
+				<p:calendar value="#{elementoBean.fecha}" />
+				<br></br>
+				<br></br>
+			</h:panelGrid>
 
-			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+			<h:panelGrid columns="1" cellpadding="5">
 				<p:outputLabel for="elemento" value="Tipo del Elemento" />
 				<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}"
 					style="width:125px">
@@ -45,18 +54,15 @@
 					<f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
 				</p:selectOneMenu>
 			</h:panelGrid>
+
 			<br></br>
 			<br></br>
 			<p:commandButton value="Registrar" update="@form"
 				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
 			<br></br>
 			<br></br>
-			<p:commandButton value="Registrar Elemento a Equipo"
-				update="elemento_form"
-				actionListener="#{elementoBean.irRegistrarElemento()}"></p:commandButton>
 			<br></br>
-			<br></br>
-
+			<label>Archivo Excel: </label>
 			<h:commandLink>
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
@@ -88,17 +94,22 @@
 					filterBy="#{elemento.equipo}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.equipo}" style="center" />
-				</p:column>	
-				<p:column headerText="Fecha" sortBy="#{row.equipo}"
+				</p:column>
+				<p:column headerText="Fecha" sortBy="#{row.fecha}"
 					filterBy="#{elemento.fecha}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.fecha}" style="center" />
-				</p:column>	
-				<p:column headerText="Marca" sortBy="#{row.equipo}"
+				</p:column>
+				<p:column headerText="Marca" sortBy="#{row.marca}"
 					filterBy="#{elemento.marca}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.marca}" style="center" />
-				</p:column>	
+				</p:column>
+				<p:column headerText="Estado" sortBy="#{row.estado}"
+					filterBy="#{elemento.estado}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{elemento.estado}" style="center" />
+				</p:column>
 				<p:column headerText="Novedad Elemento">
 					<p:button outcome="novedadElemento"
 						value="Ver Novedad del Elemento"
@@ -106,10 +117,11 @@
 						<f:param name="elemento" value="#{elemento.id}"></f:param>
 					</p:button>
 				</p:column>
-				
+
 				<p:column headerText="Eliminar">
 					<p:commandButton value="Dar de baja"
-						actionListener="#{elementoBean.eliminarElemento}" update="elemento_table">
+						actionListener="#{elementoBean.eliminarElemento}"
+						update="elemento_table">
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>

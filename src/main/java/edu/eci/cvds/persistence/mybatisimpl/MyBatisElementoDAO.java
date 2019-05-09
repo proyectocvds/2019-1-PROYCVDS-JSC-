@@ -1,6 +1,7 @@
 package edu.eci.cvds.persistence.mybatisimpl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -25,11 +26,11 @@ public class MyBatisElementoDAO implements ElementoDAO {
 
 
 	@Override
-	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion {
+	public void registrarElemento(String id, boolean disponible, String tipo,Date fecha ,String marca ,String estado) throws proyExcepcion {
 		
 		//if(getElemento(id)==null) throw new proyExcepcion("El elemento no debe ser nulo");
 		//if(getElemento(id)!=null) throw new proyExcepcion("El elemento ya existe");
-		elementoMapper.registrarElemento(id, disponible, tipo);
+		elementoMapper.registrarElemento(id, disponible, tipo,fecha,marca,estado);
 		
 	}
 
@@ -51,16 +52,16 @@ public class MyBatisElementoDAO implements ElementoDAO {
 
 
 	@Override
-	public void registrarElementoAEquipo(String id, String equipo) {
-		elementoMapper.registrarElementoAEquipo(id, equipo);
+	public void registrarElementoAEquipo(String idElemento, String equipo) {
+		elementoMapper.registrarElementoAEquipo(idElemento, equipo);
 		
 	}
 
 
 
 	@Override
-	public void eliminarElemento(String id) {
-		elementoMapper.eliminarElemento(id);
+	public void eliminarElemento(String id ,String valor) {
+		elementoMapper.eliminarElemento(id,valor);
 		
 	}
 

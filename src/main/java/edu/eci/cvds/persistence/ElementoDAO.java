@@ -3,12 +3,13 @@ package edu.eci.cvds.persistence;
 import edu.eci.cvds.proyExcepcion;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import edu.eci.cvds.entities.Elemento;
 
 public interface ElementoDAO {
 
-	public void registrarElemento(String id, boolean disponible, String tipo) throws proyExcepcion;
+	public void registrarElemento(String id, boolean disponible, String tipo ,Date fecha, String marca , String estado) throws proyExcepcion;
 
 	Elemento getElemento(String id);
 
@@ -18,7 +19,7 @@ public interface ElementoDAO {
 
 	public void registrarElementoAEquipo(String id, String equipo);
 
-	public void eliminarElemento(String id);
+	public void eliminarElemento(String idElemento,String valor);
 
 	public List<Elemento> elementosSinEquipo();
 

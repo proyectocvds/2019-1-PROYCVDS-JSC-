@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -27,10 +28,41 @@ public class ElementoBean extends BasePageBean {
 	private String tipo;
 	private String username;
 	private String contrasena;
-	private String equipo;
 	private String idEquipo;
 	private Date fecha;
 	private String marca;
+	private String estado;
+	private String valor;
+	@ManagedProperty(value = "#{param.equipo}")
+	private String equipo;
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public Date getFecha() {
 		return fecha;
@@ -100,7 +132,7 @@ public class ElementoBean extends BasePageBean {
 	}
 
 	public void registrarElemento() throws proyExcepcion {
-		elementoServices.registrarElemento(id, true, tipo);
+		elementoServices.registrarElemento(id, true, tipo,fecha,marca,null);
 		
 	}
 
@@ -132,8 +164,10 @@ public class ElementoBean extends BasePageBean {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("registroElemento.xhtml");
 	}
 
-	public void registrarElementoAEquipo() {
-		elementoServices.registrarElementoAEquipo(id, equipo);
+	public void registrarElementoAEquipo(String idElemento,String equipo) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		elementoServices.registrarElementoAEquipo(idElemento, equipo);
+		context.addMessage(null, new FacesMessage("Succesfull","elemento insertado.") );
 	}
 
 	public String getIdEquipo() {
@@ -149,7 +183,8 @@ public class ElementoBean extends BasePageBean {
 	}
 
 	public void eliminarElemento() {
-		elementoServices.eliminarElemento(id);
+		valor="Eliminado.";
+		elementoServices.eliminarElemento(id,valor);
 	}
 	
 	public List<Elemento> elementosSinEquipo() {

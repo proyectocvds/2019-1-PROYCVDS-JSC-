@@ -70,7 +70,6 @@ public class EquipoBean extends BasePageBean {
 	}
 
 	public void registrarEquipo() throws proyExcepcion {
-		FacesContext context = FacesContext.getCurrentInstance();
 		equipoServices.registrarEquipo(id, false, fecha);
 	}
 

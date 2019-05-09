@@ -14,32 +14,44 @@
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+
 		<br></br>
 		<h1>Registrar equipo</h1>
-		<h:form id="equipo_form">
-		    
+	</center>
+	<h:form id="equipo_form">
+		<center>
 			<p:outputLabel>Ingrese el equipo que desea registrar: </p:outputLabel>
-			<br></br>
-			<br></br>
+		</center>
+		<br></br>
+		<br></br>
+		<center>
 			<h:panelGrid columns="2" cellspacing="5px">
+
 				<label>Id del Equipo: </label>
 				<p:inputText value="#{equipoBean.id}" />
+
 				<br />
 				<label>Fecha del Equipo: </label>
 				<p:calendar value="#{equipoBean.fecha}" />
 				<br></br>
-				<center>
-				<h:commandButton value="Registrar equipo"
-					actionListener="#{equipoBean.registrarEquipo()}"
-					update="equipo_form"></h:commandButton>
-				</center>
-				<br />
-				<br />
-				<h1>Si desea Registrar un Elemento a un Equipo: </h1>
-				<p:button outcome="registroElemento" value="Registrar Elemento a Equipo" />
-				
 			</h:panelGrid>
-			
+		</center>
+		<br></br>
+		<br></br>
+		<center>
+			<h:commandButton value="Registrar equipo"
+				actionListener="#{equipoBean.registrarEquipo()}"
+				update="equipo_form"></h:commandButton>
+			<br></br> <br></br> <label>Si desea Registrar un Equipo a un
+				Laboratorio:</label> <br></br>
+			<p:button outcome="registroEquipo"
+				value="Registrar Equipo a Laboratorio" />
+		</center>
+
+
+		<br></br>
+		<center>
+			<label>Archivo Excel: </label>
 			<h:commandLink>
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
@@ -47,30 +59,47 @@
 				<p:dataExporter type="xls" target="equipo_table"
 					fileName="ExcelEquipo" />
 			</h:commandLink>
-			<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"
+		</center>
+		<br></br>
+		<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"
 			paginator="true" rows="10"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15"
-				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
-			<p:column headerText="Id" sortBy="#{row.Id}"
-					filterBy="#{equipo.id}" filterStyle="width:100px;"
-					filterMatchMode="contains">
-					<h:outputText value="#{equipo.id}" style="center" />
-				</p:column>
-				<p:column headerText="Fecha">
-					<h:outputText value="#{equipo.fecha}" style="center" />
-				</p:column>
-			</p:dataTable>
-			<br></br>
-			<br></br>
-			<div align="right">
-				<h:commandButton value="Ver equipos Activos"
-					actionListener="#{equipoBean.irEquiposActivos()}"
-					update="equipo_form"></h:commandButton>
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15"
+			currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+			<p:column headerText="Id" sortBy="#{row.Id}" filterBy="#{equipo.id}"
+				filterStyle="width:100px;" filterMatchMode="contains">
+				<h:outputText value="#{equipo.id}" style="center" />
+			</p:column>
+			<p:column headerText="Laboratorio" sortBy="#{row.Laboratorio}"
+				filterBy="#{equipo.laboratorio}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{equipo.laboratorio}" style="center" />
+			</p:column>
+			<p:column headerText="Fecha">
+				<h:outputText value="#{equipo.fecha}" style="center" />
+			</p:column>
+			<p:column headerText="Novedad Equipo">
+				<p:button outcome="novedadEquipo" value="Ver Novedad del Equipo"
+					actionListener="#{novedadBean.equipo()}">
+					<f:param name="equipo" value="#{equipo.id}"></f:param>
+				</p:button>
+			</p:column>
+			<p:column headerText="Registrar Elemento a Equipo">
+				<p:button outcome="registroElemento" value="Registrar">
+					<f:param name="equipo" value="#{equipo.id}"></f:param>
+				</p:button>
+			</p:column>
+		</p:dataTable>
+		<br></br>
+		<br></br>
+		<div align="right">
+			<h:commandButton value="Ver equipos Activos"
+				actionListener="#{equipoBean.irEquiposActivos()}"
+				update="equipo_form"></h:commandButton>
 
-			</div>
+		</div>
 
-		</h:form>
-	</center>
+	</h:form>
+
 </h:body>
 </html>

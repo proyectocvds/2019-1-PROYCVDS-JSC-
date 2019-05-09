@@ -6,22 +6,23 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Registrar Laboratorio</title>
-	<link rel="stylesheet" 
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
-<h:body style="margin:0px; padding:0px;" >
-<p:button outcome="menu" value="Regresar al menu" />
+<h:body style="margin:0px; padding:0px;">
+	<p:button outcome="menu" value="Regresar al menu" />
 
-<center>
-		<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
+	<center>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 		<p:layout>
-		<p:layoutUnit position="center" resizable="true" size="1500">
-		</p:layoutUnit>
-		</p:layout>	
+			<p:layoutUnit position="center" resizable="true" size="1500">
+			</p:layoutUnit>
+		</p:layout>
 		<h1>Registrar Laboratorio</h1>
-		
+
 		<h:form id="laboratorio_form">
-		<h:panelGrid columns="2" cellspacing="5px">
+			<h:panelGrid columns="2" cellspacing="5px">
 				<label>Id de Laboratorio: </label>
 				<p:inputText value="#{laboratorioBean.id}" />
 				<br />
@@ -31,12 +32,14 @@
 				<label>Cupos: </label>
 				<p:inputText value="#{laboratorioBean.cupos}" />
 				<br />
-				
+
 			</h:panelGrid>
-			<p:commandButton value="Registrar" update="laboratorio_form" actionListener="#{laboratorioBean.registrarLaboratorio()}"></p:commandButton>
+			<p:commandButton value="Registrar" update="laboratorio_form"
+				actionListener="#{laboratorioBean.registrarLaboratorio()}"></p:commandButton>
 			<br></br>
 			<br></br>
 			<br></br>
+			<label>Archivo Excel: </label>
 			<h:commandLink>
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
@@ -44,36 +47,42 @@
 				<p:dataExporter type="xls" target="equipo_table"
 					fileName="ExcelEquipo" />
 			</h:commandLink>
-			<p:dataTable id="laboratorio_table" var="laboratorio" value="#{laboratorioBean.data}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-          rowsPerPageTemplate="5,10,15"
-          currentPageReportTemplate="Página: ({currentPage} de {totalPages})" >
-				<p:column headerText="Id" sortBy="#{row.Id}" filterBy="#{laboratorio.id}" filterStyle="width:100px;" filterMatchMode="contains">
-				<h:outputText value="#{laboratorio.id}"/>
+			<p:dataTable id="laboratorio_table" var="laboratorio"
+				value="#{laboratorioBean.data}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{laboratorio.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.id}" />
 				</p:column>
-				<p:column headerText="Nombre"  sortBy="#{row.Nombre}" filterBy="#{laboratorio.nombre}" filterStyle="width:100px;" filterMatchMode="contains">
-				<h:outputText value="#{laboratorio.nombre}"/>
+				<p:column headerText="Nombre" sortBy="#{row.Nombre}"
+					filterBy="#{laboratorio.nombre}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.nombre}" />
 				</p:column>
-				<p:column headerText="Cupos"  sortBy="#{row.cupos}" filterBy="#{laboratorio.cupos}" filterStyle="width:100px;" filterMatchMode="contains">
-				<h:outputText value="#{laboratorio.cupos}"/>
+				<p:column headerText="Cupos" sortBy="#{row.cupos}"
+					filterBy="#{laboratorio.cupos}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.cupos}" />
 				</p:column>
 				<p:column headerText="Novedad Laboratorio">
-            <p:button outcome="novedadLaboratorio" value="Ver Novedad">
-              <f:param name="laboratorio" value="#{laboratorio.id}" />
-            </p:button>
-            </p:column>
-      
-          	
-       
-						
+					<p:button outcome="novedadLaboratorio" value="Ver Novedad">
+						<f:param name="laboratorio" value="#{laboratorio.id}" />
+					</p:button>
+				</p:column>
 			</p:dataTable>
-			<h1>Si desea Registrar un Equipo a un Laboratorio: </h1>
-            <p:button outcome="registroEquipo" value="Registrar Equipo a Laboratorio">
-              
-            </p:button>
-		
-		
+
+			<h1>Si desea Registrar un Equipo a un Laboratorio:</h1>
+			<p:button outcome="registroEquipo"
+				value="Registrar Equipo a Laboratorio">
+
+			</p:button>
+
+
 		</h:form>
-</center>
+	</center>
 
 </h:body>
 </html>

@@ -5,39 +5,92 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>Registro Equipo a Laboratorio</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<title>Registro Equipo a Laboratorio</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
 <h:body style="margin:0px; padding:0px;">
-<p:button outcome="menu" value="Regresar al menu" />
-<br></br>
-<br></br>
-<p:button outcome="laboratorio" value="Regresar a laboratorio" />
-<br></br>
-<br></br>
-<p:button outcome="equipo" value="Regresar a equipo" />
-<center>
-		<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
-	<br></br>	
+	<p:button outcome="menu" value="Regresar al menu" />
+	<br></br>
+	<br></br>
+	<p:button outcome="laboratorio" value="Regresar a laboratorio" />
+	<br></br>
+	<br></br>
+	<p:button outcome="equipo" value="Regresar a equipo" />
+	<center>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+		<br></br>
 		<h1>Registrar Equipo a Laboratorio</h1>
 		<h:form id="registroEquipo_form">
-		<br></br>
-		<br></br>
-		<p:outputLabel>Id del Equipo: </p:outputLabel>
-		<h:inputText value="#{equipoBean.id}"></h:inputText>
-		<br></br>
-		<br></br>
-		<p:outputLabel>Id del Laboratorio: </p:outputLabel>
-		<h:inputText value="#{equipoBean.laboratorio}"></h:inputText>
-		<br></br>
-		<br></br>
-		<p:commandButton value="Registrar Equipo al laboratorio" update="registroEquipo_form" actionListener="#{equipoBean.registrarEquipoALaboratorio()}"></p:commandButton>
-		<br></br>
-		<br></br>
+			<br></br>
+			<br></br>
+			<p:outputLabel>Id del Equipo: </p:outputLabel>
+			<h:inputText value="#{equipoBean.id}"></h:inputText>
+			<br></br>
+			<br></br>
+			<p:outputLabel>Id del Laboratorio: </p:outputLabel>
+			<h:inputText value="#{equipoBean.laboratorio}"></h:inputText>
+			<br></br>
+			<br></br>
+			<p:commandButton value="Registrar Equipo al laboratorio"
+				update="registroEquipo_form"
+				actionListener="#{equipoBean.registrarEquipoALaboratorio()}"></p:commandButton>
+			<br></br>
+			<br></br>
+
+			<h1>Equipos Activos</h1>
+
+			<p:dataTable value="#{equipoBean.EquiposSinElementos()}"
+				paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
+				var="equipo">
+
+				<p:column headerText="Id">
+					<center>${equipo.getId()}</center>
+				</p:column>
+				<p:column headerText="Fecha">
+					<center>${equipo.getFecha()}</center>
+				</p:column>
+			</p:dataTable>
+
+			<h1>Laboratorios Disponibles</h1>
+
+			<p:dataTable id="laboratorio_table" var="laboratorio"
+				value="#{laboratorioBean.data}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{laboratorio.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.id}" />
+				</p:column>
+				<p:column headerText="Nombre" sortBy="#{row.Nombre}"
+					filterBy="#{laboratorio.nombre}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.nombre}" />
+				</p:column>
+				<p:column headerText="Cupos" sortBy="#{row.cupos}"
+					filterBy="#{laboratorio.cupos}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{laboratorio.cupos}" />
+				</p:column>
+				<p:column headerText="Novedad Laboratorio">
+					<p:button outcome="novedadLaboratorio" value="Ver Novedad">
+						<f:param name="laboratorio" value="#{laboratorio.id}" />
+					</p:button>
+				</p:column>
+			</p:dataTable>
+
+
+
 		</h:form>
-		
-		
-		
-</center>
+
+
+
+	</center>
 </h:body>
 </html>

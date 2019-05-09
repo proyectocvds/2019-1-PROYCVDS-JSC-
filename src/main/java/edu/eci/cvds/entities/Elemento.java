@@ -9,8 +9,9 @@ public class Elemento {
 	private String equipo;
 	private Date fecha;
 	private String marca;
+	private String estado;
 
-	public Elemento(String id, boolean disponible, String tipo,String equipo , Date fecha, String marca ) {
+	public Elemento(String id, boolean disponible, String tipo,String equipo , Date fecha, String marca, String estado ) {
 		super();
 		this.id=id;
 		this.disponible=disponible;
@@ -18,10 +19,19 @@ public class Elemento {
 		this.equipo=equipo;
 		this.fecha=fecha;
 		this.marca=marca;
+		this.estado=estado;
 		
 		
 	}
 	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	public Date getFecha() {
 		return fecha;
 	}

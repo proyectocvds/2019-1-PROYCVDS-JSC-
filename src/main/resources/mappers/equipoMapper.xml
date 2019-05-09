@@ -33,12 +33,14 @@
 		SELECT id,fecha
 		FROM EQUIPO 
 		WHERE disponible=#{valor};
+		ORDER BY FECHA DESC;
 	</select>
 	
 	<select id="EquiposSinElementos" resultMap="EquipoResult">
 		SELECT id,fecha
 		FROM EQUIPO 
 		WHERE disponible=false;
+		ORDER BY FECHA DESC;
 	</select>
 	
 	

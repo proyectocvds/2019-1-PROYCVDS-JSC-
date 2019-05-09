@@ -5,60 +5,62 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>Registro ELemento a Equipo</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<title>Registro ELemento a Equipo</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
+<f:metadata>
+	<f:viewParam name="equipo" value="#{equipoBean.id}" />
+</f:metadata>
 <h:body style="margin:0px; padding:0px;">
-<p:button outcome="menu" value="Regresar al menu" />
-<br></br>
-<br></br>
-<p:button outcome="elemento" value="Regresar a elemento" />
-<br></br>
-<br></br>
-<p:button outcome="equipo" value="Regresar a equipo" />
-<center>
-		<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img> <br></br>
-	<br></br>	
+	<p:button outcome="menu" value="Regresar al menu" />
+	<br></br>
+	<br></br>
+	<p:button outcome="elemento" value="Regresar a elemento" />
+	<br></br>
+	<br></br>
+	<p:button outcome="equipo" value="Regresar a equipo" />
+	<center>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+		<br></br>
 		<h1>Registrar Elemento a Equipo</h1>
+		#{equipo.setEquipo(elementoBean.equipo)}
 		<h:form id="registroElemento_form">
-		<br></br>
-		<br></br>
-		<p:outputLabel>Id del Elemento: </p:outputLabel>
-		<h:inputText value="#{elementoBean.id}"></h:inputText>
-		<br></br>
-		<br></br>
-		<p:outputLabel>Id del Equipo: </p:outputLabel>
-		<h:inputText value="#{elementoBean.equipo}"></h:inputText>
-		<br></br>
-		<br></br>
-		<p:commandButton value="Registrar Elemento a Equipo" update="registroElemento_form" actionListener="#{elementoBean.registrarElementoAEquipo()}"></p:commandButton>
-		<br></br>
-		<br></br>
-		<h1>Elementos Activos</h1>
-			<p:dataTable value="#{elementoBean.elementosSinEquipo()}" paginator="true" rows="10"
+			<br></br>
+			<p:commandButton value="Registrar Elemento a Equipo"
+				update="registroElemento_form"
+				actionListener="#{elementoBean.registrarElementoAEquipo()}"></p:commandButton>
+			<br></br>
+			<br></br>
+			<h1>Elementos Activos</h1>
+			<p:dataTable value="#{elementoBean.elementosSinEquipo()}"
+				paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
 				var="elemento">
-				
-				<p:column headerText="Id"><center>${elemento.getId()}</center></p:column>
+
+				<p:column headerText="Id">
+					<center>${elemento.getId()}</center>
+				</p:column>
 				<p:column headerText="Tipo" filterBy="#{elemento.tipo}"
-					filterStyle="width:100px;" filterMatchMode="contains"><center>${elemento.getTipo()}</center></p:column>
+					filterStyle="width:100px;" filterMatchMode="contains">
+					<center>${elemento.getTipo()}</center>
+				</p:column>
+				<p:column headerText="Asociar">
+					<center>
+						<p:commandButton value="Registrar Elemento"
+							update="registroElemento_form"
+							actionListener="#{elementoBean.registrarElementoAEquipo(elemento.id, equipo.equipo)}">
+						</p:commandButton>
+					</center>
+				</p:column>
 			</p:dataTable>
-			
-			<h1>Equipos Activos</h1>
-			
-			<p:dataTable value="#{equipoBean.EquiposSinElementos()}" paginator="true" rows="10"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,15"
-				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
-				var="equipo">
-				
-				<p:column headerText="Id"><center>${equipo.getId()}</center></p:column>
-				<p:column headerText="Fecha"><center>${equipo.getFecha()}</center></p:column>
-			</p:dataTable>
+
+
 		</h:form>
-		
-</center>
+
+	</center>
 </h:body>
 </html>

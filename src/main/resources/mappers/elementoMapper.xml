@@ -14,35 +14,41 @@
 		<result property='equipo' column='equipo' />
 		<result property='fecha' column='fecha' />
 		<result property='marca' column='marca' />
+		<result property='estado' column='estado' />
 	</resultMap>
-	
+
 	<insert parameterType="map" id="registrarElemento">
 		INSERT INTO
-		ELEMENTO (id,disponible, tipo) VALUES(#{id},#{disponible},#{tipo});
+		ELEMENTO
+		(id,disponible, tipo, fecha, marca, estado)
+		VALUES(#{id},#{disponible},#{tipo},#{fecha},#{marca},#{estado});
 	</insert>
 	<select id="consultarElemento" resultMap="ElementoResult">
 		SELECT
-		id,disponible,tipo,equipo,fecha,marca
+		*
 		FROM ELEMENTO
 		ORDER BY fecha DESC
 	</select>
 
 	<update parameterType="map" id="registrarElementoAEquipo">
-		UPDATE ELEMENTO SET EQUIPO=#{equipo}
-		where id=#{id}
+		UPDATE ELEMENTO SET
+		EQUIPO=#{equipo}
+		where id=#{idElemento}
 	</update>
-	
-	<delete parameterType="map" id="eliminarElemento" >
-		DELETE
-		FROM ELEMENTO
-		WHERE id=#{id}
-	</delete>
-	
+
+	<update parameterType="map" id="eliminarElemento">
+		UPDATE ELEMENTO SET
+		ESTADO=#{valor}
+		WHERE
+		id=#{id}
+	</update>
+
 	<select id="elementosSinEquipo" resultMap="ElementoResult">
 		SELECT id, tipo
-		FROM elemento
+		FROM
+		elemento
 		WHERE equipo is null;
-	
+
 	</select>
 
 </mapper>

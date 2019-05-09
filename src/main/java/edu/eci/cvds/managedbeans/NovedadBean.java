@@ -31,11 +31,11 @@ public class NovedadBean extends BasePageBean {
 	private String titulo;
 	private String usuario;
 	private String detalle;
-	private String equipo;
-	//private String elemento;
 	private String laboratorio;
 	@ManagedProperty(value = "#{param.elemento}")
 	private String elemento;
+	@ManagedProperty(value = "#{param.equipo}")
+	private String equipo;
 
 
 	private static final long serialVersionUID = 3594009161252782831L;

@@ -5,13 +5,15 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Novedad</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="menu" value="Regresar al menu" />
 	<h:form id="novedad_form">
 		<center>
-			<img src="logo.png" style="width: 120px;height:120px;border-radius: 60px "> </img>
+			<img src="logo.png"
+				style="width: 120px; height: 120px; border-radius: 60px"> </img>
 			<h1>Novedad</h1>
 			<br></br> <br></br>
 			<h:panelGrid columns="2" cellspacing="5px">
@@ -46,12 +48,12 @@
 				<p:commandButton value="Registrar" update="novedad_form"
 					actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
 			</center>
-			<br></br> <br></br> <br></br>
+			<br></br> <br></br> <br></br> <label>Archivo Excel: </label>
 			<h:commandLink>
 				<img src="excel.png"
 					style="width: 30px; height: 30px; border-radius: 60px"> </img>
 				<br></br>
-				<p:dataExporter type="xls" target="elemento_table"
+				<p:dataExporter type="xls" target="novedad_table"
 					fileName="ExcelElementos" />
 			</h:commandLink>
 			<p:dataTable id="novedad_table" var="novedad"

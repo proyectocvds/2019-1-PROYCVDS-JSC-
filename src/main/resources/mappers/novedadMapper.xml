@@ -16,8 +16,7 @@
 	</resultMap>
 
 	<insert parameterType="map" id="registrarNovedad">
-		INSERT INTO NOVEDAD (id, fecha,
-		titulo, detalle, usuario, elemento, equipo)
+		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo)
 		VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo});
 	</insert>
 
