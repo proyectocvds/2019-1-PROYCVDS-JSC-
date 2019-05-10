@@ -51,3 +51,19 @@ ARQUITECTURA Y DISEÑO DETALLADO
 
 ![diagrama](https://user-images.githubusercontent.com/48154086/56165286-2c098580-5f98-11e9-9cde-23a677f12c99.PNG)
 
+
+
+
+# Comandos de Despliegue
+
+> Para hacer el despliegue se deben seguir los siguientes pasos
+
+1) mvn package
+2) heroku login
+3) heroku war:deploy target/Proyectocvds-1.0.war --app cvds-pro
+4) heroku open
+
+
+
+
+
