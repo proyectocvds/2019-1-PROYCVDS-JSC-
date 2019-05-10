@@ -17,6 +17,7 @@ public interface ServicesEquipo {
 	public List<Equipo> equiposActivos(boolean valor);
 	public List<Equipo> EquiposSinElementos();
 	public void registrarEquipoALaboratorio(String id, String laboratorio);
+	public List<Equipo> administraEquipo(String id);
 	
 	
 

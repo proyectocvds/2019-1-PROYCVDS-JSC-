@@ -12,15 +12,17 @@ public interface ElementoMapper {
 	
 	public Elemento getElemento(@Param("id") String id);
 
-	public void registrarElemento(@Param("id") String id, @Param("disponible")boolean disponible, @Param("tipo")String tipo, @Param("fecha") Date fecha, @Param("marca") String marca, @Param("estado") String estado);
+	public void registrarElemento(@Param("id") String id, @Param("nombre") String nombre, @Param("disponible")boolean disponible, @Param("tipo")String tipo, @Param("fecha") Date fecha, @Param("marca") String marca, @Param("estado") String estado);
 
 	public List<Elemento> consultarElemento();
 
-	public void registrarElementoAEquipo(@Param("idElemento")String idElemento, @Param("equipo")String equipo);
+	public void registrarElementoAEquipo(@Param("idElemento")String idElemento, @Param("equipo")String equipo,@Param("eliminado")String eliminado);
 
 	public void eliminarElemento(@Param ("id") String id, @Param("valor") String valor);
 
 	public List<Elemento> elementosSinEquipo();
+	
+	public List<Elemento> administraElemento(@Param("id") String id);
 
 
 }

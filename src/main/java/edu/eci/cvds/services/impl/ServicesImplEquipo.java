@@ -48,5 +48,11 @@ public class ServicesImplEquipo implements ServicesEquipo {
 		
 	}
 
+	@Override
+	public List<Equipo> administraEquipo(String id) {
+		return equipoDAO.administraEquipo(id);
+		
+	}
+
 
 }

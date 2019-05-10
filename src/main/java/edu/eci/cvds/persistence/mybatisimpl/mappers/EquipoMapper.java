@@ -17,4 +17,5 @@ public interface EquipoMapper {
 	public List<Equipo> equiposActivos(@Param("valor")boolean valor);
 	public List<Equipo> EquiposSinElementos();
 	public void registrarEquipoALaboratorio(@Param("id") String id,@Param("laboratorio") String laboratorio);
+	public List <Equipo> administraEquipo(@Param("id") String id);
 }

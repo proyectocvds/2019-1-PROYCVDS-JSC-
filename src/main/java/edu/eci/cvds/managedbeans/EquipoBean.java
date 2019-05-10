@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -27,20 +28,18 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 @RequestScoped
 
 public class EquipoBean extends BasePageBean {
+	@ManagedProperty(value = "#{param.id}")
 	private String id;
 	private boolean disponible;
-	private ArrayList<Elemento> elementos= new ArrayList<Elemento>();
+	private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+	@ManagedProperty(value = "#{param.laboratorio}")
 	private String laboratorio;
 	private Date fecha;
-	
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	@Inject
 	private ServicesEquipo equipoServices;
-	@Inject
-	ServicesElemento elementoServices;
-	
-	
+
 	public String getId() {
 		return id;
 	}
@@ -73,8 +72,6 @@ public class EquipoBean extends BasePageBean {
 		equipoServices.registrarEquipo(id, false, fecha);
 	}
 
-	
-
 	public Date getFecha() {
 		return fecha;
 	}
@@ -95,7 +92,7 @@ public class EquipoBean extends BasePageBean {
 	public List<Equipo> equiposActivos() {
 		return equipoServices.equiposActivos(true);
 	}
-	
+
 	public String getLaboratorio() {
 		return laboratorio;
 	}
@@ -104,12 +101,16 @@ public class EquipoBean extends BasePageBean {
 		this.laboratorio = laboratorio;
 	}
 
-	public List<Equipo> EquiposSinElementos(){
+	public List<Equipo> EquiposSinElementos() {
 		return equipoServices.EquiposSinElementos();
 	}
+
+	public void registrarEquipoALaboratorio(String id, String laboratorio) {
+		equipoServices.registrarEquipoALaboratorio(id, laboratorio);
+	}
 	
-	public void registrarEquipoALaboratorio() {
-		equipoServices.registrarEquipoALaboratorio(id,laboratorio);
+	public List<Equipo> administraEquipo() throws proyExcepcion, IOException {
+		return equipoServices.administraEquipo(id);
 	}
 
 }

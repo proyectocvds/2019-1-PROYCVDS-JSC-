@@ -26,11 +26,11 @@ public class MyBatisElementoDAO implements ElementoDAO {
 
 
 	@Override
-	public void registrarElemento(String id, boolean disponible, String tipo,Date fecha ,String marca ,String estado) throws proyExcepcion {
+	public void registrarElemento(String id, String nombre,  boolean disponible, String tipo,Date fecha ,String marca ,String estado) throws proyExcepcion {
 		
 		//if(getElemento(id)==null) throw new proyExcepcion("El elemento no debe ser nulo");
 		//if(getElemento(id)!=null) throw new proyExcepcion("El elemento ya existe");
-		elementoMapper.registrarElemento(id, disponible, tipo,fecha,marca,estado);
+		elementoMapper.registrarElemento(id,nombre,disponible,tipo,fecha,marca,estado);
 		
 	}
 
@@ -52,8 +52,8 @@ public class MyBatisElementoDAO implements ElementoDAO {
 
 
 	@Override
-	public void registrarElementoAEquipo(String idElemento, String equipo) {
-		elementoMapper.registrarElementoAEquipo(idElemento, equipo);
+	public void registrarElementoAEquipo(String idElemento, String equipo, String eliminado) {
+		elementoMapper.registrarElementoAEquipo(idElemento, equipo, eliminado);
 		
 	}
 
@@ -71,6 +71,14 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	public List<Elemento> elementosSinEquipo() {
 		return elementoMapper.elementosSinEquipo();
 		
+	}
+
+
+
+	@Override
+	public List<Elemento> administraElemento(String id) {
+	
+		return elementoMapper.administraElemento(id);
 	}
 
 	

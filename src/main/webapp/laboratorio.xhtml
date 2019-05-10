@@ -68,17 +68,20 @@
 					<h:outputText value="#{laboratorio.cupos}" />
 				</p:column>
 				<p:column headerText="Novedad Laboratorio">
-					<p:button outcome="novedadLaboratorio" value="Ver Novedad">
-						<f:param name="laboratorio" value="#{laboratorio.id}" />
-					</p:button>
+					<center>
+						<p:button outcome="novedadLaboratorio" value="Ver Novedad">
+							<f:param name="laboratorio" value="#{laboratorio.id}" />
+						</p:button>
+					</center>
+				</p:column>
+				<p:column headerText="Registrar Equipo a Laboratorio">
+					<center>
+						<p:button outcome="registroEquipo" value="Registrar">
+							<f:param name="laboratorio" value="#{laboratorio.id}"></f:param>
+						</p:button>
+					</center>
 				</p:column>
 			</p:dataTable>
-
-			<h1>Si desea Registrar un Equipo a un Laboratorio:</h1>
-			<p:button outcome="registroEquipo"
-				value="Registrar Equipo a Laboratorio">
-
-			</p:button>
 
 
 		</h:form>

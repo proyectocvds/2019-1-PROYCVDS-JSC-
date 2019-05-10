@@ -108,7 +108,7 @@ public class NovedadBean extends BasePageBean {
 	}
 
 	public void registrarNovedad() throws proyExcepcion {
-		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo,laboratorio);
+		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo, laboratorio);
 	}
 
 	public List<Novedad> getData() throws proyExcepcion {

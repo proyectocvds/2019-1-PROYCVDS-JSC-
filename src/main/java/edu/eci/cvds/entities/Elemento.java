@@ -10,8 +10,9 @@ public class Elemento {
 	private Date fecha;
 	private String marca;
 	private String estado;
+	private String nombre;
 
-	public Elemento(String id, boolean disponible, String tipo,String equipo , Date fecha, String marca, String estado ) {
+	public Elemento(String id, String nombre, boolean disponible, String tipo,String equipo , Date fecha, String marca, String estado ) {
 		super();
 		this.id=id;
 		this.disponible=disponible;
@@ -20,10 +21,19 @@ public class Elemento {
 		this.fecha=fecha;
 		this.marca=marca;
 		this.estado=estado;
+		this.nombre=nombre;
 		
 		
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public String getEstado() {
 		return estado;
 	}

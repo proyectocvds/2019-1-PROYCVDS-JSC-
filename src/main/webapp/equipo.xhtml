@@ -42,10 +42,6 @@
 			<h:commandButton value="Registrar equipo"
 				actionListener="#{equipoBean.registrarEquipo()}"
 				update="equipo_form"></h:commandButton>
-			<br></br> <br></br> <label>Si desea Registrar un Equipo a un
-				Laboratorio:</label> <br></br>
-			<p:button outcome="registroEquipo"
-				value="Registrar Equipo a Laboratorio" />
 		</center>
 
 
@@ -89,7 +85,15 @@
 					<f:param name="equipo" value="#{equipo.id}"></f:param>
 				</p:button>
 			</p:column>
+			<p:column headerText="Administrar Equipo">
+					<p:button outcome="administracionEquipo"
+						value="Administrar"
+						actionListener="#{equipoBean.id}">
+						<f:param name="equipo" value="#{equipo.id}"></f:param>
+					</p:button>
+				</p:column>
 		</p:dataTable>
+		
 		<br></br>
 		<br></br>
 		<div align="right">

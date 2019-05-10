@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Administracion Elemento</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+
+<f:metadata>
+	<f:viewParam name="elemento" value="#{elementoBean.id}" />
+</f:metadata>
+
+<h:body style="margin:0px; padding:0px;">
+	<p:button outcome="menu" value="Regresar al menu" />
+	<p:button outcome="elemento" value="Regresar a elemento" />
+	<h:form id="elementoAdministracion_form">
+		<center>
+			<img src="logo.png"
+				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+			<h1>Elemento: #{elementoBean.id}</h1>
+			#{elemento.setId(elementoBean.elemento)}
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<p:dataExporter type="xls" target="administracionElemento_table"
+					fileName="ExcelNovedades" />
+			</h:commandLink>
+			<br></br> <br></br>
+			<p:dataTable id="administracionElemento_table" var="administraElemento"
+				value="#{elementoBean.administraElemento()}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPzageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{elementoBean.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.id}" />
+				</p:column>
+				<p:column headerText="Nombre" sortBy="#{row.Nombre}"
+					filterBy="#{elementoBean.nombre}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.nombre}" />
+				</p:column>
+				
+				<p:column headerText="Disponible" sortBy="#{row.Disponible}"
+					filterBy="#{elementoBean.disponible}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.disponible}" />
+				</p:column>
+				
+				<p:column headerText="Tipo de Elemento" sortBy="#{row.Tipo}"
+					filterBy="#{elementoBean.tipo}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.tipo}" />
+				</p:column>
+				
+				<p:column headerText="Equipo" sortBy="#{row.Equipo}"
+					filterBy="#{elementoBean.equipo}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.equipo}" />
+				</p:column>
+				
+				<p:column headerText="Fecha" sortBy="#{row.Fecha}"
+					filterBy="#{elementoBean.fecha}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.fecha}" />
+				</p:column>
+				
+				<p:column headerText="Marca" sortBy="#{row.Marca}"
+					filterBy="#{elementoBean.marca}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.marca}" />
+				</p:column>
+				
+					<p:column headerText="Estado" sortBy="#{row.Estado}"
+					filterBy="#{elementoBean.estado}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraElemento.estado}" />
+				</p:column>
+				
+			</p:dataTable>
+		</center>
+	</h:form>
+</h:body>
+</html>

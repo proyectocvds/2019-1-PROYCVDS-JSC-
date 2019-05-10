@@ -50,4 +50,11 @@ public class MyBatisEquipoDAO implements EquipoDAO{
 		
 	}
 
+	@Override
+	public List<Equipo> administraEquipo(String id) {
+		
+		return equipoMapper.administraEquipo(id);
+	}
+	
+
 }

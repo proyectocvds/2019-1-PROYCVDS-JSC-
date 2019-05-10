@@ -16,6 +16,7 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.ServicesElemento;
+import edu.eci.cvds.services.ServicesNovedad;
 import edu.eci.cvds.services.impl.ServicesImpl;
 
 @SuppressWarnings("deprecation")
@@ -23,6 +24,7 @@ import edu.eci.cvds.services.impl.ServicesImpl;
 @RequestScoped
 
 public class ElementoBean extends BasePageBean {
+	@ManagedProperty(value = "#{param.id}")
 	private String id;
 	private boolean disponible;
 	private String tipo;
@@ -35,9 +37,18 @@ public class ElementoBean extends BasePageBean {
 	private String valor;
 	@ManagedProperty(value = "#{param.equipo}")
 	private String equipo;
+	private String nombre;
 
 	public String getContrasena() {
 		return contrasena;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public void setContrasena(String contrasena) {
@@ -76,6 +87,8 @@ public class ElementoBean extends BasePageBean {
 
 	@Inject
 	private ServicesElemento elementoServices;
+	@Inject
+	private ServicesNovedad novedadServices;
 
 	public String getId() {
 		return id;
@@ -132,8 +145,8 @@ public class ElementoBean extends BasePageBean {
 	}
 
 	public void registrarElemento() throws proyExcepcion {
-		elementoServices.registrarElemento(id, true, tipo,fecha,marca,null);
-		
+		elementoServices.registrarElemento(id,nombre,true, tipo, fecha, marca, null);
+
 	}
 
 	public void irNovedad() throws IOException {
@@ -164,10 +177,14 @@ public class ElementoBean extends BasePageBean {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("registroElemento.xhtml");
 	}
 
-	public void registrarElementoAEquipo(String idElemento,String equipo) {
+	public void registrarElementoAEquipo(String idElemento, String equipo) throws proyExcepcion {
+		String eliminado = "eliminado";
 		FacesContext context = FacesContext.getCurrentInstance();
-		elementoServices.registrarElementoAEquipo(idElemento, equipo);
-		context.addMessage(null, new FacesMessage("Succesfull","elemento insertado.") );
+		elementoServices.registrarElementoAEquipo(idElemento, equipo, eliminado);
+		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Insertado."));
+		// novedadServices.registrarNovedad("4486456165413251", fecha, "Registro", "Se
+		// registro elemento a quipo", null, idElemento, equipo, null);
+
 	}
 
 	public String getIdEquipo() {
@@ -182,11 +199,11 @@ public class ElementoBean extends BasePageBean {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("novedadElemento.xhtml");
 	}
 
-	public void eliminarElemento() {
-		valor="Eliminado.";
-		elementoServices.eliminarElemento(id,valor);
+	public void eliminarElemento(String id) {
+		valor = "Eliminado";
+		elementoServices.eliminarElemento(id, valor);
 	}
-	
+
 	public List<Elemento> elementosSinEquipo() {
 		return elementoServices.elementosSinEquipo();
 	}
@@ -198,6 +215,11 @@ public class ElementoBean extends BasePageBean {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
+	public List<Elemento> administraElemento() throws proyExcepcion, IOException {
+		return elementoServices.administraElemento(id);
+	}
 	
 	
+
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Administracion Equipo</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+
+<f:metadata>
+	<f:viewParam name="equipo" value="#{equipoBean.id}" />
+</f:metadata>
+
+<h:body style="margin:0px; padding:0px;">
+	<p:button outcome="menu" value="Regresar al menu" />
+	<p:button outcome="equipo" value="Regresar a equipo" />
+	<h:form id="equipoAdministracion_form">
+		<center>
+			<img src="logo.png"
+				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+			<h1>Equipo: #{equipoBean.id}</h1>
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<p:dataExporter type="xls" target="administracionEquipo_table"
+					fileName="ExcelNovedades" />
+			</h:commandLink>
+			<br></br> <br></br>
+			<p:dataTable id="administracionEquipo_table" var="administraEquipo"
+				value="#{equipoBean.administraEquipo()}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPzageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{equipoBean.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraEquipo.id}" />
+				</p:column>
+
+				<p:column headerText="Laboratorio" sortBy="#{row.Laboratorio}"
+					filterBy="#{equipoBean.laboratorio}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraEquipo.laboratorio}" />
+				</p:column>
+
+
+
+				<p:column headerText="Fecha" sortBy="#{row.Fecha}"
+					filterBy="#{equipoBean.fecha}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<h:outputText value="#{administraEquipo.fecha}" />
+				</p:column>
+
+
+
+			</p:dataTable>
+		</center>
+	</h:form>
+</h:body>
+</html>

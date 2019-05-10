@@ -15,8 +15,8 @@ public class ServicesImplElemento implements ServicesElemento{
 	@Inject
 	private ElementoDAO elementoDAO;
 	
-	public void registrarElemento(String id, boolean disponible, String tipo,Date fecha,String marca,String estado) throws proyExcepcion  {
-		elementoDAO.registrarElemento(id, disponible, tipo,fecha,marca,estado);
+	public void registrarElemento(String id, String nombre, boolean disponible, String tipo,Date fecha,String marca,String estado) throws proyExcepcion  {
+		elementoDAO.registrarElemento(id, nombre ,disponible, tipo,fecha,marca,estado);
 	}
 	
 	public List<Elemento> listByElemento() {
@@ -30,8 +30,8 @@ public class ServicesImplElemento implements ServicesElemento{
 	}
 
 	@Override
-	public void registrarElementoAEquipo(String idElemento, String equipo) {
-		elementoDAO.registrarElementoAEquipo(idElemento, equipo);
+	public void registrarElementoAEquipo(String idElemento, String equipo, String eliminado) {
+		elementoDAO.registrarElementoAEquipo(idElemento, equipo, eliminado);
 		
 	}
 
@@ -44,6 +44,11 @@ public class ServicesImplElemento implements ServicesElemento{
 	public List<Elemento> elementosSinEquipo() {
 		return elementoDAO.elementosSinEquipo();
 		
+	}
+
+	@Override
+	public List<Elemento> administraElemento(String id) {
+		return elementoDAO.administraElemento(id);
 	}
 
 

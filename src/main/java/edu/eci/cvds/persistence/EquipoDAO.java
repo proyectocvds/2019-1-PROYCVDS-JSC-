@@ -21,6 +21,8 @@ public interface EquipoDAO {
 	public List<Equipo> equiposActivos(boolean valor);
 
 	public List<Equipo> EquiposSinElementos();
+	
+	public List<Equipo> administraEquipo(String id);
 
 
 }

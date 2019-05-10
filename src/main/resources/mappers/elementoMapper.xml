@@ -9,6 +9,7 @@
 
 	<resultMap type='Elemento' id='ElementoResult'>
 		<id property='id' column='id' />
+		<result property='nombre' column='nombre'/>
 		<result property='disponible' column='disponible' />
 		<result property='tipo' column='tipo' />
 		<result property='equipo' column='equipo' />
@@ -20,8 +21,8 @@
 	<insert parameterType="map" id="registrarElemento">
 		INSERT INTO
 		ELEMENTO
-		(id,disponible, tipo, fecha, marca, estado)
-		VALUES(#{id},#{disponible},#{tipo},#{fecha},#{marca},#{estado});
+		(id,nombre,disponible, tipo, fecha, marca, estado)
+		VALUES(#{id},#{nombre},#{disponible},#{tipo},#{fecha},#{marca},#{estado});
 	</insert>
 	<select id="consultarElemento" resultMap="ElementoResult">
 		SELECT
@@ -49,6 +50,15 @@
 		elemento
 		WHERE equipo is null;
 
+	</select>
+	
+	
+	
+	<select id="administraElemento" resultMap ="ElementoResult">
+		SELECT
+		*
+		FROM ELEMENTO
+		WHERE id=#{id}
 	</select>
 
 </mapper>
