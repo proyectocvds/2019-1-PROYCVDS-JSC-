@@ -13,11 +13,12 @@
 		<result property='detalle' column='detalle' />
 		<result property='equipo' column='equipo' />
 		<result property='elemento' column='elemento' />
+		<result property='laboratorio' column='laboratorio' />
 	</resultMap>
 
 	<insert parameterType="map" id="registrarNovedad">
-		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo)
-		VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo});
+		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo, laboratorio)
+		VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo}, #{laboratorio});
 	</insert>
 
 	<select id="consultarNovedad" parameterType="map"

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+<h:body style="margin:0px; padding:0px;">
+	<p:button outcome="menu" value="Regresar al menu" />
+	<h:form id="novedad_form">
+		<center>
+			<img src="logo.png"
+				style="width: 120px; height: 120px; border-radius: 60px"> </img>
+			<h1>Novedad</h1>
+			<br></br> <br></br>
+			<h:panelGrid columns="2" cellspacing="5px">
+				<label>Id Novedad: </label>
+				<p:inputText value="#{novedadBean.id}" />
+				<br />
+				<label>Fecha: </label>
+				<p:calendar value="#{novedadBean.fecha}" />
+				<br />
+				<label>Titulo: </label>
+				<p:inputText value="#{novedadBean.titulo}" />
+				<br />
+				<label>Detalle: </label>
+				<p:inputText value="#{novedadBean.detalle}" />
+				<br />
+				<label>Usuario: </label>
+				<p:inputText value="#{novedadBean.usuario}" />
+				<br />
+				<label>Laboratorio: </label>
+				<p:inputText value="#{novedadBean.laboratorio}" />
+				<br />
+			</h:panelGrid>
+</center>
+			<center>
+				<p:commandButton value="Registrar" update="novedad_form"
+					actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
+			</center>
+			<br></br> <br></br> <br></br> <label>Archivo Excel: </label>
+			<h:commandLink>
+				<img src="excel.png"
+					style="width: 30px; height: 30px; border-radius: 60px"> </img>
+				<br></br>
+				<p:dataExporter type="xls" target="novedad_table"
+					fileName="ExcelElementos" />
+			</h:commandLink>
+			<p:dataTable id="novedad_table" var="novedad"
+				value="#{novedadBean.data}" paginator="true" rows="10"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+				<p:column headerText="Id" sortBy="#{row.Id}"
+					filterBy="#{novedad.id}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.id}" />
+					</center>
+				</p:column>
+				<p:column headerText="Fecha" sortBy="#{row.Fecha}"
+					filterBy="#{novedad.fecha}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.fecha}" />
+					</center>
+				</p:column>
+				<p:column headerText="Titulo" sortBy="#{row.Titulo}"
+					filterBy="#{novedad.titulo}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.titulo}" />
+					</center>
+				</p:column>
+				<p:column headerText="Detalle" sortBy="#{row.Detalle}"
+					filterBy="#{novedad.detalle}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.detalle}" />
+					</center>
+				</p:column>
+				<p:column headerText="Usuario" sortBy="#{row.Usuario}"
+					filterBy="#{novedad.usuario}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.usuario}" />
+					</center>
+				</p:column>
+				<p:column headerText="Laboratorio" sortBy="#{row.Laboratorio}"
+					filterBy="#{novedad.Laboratorio}" filterStyle="width:100px;"
+					filterMatchMode="contains">
+					<center>
+						<h:outputText value="#{novedad.laboratorio}" />
+					</center>
+				</p:column>
+			</p:dataTable>
+
+
+
+	
+
+	</h:form>
+</h:body>
+
+</html>
