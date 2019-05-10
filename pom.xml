@@ -7,7 +7,7 @@
 	<groupId>edu.eci.cvds</groupId>
 	<artifactId>Proyectocvds</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>Proyectocvds</name>
 
