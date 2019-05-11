@@ -22,6 +22,7 @@ public interface NovedadDAO {
 	
 	public List<Novedad> novedadLaboratorio(String laboratorio);
 
+
 	
 
 }

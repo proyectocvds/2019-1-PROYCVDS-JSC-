@@ -11,12 +11,28 @@
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="menu" value="Regresar al menu" />
 	<h:form id="novedad_form">
-		<center>
+		<center>	
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img>
 			<h1>Novedad</h1>
 			<br></br>
-			<p:button outcome="registrarNovedadLaboratorio" value="Registrar Novedad del Laboratorio"></p:button>
+			<label>Si desea registrar una novedad para un Laboratorio: </label>
+			<br></br>
+			<br></br>
+			<p:button outcome="laboratorioARegistrar" value="Registrar Novedad del Laboratorio"></p:button>
+			<br></br>
+			<br></br>
+			<label>Si desea registrar una novedad para un Elemento: </label>
+			<br></br>
+			<br></br>
+			<p:button outcome="elementoARegistrar" value="Registrar Novedad del Elemento"></p:button>
+			<br></br>
+			<br></br>
+			<label>Si desea registrar una novedad para un Equipo: </label>
+			<br></br>
+			<br></br>
+			<p:button outcome="equipoARegistrar" value="Registrar Novedad del Equipo"></p:button>
+			<br></br>
 		</center>
 	</h:form>
 </h:body>

@@ -8,7 +8,7 @@
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
 <f:metadata>
-	<f:viewParam name="laboratorio" value="#{laboratorioBean.id}" />
+	<f:viewParam name="elemento" value="#{elementoBean.id}" />
 </f:metadata>
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="novedad" value="Regresar a Novedad" />
@@ -16,10 +16,10 @@
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img>
-			<h1>Novedad del laboratorio: #{laboratorioBean.id}</h1>
+			<h1>Novedad del Elemento: #{elementoBean.id}</h1>
 			<br></br> <br></br>
 			<h:panelGrid columns="2" cellspacing="5px">
-			<label>id: </label>
+				<label>Id Novedad: </label>
 				<p:inputText value="#{novedadBean.id}" />
 				<br />
 				<label>Fecha: </label>
@@ -40,7 +40,6 @@
 			<p:commandButton value="Registrar" update="novedad_form"
 				actionListener="#{novedadBean.registrarNovedad()}"></p:commandButton>
 		</center>
-
 		<br></br>
 		<br></br>
 		<br></br>
@@ -91,11 +90,11 @@
 					<h:outputText value="#{novedad.usuario}" />
 				</center>
 			</p:column>
-			<p:column headerText="Laboratorio" sortBy="#{row.Laboratorio}"
-				filterBy="#{novedad.Laboratorio}" filterStyle="width:100px;"
+			<p:column headerText="Elemento" sortBy="#{row.Elemento}"
+				filterBy="#{novedad.elemento}" filterStyle="width:100px;"
 				filterMatchMode="contains">
 				<center>
-					<h:outputText value="#{novedad.laboratorio}" />
+					<h:outputText value="#{novedad.elemento}" />
 				</center>
 			</p:column>
 		</p:dataTable>

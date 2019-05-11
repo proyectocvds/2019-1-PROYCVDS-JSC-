@@ -31,6 +31,7 @@ public class NovedadBean extends BasePageBean {
 	private String titulo;
 	private String usuario;
 	private String detalle;
+	@ManagedProperty(value = "#{param.laboratorio}")
 	private String laboratorio;
 	@ManagedProperty(value = "#{param.elemento}")
 	private String elemento;

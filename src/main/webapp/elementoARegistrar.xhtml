@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>ElementoARegistrar</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+<p:button outcome="novedad" value="Regresar a novedad" />
+<body>
+	<center>
+		<br></br> <br></br>
+		<h1>Registrar Novedad del Elemento</h1>
+		<br></br> <br></br> <br></br>
+		<p:dataTable id="elemento_table" var="elemento"
+			value="#{elementoBean.data}" paginator="true" rows="10"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15"
+			currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+			<p:column headerText="Id" sortBy="#{row.Id}"
+				filterBy="#{elemento.id}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.id}" style="center" />
+			</p:column>
+			<p:column headerText="Nombre" sortBy="#{row.Nombre}"
+				filterBy="#{elemento.nombre}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.nombre}" style="center" />
+			</p:column>
+
+			<p:column headerText="Disponible" sortBy="#{row.Disponible}"
+				filterBy="#{elemento.disponible}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.disponible}" style="center" />
+			</p:column>
+			<p:column headerText="Tipo de Elemento" sortBy="#{row.tipo}"
+				filterBy="#{elemento.tipo}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.tipo}" style="center" />
+			</p:column>
+			<p:column headerText="Equipo" sortBy="#{row.equipo}"
+				filterBy="#{elemento.equipo}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.equipo}" style="center" />
+			</p:column>
+			<p:column headerText="Fecha" sortBy="#{row.fecha}"
+				filterBy="#{elemento.fecha}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.fecha}" style="center" />
+			</p:column>
+			<p:column headerText="Marca" sortBy="#{row.marca}"
+				filterBy="#{elemento.marca}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{elemento.marca}" style="center" />
+			</p:column>
+			<p:column headerText="Registrar Novedad a ELemento">
+				<center>
+					<p:button outcome="registrarNovedadElemento" value="registrar">
+						<f:param name="elemento" value="#{elemento.id}" />
+					</p:button>
+				</center>
+			</p:column>
+		</p:dataTable>
+	</center>
+</body>
+</html>

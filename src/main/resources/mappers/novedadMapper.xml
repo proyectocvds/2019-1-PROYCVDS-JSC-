@@ -17,8 +17,10 @@
 	</resultMap>
 
 	<insert parameterType="map" id="registrarNovedad">
-		INSERT INTO NOVEDAD (id, fecha, titulo, detalle, usuario, elemento, equipo, laboratorio)
-		VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo}, #{laboratorio});
+		INSERT INTO NOVEDAD (id, fecha,
+		titulo, detalle, usuario, elemento, equipo, laboratorio)
+		VALUES(#{id},#{fecha},#{titulo},#{detalle},#{usuario},#{elemento},#{equipo},
+		#{laboratorio});
 	</insert>
 
 	<select id="consultarNovedad" parameterType="map"
@@ -47,8 +49,8 @@
 		SELECT *
 		FROM NOVEDAD
 		WHERE laboratorio=#{laboratorio};
-
 	</select>
+
 
 </mapper>
   

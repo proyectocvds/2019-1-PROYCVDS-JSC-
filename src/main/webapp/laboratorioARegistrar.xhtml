@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>laboratorioARegistrar</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+<body>
+<p:button outcome="novedad" value="Regresar a novedad" />
+	<center>
+		<br></br>
+		<br></br>
+		<h1>Registrar Novedad de Laboratorio</h1>
+		<br></br>
+		<br></br>
+		<br></br>
+		<p:dataTable id="laboratorio_table" var="laboratorio"
+			value="#{laboratorioBean.data}" paginator="true" rows="10"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15"
+			currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
+			<p:column headerText="Id" sortBy="#{row.Id}"
+				filterBy="#{laboratorio.id}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{laboratorio.id}" />
+			</p:column>
+			<p:column headerText="Nombre" sortBy="#{row.Nombre}"
+				filterBy="#{laboratorio.nombre}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{laboratorio.nombre}" />
+			</p:column>
+			<p:column headerText="Cupos" sortBy="#{row.cupos}"
+				filterBy="#{laboratorio.cupos}" filterStyle="width:100px;"
+				filterMatchMode="contains">
+				<h:outputText value="#{laboratorio.cupos}" />
+			</p:column>
+			<p:column headerText="Registrar Novedad a Laboratorio">
+				<center>
+					<p:button outcome="registrarNovedadLaboratorio" value="registrar">
+						<f:param name="laboratorio" value="#{laboratorio.id}" />
+					</p:button>
+				</center>
+			</p:column>
+		</p:dataTable>
+	</center>
+
+</body>
+</html>
