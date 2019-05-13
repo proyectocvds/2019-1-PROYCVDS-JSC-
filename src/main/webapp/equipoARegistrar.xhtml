@@ -9,10 +9,23 @@
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
-<p:button outcome="novedad" value="Regresar a novedad" />
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="novedad" value="Regresar a novedad" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <body>
 	<center>
-		<br></br> <br></br>
+		<br></br> <img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
+		<br></br>
 		<h1>Registrar Novedad del Equipo</h1>
 		<br></br> <br></br> <br></br>
 		<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"

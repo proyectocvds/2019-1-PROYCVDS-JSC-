@@ -13,14 +13,26 @@
 <f:metadata>
 	<f:viewParam name="laboratorio" value="#{laboratorioBean.id}" />
 </f:metadata>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="laboratorio" value="Regresar a laboratorio" /> <p:button
+						outcome="equipo" value="Regresar a equipo" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
+
+
+
 	<br></br>
 	<br></br>
-	<p:button outcome="laboratorio" value="Regresar a laboratorio" />
-	<br></br>
-	<br></br>
-	<p:button outcome="equipo" value="Regresar a equipo" />
+
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
@@ -30,12 +42,28 @@
 		<h:form id="registroEquipo_form">
 			<br></br>
 			<br></br>
+			<div
+				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+				<div style="text-align: center;">
+					<ul class="my_test">
+						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+								<img src="excel.png"
+									style="width: 30px; height: 30px; border-radius: 60px"> </img>
+								<br></br>
+								<p:dataExporter type="xls" target="registroEquipo_table"
+									fileName="ExcelElementos" />
+							</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+			
 
 			<h1>Equipos Activos</h1>
-             <p:messages id="registroEquipo" showDetail="true" closable="true">
-					<p:autoUpdate/>
-				</p:messages>
-			<p:dataTable value="#{equipoBean.EquiposSinElementos()}"
+			<br></br>
+			<p:messages id="registroEquipo" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<p:dataTable id="registroEquipo_table" value="#{equipoBean.EquiposSinElementos()}"
 				paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
@@ -48,16 +76,13 @@
 				<p:column headerText="Fecha">
 					<center>${equipo.getFecha()}</center>
 				</p:column>
-				
+
 				<p:column headerTest="Registrar">
 
-					
-				<p:commandButton value="Registrar Equipo"
-				update="@form"
-				actionListener="#{equipoBean.registrarEquipoALaboratorio(equipo.id, lab.laboratorio)}"></p:commandButton>
-					<p:commandButton value="Registrar Equipo"
-						update="registroEquipo_form"
+
+					<p:commandButton value="Registrar Equipo" update="@form"
 						actionListener="#{equipoBean.registrarEquipoALaboratorio(equipo.id, lab.laboratorio)}"></p:commandButton>
+
 
 				</p:column>
 			</p:dataTable>

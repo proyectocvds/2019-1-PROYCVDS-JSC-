@@ -10,13 +10,25 @@
 <f:metadata>
 	<f:viewParam name="elemento" value="#{elementoBean.id}" />
 </f:metadata>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="novedad" value="Regresar a Novedad" /> <p:button
+						outcome="elementoARegistrar" value="Regresar a Registrar Elemento" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="novedad" value="Regresar a Novedad" />
-	<p:button outcome="elementoARegistrar" value="Regresar a Registrar Elemento" />
+	<br></br>
 	<h:form id="novedad_form">
-	<p:messages id="registrarNovedad" showDetail="true" closable="true">
-					<p:autoUpdate/>
-				</p:messages>
+		<p:messages id="registrarNovedad" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img>
@@ -46,21 +58,29 @@
 		<center>
 			<p:commandButton value="Registrar" update="@form"
 				actionListener="#{novedadBean.registrarNovedad}"></p:commandButton>
-				<br></br>
-				<br></br>
-				<label>Archivo Excel: </label>
-		<h:commandLink>
-			<img src="excel.png"
-				style="width: 30px; height: 30px; border-radius: 60px"> </img>
 			<br></br>
-			<p:dataExporter type="xls" target="novedad_table"
-				fileName="ExcelElementos" />
-		</h:commandLink>
+
 		</center>
 		<br></br>
-		<br></br>
-		<br></br>
+
 		
+			<div
+				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+				<div style="text-align: center;">
+					<ul class="my_test">
+						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+								<img src="excel.png"
+									style="width: 30px; height: 30px; border-radius: 60px"> </img>
+								<br></br>
+								<p:dataExporter type="xls" target="novedad_table"
+									fileName="ExcelElementos" />
+							</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+
+		<br></br>
+
 		<p:dataTable id="novedad_table" var="novedad"
 			value="#{novedadBean.elemento()}" paginator="true" rows="10"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"

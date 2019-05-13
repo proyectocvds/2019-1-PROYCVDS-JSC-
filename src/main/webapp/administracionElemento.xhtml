@@ -13,25 +13,53 @@
 <f:metadata>
 	<f:viewParam name="elemento" value="#{elementoBean.id}" />
 </f:metadata>
+<h:form>
 
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="elemento" value="Regresar a elemento" /></li>
+			</ul>
+
+		</div>
+	</div>
+
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
-	<p:button outcome="elemento" value="Regresar a elemento" />
+	<br></br>
 	<h:form id="elementoAdministracion_form">
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 			<h1>Elemento: #{elementoBean.id}</h1>
 			#{elemento.setId(elementoBean.elemento)}
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<p:dataExporter type="xls" target="administracionElemento_table"
-					fileName="ExcelNovedades" />
-			</h:commandLink>
+
+			
+				<div
+					style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+					<div style="text-align: center;">
+						<ul class="my_test">
+							<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+									<img src="excel.png"
+										style="width: 30px; height: 30px; border-radius: 60px">
+									</img>
+									<p:dataExporter type="xls"
+										target="administracionElemento_table"
+										fileName="ExcelNovedades" />
+								</h:commandLink></li>
+						</ul>
+					</div>
+				</div>
+
+			
 			<br></br> <br></br>
-			<p:dataTable id="administracionElemento_table" var="administraElemento"
-				value="#{elementoBean.administraElemento()}" paginator="true" rows="10"
+			<p:dataTable id="administracionElemento_table"
+				var="administraElemento"
+				value="#{elementoBean.administraElemento()}" paginator="true"
+				rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPzageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})">
@@ -45,43 +73,43 @@
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.nombre}" />
 				</p:column>
-				
+
 				<p:column headerText="Disponible" sortBy="#{row.Disponible}"
 					filterBy="#{elementoBean.disponible}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.disponible}" />
 				</p:column>
-				
+
 				<p:column headerText="Tipo de Elemento" sortBy="#{row.Tipo}"
 					filterBy="#{elementoBean.tipo}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.tipo}" />
 				</p:column>
-				
+
 				<p:column headerText="Equipo" sortBy="#{row.Equipo}"
 					filterBy="#{elementoBean.equipo}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.equipo}" />
 				</p:column>
-				
+
 				<p:column headerText="Fecha" sortBy="#{row.Fecha}"
 					filterBy="#{elementoBean.fecha}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.fecha}" />
 				</p:column>
-				
+
 				<p:column headerText="Marca" sortBy="#{row.Marca}"
 					filterBy="#{elementoBean.marca}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.marca}" />
 				</p:column>
-				
-					<p:column headerText="Estado" sortBy="#{row.Estado}"
+
+				<p:column headerText="Estado" sortBy="#{row.Estado}"
 					filterBy="#{elementoBean.estado}" filterStyle="width:100px;"
 					filterMatchMode="contains">
 					<h:outputText value="#{administraElemento.estado}" />
 				</p:column>
-				
+
 			</p:dataTable>
 		</center>
 	</h:form>

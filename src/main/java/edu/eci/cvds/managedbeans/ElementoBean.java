@@ -184,7 +184,7 @@ public class ElementoBean extends BasePageBean {
 		System.out.println(idElemento);
 		FacesContext context = FacesContext.getCurrentInstance();
 		elementoServices.registrarElementoAEquipo(idElemento, equipo, eliminado);
-		equipobean.add(idElemento);
+		equipobean.add(idElemento, equipo);
 		
 		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Insertado."));
 		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Asociado" ) );

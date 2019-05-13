@@ -13,24 +13,50 @@
 <f:metadata>
 	<f:viewParam name="elemento" value="#{elementoBean.id}" />
 </f:metadata>
+<h:form>
 
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="elemento" value="Regresar a elemento" /></li>
+			</ul>
+
+		</div>
+	</div>
+
+</h:form>
 
 
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
-	<p:button outcome="elemento" value="Regresar a elemento" />
+	<br></br>
+
 	<h:form id="elementoNovedad_form">
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 			<h1>Novedad de Elemento:</h1>
 			<h1>#{elementoBean.id}</h1>
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<p:dataExporter type="xls" target="novedadElemento_table"
-					fileName="ExcelNovedades" />
-			</h:commandLink>
+			<h:form>
+				<div
+					style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+					<div style="text-align: center;">
+						<ul class="my_test">
+							<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+									<img src="excel.png"
+										style="width: 30px; height: 30px; border-radius: 60px">
+									</img>
+									<p:dataExporter type="xls" target="novedadElemento_table"
+										fileName="ExcelNovedades" />
+								</h:commandLink></li>
+						</ul>
+					</div>
+				</div>
+
+			</h:form>
+
 			<br></br> <br></br>
 			<p:dataTable id="novedadElemento_table" var="novedadElemento"
 				value="#{novedadBean.novedadElemento()}" paginator="true" rows="10"

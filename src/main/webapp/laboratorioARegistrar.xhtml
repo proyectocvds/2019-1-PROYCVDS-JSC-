@@ -9,15 +9,26 @@
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="novedad" value="Regresar a novedad" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <body>
-<p:button outcome="novedad" value="Regresar a novedad" />
+	<br></br>
 	<center>
-		<br></br>
+		<img src="logo.png"
+			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 		<br></br>
 		<h1>Registrar Novedad de Laboratorio</h1>
-		<br></br>
-		<br></br>
-		<br></br>
+		<br></br> <br></br> <br></br>
 		<p:dataTable id="laboratorio_table" var="laboratorio"
 			value="#{laboratorioBean.data}" paginator="true" rows="10"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"

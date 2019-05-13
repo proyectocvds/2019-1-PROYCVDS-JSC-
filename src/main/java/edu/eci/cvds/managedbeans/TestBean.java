@@ -19,7 +19,16 @@ public class TestBean implements Serializable{
 	private String id;
 	private String estado;
 	private ArrayList<Elemento> elementos= new ArrayList<Elemento>();
+	private String nombre;
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public TestBean() {}
 
 	public String getEquipo() {
@@ -53,6 +62,7 @@ public class TestBean implements Serializable{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	
 	
 	
 	

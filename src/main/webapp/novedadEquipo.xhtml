@@ -12,23 +12,46 @@
 <f:metadata>
 	<f:viewParam name="equipo" value="#{equipoBean.id}" />
 </f:metadata>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="equipo" value="Regresar a equipo" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
-	<p:button outcome="equipo" value="Regresar a equipo" />
+	<br></br>
 	<h:form id="novedadEquipo_form">
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 			<br></br>
-			<h1>Novedad de Equipo:</h1>
-			<h1>#{equipoBean.id}</h1>
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<p:dataExporter type="xls" target="novedadEquipo_table"
-					fileName="ExcelNovedades" />
-			</h:commandLink>
+			<h1>Novedad de Equipo: #{equipoBean.id}</h1>
+
+			
+			<br></br>
+				<div
+					style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+					<div style="text-align: center;">
+						<ul class="my_test">
+							<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+									<img src="excel.png"
+										style="width: 30px; height: 30px; border-radius: 60px">
+									</img>
+									<p:dataExporter type="xls" target="novedadEquipo_table"
+										fileName="ExcelNovedades" />
+								</h:commandLink></li>
+						</ul>
+					</div>
+				</div>
+
+			<br></br>
 			<p:dataTable id="novedadEquipo_table" var="novedadEquipo"
 				value="#{novedadBean.novedadEquipo()}" paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"

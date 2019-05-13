@@ -9,8 +9,19 @@
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
+	<br></br>
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
@@ -25,37 +36,41 @@
 		<br></br>
 		<br></br>
 		<center>
-			<h:panelGrid columns="2" cellspacing="5px">
+			<h:panelGrid columns="1" cellspacing="5px">
 
-				<label>Id del Equipo: </label>
+				<p:outputLabel>Id del Equipo: </p:outputLabel>
 				<p:inputText value="#{equipoBean.id}" />
-
 				<br />
-				<label>Fecha del Equipo: </label>
+				<br />
+				<p:outputLabel>Fecha del Equipo: </p:outputLabel>
 				<p:calendar value="#{equipoBean.fecha}" />
 				<br></br>
 			</h:panelGrid>
 		</center>
 		<br></br>
-		<br></br>
 		<center>
 			<h:commandButton value="Registrar equipo"
-				actionListener="#{equipoBean.registrarEquipo()}"
-				update="equipo_form"></h:commandButton>
+				actionListener="#{equipoBean.registrarEquipo()}" update="@form"></h:commandButton>
 		</center>
 
 
 		<br></br>
-		<center>
-			<label>Archivo Excel: </label>
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<br></br>
-				<p:dataExporter type="xls" target="equipo_table"
-					fileName="ExcelEquipo" />
-			</h:commandLink>
-		</center>
+		
+			<div
+				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+				<div style="text-align: center;">
+					<ul class="my_test">
+						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+								<img src="excel.png"
+									style="width: 30px; height: 30px; border-radius: 60px"> </img>
+								<br></br>
+								<p:dataExporter type="xls" target="equipo_table"
+									fileName="ExcelEquipo" />
+							</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+
 		<br></br>
 		<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"
 			paginator="true" rows="10"
@@ -86,14 +101,13 @@
 				</p:button>
 			</p:column>
 			<p:column headerText="Administrar Equipo">
-					<p:button outcome="administracionEquipo"
-						value="Administrar"
-						actionListener="#{equipoBean.id}">
-						<f:param name="equipo" value="#{equipo.id}"></f:param>
-					</p:button>
-				</p:column>
+				<p:button outcome="administracionEquipo" value="Administrar"
+					actionListener="#{equipoBean.id}">
+					<f:param name="equipo" value="#{equipo.id}"></f:param>
+				</p:button>
+			</p:column>
 		</p:dataTable>
-		
+
 		<br></br>
 		<br></br>
 		<div align="right">

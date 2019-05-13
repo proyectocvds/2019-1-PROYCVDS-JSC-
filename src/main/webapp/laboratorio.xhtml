@@ -9,20 +9,27 @@
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </h:head>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
 
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
-		<p:layout>
-			<p:layoutUnit position="center" resizable="true" size="1500">
-			</p:layoutUnit>
-		</p:layout>
+
 		<h1>Registrar Laboratorio</h1>
-		 <p:messages id="laboratorio" showDetail="true" closable="true">
-					<p:autoUpdate/>
-				</p:messages>
+		<p:messages id="laboratorio" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
 
 		<h:form id="laboratorio_form">
 			<h:panelGrid columns="2" cellspacing="5px">
@@ -42,14 +49,24 @@
 			<br></br>
 			<br></br>
 			<br></br>
-			<label>Archivo Excel: </label>
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<br></br>
-				<p:dataExporter type="xls" target="equipo_table"
-					fileName="ExcelEquipo" />
-			</h:commandLink>
+
+			<div
+				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+				<div style="text-align: center;">
+					<ul class="my_test">
+						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+								<img src="excel.png"
+									style="width: 30px; height: 30px; border-radius: 60px"> </img>
+								<br></br>
+								<p:dataExporter type="xls" target="laboratorio_table"
+									fileName="ExcelLaboratorio" />
+							</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+			<br></br>
+
+
 			<p:dataTable id="laboratorio_table" var="laboratorio"
 				value="#{laboratorioBean.data}" paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"

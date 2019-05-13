@@ -14,16 +14,25 @@
 	<f:viewParam name="elemento" value="#{novedadBean.elemento}" />
 </f:metadata>
 
+<h:form>
 
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 
 <h:body style="margin:0px; padding:0px;">
 	<br></br>
-	<p:button outcome="menu" value="Regresar al menu" />
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 
-		<h1>Registrar elemento</h1>
+		<h1>Registrar elemento #{usuarioBean.getNombre()}</h1>
 		<h:form id="elemento_form">
 			<p:outputLabel>Ingrese el elemento que desea registrar: </p:outputLabel>
 			<br></br>
@@ -67,15 +76,26 @@
 				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
 			<br></br>
 			<br></br>
+			
+				<div
+					style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+					<div style="text-align: center;">
+						<ul class="my_test">
+							<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+									<img src="excel.png"
+										style="width: 30px; height: 30px; border-radius: 60px">
+									</img>
+									<br></br>
+									<p:dataExporter type="xls" target="elemento_table"
+										fileName="ExcelElementos" />
+								</h:commandLink></li>
+						</ul>
+					</div>
+				</div>
+
+			
 			<br></br>
-			<label>Archivo Excel: </label>
-			<h:commandLink>
-				<img src="excel.png"
-					style="width: 30px; height: 30px; border-radius: 60px"> </img>
-				<br></br>
-				<p:dataExporter type="xls" target="elemento_table"
-					fileName="ExcelElementos" />
-			</h:commandLink>
+
 			<p:dataTable id="elemento_table" var="elemento"
 				value="#{elementoBean.data}" paginator="true" rows="10"
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -91,7 +111,7 @@
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.nombre}" style="center" />
 				</p:column>
-				
+
 				<p:column headerText="Disponible" sortBy="#{row.Disponible}"
 					filterBy="#{elemento.disponible}" filterStyle="width:100px;"
 					filterMatchMode="contains">
@@ -130,8 +150,7 @@
 					</p:button>
 				</p:column>
 				<p:column headerText="Administrar Elemento">
-					<p:button outcome="administracionElemento"
-						value="Administrar"
+					<p:button outcome="administracionElemento" value="Administrar"
 						actionListener="#{elementoBean.id}">
 						<f:param name="elemento" value="#{elemento.id}"></f:param>
 					</p:button>

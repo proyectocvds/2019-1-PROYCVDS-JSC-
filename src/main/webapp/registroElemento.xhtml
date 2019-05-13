@@ -12,14 +12,21 @@
 <f:metadata>
 	<f:viewParam name="equipo" value="#{equipoBean.id}" />
 </f:metadata>
+<h:form>
+
+	<div
+		style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+		<div style="text-align: right;">
+			<ul class="my_test">
+				<li><p:button outcome="menu" value="Regresar al menu" /> <p:button
+						outcome="equipo" value="Regresar a equipo" /> <p:button
+						outcome="elemento" value="Regresar a elemento" /></li>
+			</ul>
+		</div>
+	</div>
+</h:form>
 <h:body style="margin:0px; padding:0px;">
-	<p:button outcome="menu" value="Regresar al menu" />
 	<br></br>
-	<br></br>
-	<p:button outcome="elemento" value="Regresar a elemento" />
-	<br></br>
-	<br></br>
-	<p:button outcome="equipo" value="Regresar a equipo" />
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
@@ -30,10 +37,9 @@
 			<br></br>
 
 			<p:messages id="registroElemento" showDetail="true" closable="true">
-					<p:autoUpdate/>
-				</p:messages>
-			<p:commandButton value="Registrar Elemento a Equipo"
-				update="@form"
+				<p:autoUpdate />
+			</p:messages>
+			<p:commandButton value="Registrar Elemento a Equipo" update="@form"
 				action="#{elementoBean.registrarElementoAEquipo}"></p:commandButton>
 
 			<h1>Desea registrar un nuevo elemento:</h1>

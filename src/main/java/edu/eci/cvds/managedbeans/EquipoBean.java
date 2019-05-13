@@ -80,7 +80,7 @@ public class EquipoBean extends BasePageBean {
 		this.fecha = fecha;
 	}
 
-	public void add(String elemento) {
+	public void add(String elemento, String equipo) {
 		System.out.println(elementos.size());
 		elementos.add(elemento);
 	}
