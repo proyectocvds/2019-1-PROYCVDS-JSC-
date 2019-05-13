@@ -8,9 +8,13 @@ import javax.faces.bean.SessionScoped;
 import edu.eci.cvds.entities.Elemento;
 
 @SuppressWarnings("deprecation")
-@ManagedBean(name="equipo")
+@ManagedBean(name="testBean")
 @SessionScoped
-public class TestBean {
+public class TestBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String equipo;
 	private String id;
 	private String estado;

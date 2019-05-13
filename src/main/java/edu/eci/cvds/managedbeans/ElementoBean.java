@@ -145,7 +145,7 @@ public class ElementoBean extends BasePageBean {
 	}
 
 	public void registrarElemento() throws proyExcepcion {
-		elementoServices.registrarElemento(id,nombre,true, tipo, fecha, marca, null);
+		elementoServices.registrarElemento(id, nombre, true, tipo, fecha, marca, null);
 
 	}
 
@@ -219,7 +219,5 @@ public class ElementoBean extends BasePageBean {
 	public List<Elemento> administraElemento() throws proyExcepcion, IOException {
 		return elementoServices.administraElemento(id);
 	}
-	
-	
 
 }

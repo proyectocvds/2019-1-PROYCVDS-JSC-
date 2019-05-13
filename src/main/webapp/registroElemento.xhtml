@@ -25,7 +25,7 @@
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 		<br></br>
 		<h1>Registrar Elemento a Equipo</h1>
-		#{equipo.setEquipo(elementoBean.equipo)}
+		#{testBean.setEquipo(elementoBean.equipo)}
 		<h:form id="registroElemento_form">
 			<br></br>
 			<p:commandButton value="Registrar Elemento a Equipo"
@@ -34,9 +34,10 @@
 			<br></br>
 			<br></br>
 			<br></br>
+			<!--  
 			<p:commandButton id="imageBtn" value="Registrar Nuevo Elemento"
 				type="button">
-			</p:commandButton>
+			</p:commandButton>-->
 			<p:overlayPanel id="imageBtn" for="imageBtn" hideEffect="fade">
 				<h1>Registrar Nuevo Elemento</h1>
 				<br></br>
@@ -73,12 +74,6 @@
 				rowsPerPageTemplate="5,10,15"
 				currentPageReportTemplate="Página: ({currentPage} de {totalPages})"
 				var="elemento">
-				<p:column headerText="Seleccionar">
-					<center>
-						<p:selectBooleanCheckbox value="#{selectBooleanView.value1}"
-							itemLabel="Agregar" />
-					</center>
-				</p:column>
 
 				<p:column headerText="Id">
 					<center>${elemento.getId()}</center>
@@ -91,13 +86,12 @@
 					<center>
 						<p:commandButton value="Registrar Elemento"
 							update="registroElemento_form"
-							actionListener="#{elementoBean.registrarElementoAEquipo(elemento.id, equipo.equipo)}">
+							actionListener="#{elementoBean.registrarElementoAEquipo(elemento.id, testBean.equipo)}">
 						</p:commandButton>
 					</center>
 				</p:column>
 			</p:dataTable>
 		</h:form>
-
 	</center>
 </h:body>
 </html>

@@ -42,11 +42,51 @@
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px">
 		</img> <br></br> <br></br>
-
-		<h1>Inicio de Sesion</h1>
-		<br></br>
+		
+		<div class="container">
+			<div class="login">
+			<h1>Inicio de Sesion</h1>
+			<h:form method="post" action="">
+				<center>
+				<p:inputText type="text" name="login" value="#{usuarioBean.username}" placeholder="Usuario"></p:inputText>
+				<br></br>
+				<br></br>
+				<h:inputSecret type="contrasena" name="password" value="#{usuarioBean.contrasena}" placeholder="Contraseña"></h:inputSecret>
+				<br></br>
+				<br></br>
+				<p class="submit"><center><input type="submit" name="commit" value="Login"></input></center></p>
+				</center>
+			</h:form>
+			</div>
+		</div>
+	</center>
+		
+		<!-- <br></br>
 		<h:form id="usuario_form">
-			<h:panelGrid columns="2" cellspacing="5px">
+			<p:panel class="panellogin">
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+			<p:dialog class="logindialogclass" header="Login" widgetVar="dlg"
+				draggable="false" showEffect="Blind" hideEffect="Blind"
+				positionType="absolute" closeOnEscape="true" resizable="false"
+				responsive="true">
+				<h:panelGrid columns="2" cellpadding="5">
+
+					<h:outputLabel class="logintext" for="correo"
+						value="Usuario: " />
+					<p:inputText class="logincomponenents" id="correo" value="#{usuarioBean.username}"
+						required="true" requiredMessage="Ingrese su usuario."
+						placeholder="Usuario" />
+
+					<h:inputSecret class="logintext" for="password" value="Contraseña" />
+					<p:password class="logincomponenents" id="password" value="#{usuarioBean.contrasena}"
+						required="true" requiredMessage="Ingrese su contraseña."
+						placeholder="Contraseña" />
+				</h:panelGrid>
+			</p:dialog>
+		</p:panel> -->
+		
+			<!-- <h:panelGrid columns="2" cellspacing="5px">
 				<label> Usuario: </label>
 				<p:inputText value="#{usuarioBean.username}"></p:inputText>
 				<br></br>
@@ -57,8 +97,7 @@
 				<br></br>
 			</h:panelGrid>
 			<p:commandButton value="Login" update="usuario_form"
-				actionListener="#{usuarioBean.validarUsuario()}"></p:commandButton>
-		</h:form>
-	</center>
+				actionListener="#{usuarioBean.validarUsuario()}"></p:commandButton> -->
+	
 </h:body>
 </html>
