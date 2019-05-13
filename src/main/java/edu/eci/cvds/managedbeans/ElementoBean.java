@@ -148,6 +148,8 @@ public class ElementoBean extends BasePageBean {
 
 	public void registrarElemento() throws proyExcepcion {
 		elementoServices.registrarElemento(id, nombre, true, tipo, fecha, marca, null);
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Registrado"));
 
 	}
 

@@ -14,12 +14,14 @@
 	display: inline;
 	padding: 7px 20px 17px 20px;
 	margin: 20px;
+	color: #FFFFFF;
 }
 
 .my_test
       li:hover {
 	background: #0074D9;
 	text-decoration: none;
+	color:#FFFFFF ;
 }
 </style>
 </h:head>
@@ -30,9 +32,12 @@
 	<center>
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
-		<h1>Menu</h1>
+		<h1 >Menu</h1>
 		<br></br>
 		<h:form id="menu_form">
+		<p:messages id="usuario" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
 
 
 			<div
@@ -49,7 +54,7 @@
 							actionListener="#{elementoBean.irLaboratorio()}"
 							style="color:white;"></h:commandLink></li>
 					<li><h:commandLink value="Log Out"
-							actionListener="#{elementoBean.logOut()}" style="color:white;"></h:commandLink></li>
+							actionListener="#{elementoBean.logOut}" update="@form"  style="color:white;"></h:commandLink></li>
 				</ul>
 			</div>
 		</h:form>

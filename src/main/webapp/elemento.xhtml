@@ -38,6 +38,9 @@
 			<br></br>
 			<br></br>
 			<h:panelGrid columns="3" cellspacing="5px">
+
+
+
 				<p:outputLabel>Id del Elemento: </p:outputLabel>
 				<h:inputText value="#{elementoBean.id}">
 				</h:inputText>
@@ -59,6 +62,7 @@
 			</h:panelGrid>
 
 			<h:panelGrid columns="1" cellpadding="5">
+
 				<p:outputLabel for="elemento" value="Tipo del Elemento" />
 				<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}"
 					style="width:125px">
@@ -73,27 +77,30 @@
 			<br></br>
 			<br></br>
 			<p:commandButton value="Registrar" update="@form"
-				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
+				actionListener="#{elementoBean.registrarElemento()}">
+				<p:messages id="elemento_form" showDetail="true" closable="true">
+					<p:autoUpdate />
+				</p:messages>
+			</p:commandButton>
 			<br></br>
 			<br></br>
-			
-				<div
-					style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
-					<div style="text-align: center;">
-						<ul class="my_test">
-							<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
-									<img src="excel.png"
-										style="width: 30px; height: 30px; border-radius: 60px">
-									</img>
-									<br></br>
-									<p:dataExporter type="xls" target="elemento_table"
-										fileName="ExcelElementos" />
-								</h:commandLink></li>
-						</ul>
-					</div>
-				</div>
 
-			
+			<div
+				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+				<div style="text-align: center;">
+					<ul class="my_test">
+						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+								<img src="excel.png"
+									style="width: 30px; height: 30px; border-radius: 60px"> </img>
+								<br></br>
+								<p:dataExporter type="xls" target="elemento_table"
+									fileName="ExcelElementos" />
+							</h:commandLink></li>
+					</ul>
+				</div>
+			</div>
+
+
 			<br></br>
 
 			<p:dataTable id="elemento_table" var="elemento"
@@ -156,10 +163,22 @@
 					</p:button>
 				</p:column>
 				<p:column headerText="Eliminar">
+					<p:growl id="message" showDetail="true" />
 					<p:commandButton value="Dar de baja"
-						actionListener="#{elementoBean.eliminarElemento}"
-						update="elemento_table">
+						actionListener="#{elementoBean.eliminarElemento(elemento.id)}"
+						update="@form">
+						<p:confirm header="Confirmation"
+							message="está seguro que quiere dar de baja el elemento?"
+							icon="pi pi-exclamation-triangle" />
 					</p:commandButton>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Si" type="button"
+							styleClass="ui-confirmdialog-yes" icon="pi pi-check"
+							update="@form"
+							actionListener="#{elementoBean.eliminarElemento(elemento.id)}" />
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no" icon="pi pi-times" />
+					</p:confirmDialog>
 				</p:column>
 			</p:dataTable>
 		</h:form>

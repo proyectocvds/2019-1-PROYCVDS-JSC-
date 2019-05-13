@@ -33,6 +33,11 @@
 
 • Sarah Vieda - Front 
 
+# Link Heroku
+https://cvds-pro.herokuapp.com/ 
+Username: rubian.saenz
+Password: proyectoCVDS1234
+
 
 
 # DESCRIPCION DEL PRODUCTO 
@@ -109,31 +114,50 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
    
    
    
-ARQUITECTURA Y DISEÑO DETALLADO
+# ARQUITECTURA Y DISEÑO DETALLADO
 
 •Modelo E-R
 
-# Link Heroku
-https://cvds-pro.herokuapp.com/ 
-
-
-•Diagrama de clases
-
 ![Diagrama](https://user-images.githubusercontent.com/48154086/57622319-efa75600-7552-11e9-960c-7ba1d88d6d7b.PNG)
+
+
+•Diagrama de clases 
+
+
+
+
+
+
+
+
+
+# STACK DE TECNOLOGIAS
+
+• MyBatis: Es un framework de persistencia que soporta SQL, procedimientos almacenados y mapeos avanzados. 
+• PrimeFaces: Es una biblioteca de componentes para JavaServer Faces(JSF) de código abierto que cuenta con un conjunto de componentes enriquecidos que facilitan la creación de las aplicaciones web.
+• Boostrap: Es una biblioteca multiplataforma o conjunto de herramientas de codigo abierto para diseno de sistios y aplicaciones web.
+• Guice: Es un framework de inyeccion de dependencias que puede ser utilizado en aplicaciones hechas con Java en donde la relación o dependencia entre objetos de negocio necesita ser administrada o mantenida.
+• PostgreSQL: Es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto.
+
+
+# ENLACE A TAIGA
+
+https://tree.taiga.io/project/camilosaenz-historial-de-equipos-labinfo/backlog
+
+# RETROSPECTIVA
+
+https://github.com/proyectocvds/2019-1-PROYCVDS-JSC-/tree/master/Retrospectiva
 
 
 # Comandos de Despliegue
 
 > Para hacer el despliegue se deben seguir los siguientes pasos
 
-#### ANTES QUE NADA AÑADIR LO PLUGINS DE DESPLIEGUE
-
-> heroku plugins:install heroku-cli-deploy
-
-1) mvn package
-2) heroku login
-3) heroku war:deploy target/Proyectocvds-1.0.war --app cvds-pro
-4) heroku open
+1) heroku plugins:install heroku-cli-deploy
+2) mvn package
+3) heroku login
+4) heroku war:deploy target/Proyectocvds-1.0.war --app cvds-pro
+5) heroku open
 
 
 

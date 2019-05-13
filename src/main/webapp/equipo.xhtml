@@ -36,7 +36,11 @@
 		<br></br>
 		<br></br>
 		<center>
-			<h:panelGrid columns="1" cellspacing="5px">
+			<h:panelGrid columns="0" cellspacing="5px">
+				<p:messages id="equipo" showDetail="true" closable="true">
+					<p:autoUpdate />
+				</p:messages>
+
 
 				<p:outputLabel>Id del Equipo: </p:outputLabel>
 				<p:inputText value="#{equipoBean.id}" />
@@ -51,25 +55,26 @@
 		<center>
 			<h:commandButton value="Registrar equipo"
 				actionListener="#{equipoBean.registrarEquipo()}" update="@form"></h:commandButton>
+
 		</center>
 
 
 		<br></br>
-		
-			<div
-				style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
-				<div style="text-align: center;">
-					<ul class="my_test">
-						<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
-								<img src="excel.png"
-									style="width: 30px; height: 30px; border-radius: 60px"> </img>
-								<br></br>
-								<p:dataExporter type="xls" target="equipo_table"
-									fileName="ExcelEquipo" />
-							</h:commandLink></li>
-					</ul>
-				</div>
+
+		<div
+			style="margin: 0px; padding: 5px; background: #001f3f; width: 100%">
+			<div style="text-align: center;">
+				<ul class="my_test">
+					<li><text style="color: #FFFFFF">Archivo Excel:</text> <h:commandLink>
+							<img src="excel.png"
+								style="width: 30px; height: 30px; border-radius: 60px"> </img>
+							<br></br>
+							<p:dataExporter type="xls" target="equipo_table"
+								fileName="ExcelEquipo" />
+						</h:commandLink></li>
+				</ul>
 			</div>
+		</div>
 
 		<br></br>
 		<p:dataTable id="equipo_table" var="equipo" value="#{equipoBean.data}"
