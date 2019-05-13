@@ -78,6 +78,10 @@ https://cvds-pro.herokuapp.com/
 
 > Para hacer el despliegue se deben seguir los siguientes pasos
 
+#### ANTES QUE NADA AÑADIR LO PLUGINS DE DESPLIEGUE
+
+> heroku plugins:install heroku-cli-deploy
+
 1) mvn package
 2) heroku login
 3) heroku war:deploy target/Proyectocvds-1.0.war --app cvds-pro
