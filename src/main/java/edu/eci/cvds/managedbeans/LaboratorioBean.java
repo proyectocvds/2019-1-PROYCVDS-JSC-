@@ -3,8 +3,10 @@ package edu.eci.cvds.managedbeans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import edu.eci.cvds.proyExcepcion;
@@ -57,6 +59,8 @@ public class LaboratorioBean extends BasePageBean {
 	public void registrarLaboratorio() throws proyExcepcion{
 		
 		laboratorioServices.registrarLaboratorio(id,nombre,cupos);
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull","Laboratorio Registrado" ) );
 	}
 	
 	public List<Laboratorio> getData() throws proyExcepcion{

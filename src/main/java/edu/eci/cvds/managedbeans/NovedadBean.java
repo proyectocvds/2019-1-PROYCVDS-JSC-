@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -110,6 +111,8 @@ public class NovedadBean extends BasePageBean {
 
 	public void registrarNovedad() throws proyExcepcion {
 		novedadServices.registrarNovedad(id, fecha, titulo, detalle, usuario, elemento, equipo, laboratorio);
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull","Novedad registrada" ) );
 	}
 
 	public List<Novedad> getData() throws proyExcepcion {

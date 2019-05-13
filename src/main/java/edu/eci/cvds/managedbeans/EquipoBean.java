@@ -107,6 +107,8 @@ public class EquipoBean extends BasePageBean {
 
 	public void registrarEquipoALaboratorio(String id, String laboratorio) {
 		equipoServices.registrarEquipoALaboratorio(id, laboratorio);
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull", "Equipo Asociado" ) );
 	}
 	
 	public List<Equipo> administraEquipo() throws proyExcepcion, IOException {

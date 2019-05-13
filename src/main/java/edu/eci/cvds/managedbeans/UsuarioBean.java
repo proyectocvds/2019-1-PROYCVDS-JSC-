@@ -85,6 +85,12 @@ public void validarUsuario () {
    fc.getExternalContext().redirect("faces/menu.xhtml");
   
 	}
+  
+  else {
+	  FacesContext context= FacesContext.getCurrentInstance();
+	  context.addMessage(null, new FacesMessage("Warning", "Datos Inválidos" ) );
+	  
+  }
  }
   
  
@@ -92,9 +98,9 @@ public void validarUsuario () {
  
  catch(Exception e) {
   
-  FacesContext context = FacesContext.getCurrentInstance();
+ /* FacesContext context = FacesContext.getCurrentInstance();
   context.addMessage(null, new FacesMessage("ERROR", "Datos incorrectos para iniciar sesión, intentelo de nuevo!"));
-  addMessage("System Error", "Please try again later.");
+  addMessage("System Error", "Please try again later.");*/
 
 	/*FacesMessage javaTextMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR,"ds" ,null);
 	FacesContext.getCurrentInstance().addMessage("componentForm:javaText", javaTextMsg);*/
@@ -132,10 +138,10 @@ public void validarUsuario () {
 		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
 	}
 	
-	public void addMessage(String mensaje, String detalle) {
+	/*public void addMessage(String mensaje, String detalle) {
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, mensaje, detalle);
         FacesContext.getCurrentInstance().addMessage(null, message);
-	}
+	}*/
 	
 	
 }
