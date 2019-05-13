@@ -187,6 +187,9 @@ public class ElementoBean extends BasePageBean {
 		equipobean.add(idElemento);
 		
 		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Insertado."));
+		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Asociado" ) );
+		// novedadServices.registrarNovedad("4486456165413251", fecha, "Registro", "Se
+		// registro elemento a quipo", null, idElemento, equipo, null);
 
 	}
 

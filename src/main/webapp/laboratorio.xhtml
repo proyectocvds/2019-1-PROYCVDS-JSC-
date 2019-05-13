@@ -20,6 +20,9 @@
 			</p:layoutUnit>
 		</p:layout>
 		<h1>Registrar Laboratorio</h1>
+		 <p:messages id="laboratorio" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
 
 		<h:form id="laboratorio_form">
 			<h:panelGrid columns="2" cellspacing="5px">
@@ -34,8 +37,8 @@
 				<br />
 
 			</h:panelGrid>
-			<p:commandButton value="Registrar" update="laboratorio_form"
-				actionListener="#{laboratorioBean.registrarLaboratorio()}"></p:commandButton>
+			<p:commandButton value="Registrar" update="@form"
+				actionListener="#{laboratorioBean.registrarLaboratorio}"></p:commandButton>
 			<br></br>
 			<br></br>
 			<br></br>

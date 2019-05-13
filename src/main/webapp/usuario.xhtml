@@ -54,7 +54,11 @@
 				<h:inputSecret type="contrasena" name="password" value="#{usuarioBean.contrasena}" placeholder="Contraseña"></h:inputSecret>
 				<br></br>
 				<br></br>
-				<p class="submit"><center><input type="submit" name="commit" value="Login"></input></center></p>
+				<p:messages id="usuario" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
+				<p:commandButton value="Login" action="#{usuarioBean.validarUsuario}" update="@form"></p:commandButton>
+				<!-- p class="submit"><center><input type="submit" name="commit" value="Login"></input></center></p> -->
 				</center>
 			</h:form>
 			</div>

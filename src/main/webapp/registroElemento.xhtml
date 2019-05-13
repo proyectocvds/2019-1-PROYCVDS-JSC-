@@ -28,7 +28,16 @@
 		#{testBean.setEquipo(elementoBean.equipo)}
 		<h:form id="registroElemento_form">
 			<br></br>
+
+			<p:messages id="registroElemento" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
+			<p:commandButton value="Registrar Elemento a Equipo"
+				update="@form"
+				action="#{elementoBean.registrarElementoAEquipo}"></p:commandButton>
+
 			<h1>Desea registrar un nuevo elemento:</h1>
+
 			<br></br>
 
 			<p:commandButton id="imageBtn" value="Registrar Nuevo Elemento"
