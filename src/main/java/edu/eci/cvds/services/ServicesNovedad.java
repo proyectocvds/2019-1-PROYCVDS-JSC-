@@ -16,5 +16,11 @@ public interface ServicesNovedad {
 	List<Novedad> novedadElemento(String elemento) throws proyExcepcion;
 	List<Novedad> novedadLaboratorio(String laboratorio) throws proyExcepcion;
 
+	public List<Novedad> laboratorio();
+
+	public List<Novedad> elemento();
+
+	public List<Novedad> equipo();
+
 
 }

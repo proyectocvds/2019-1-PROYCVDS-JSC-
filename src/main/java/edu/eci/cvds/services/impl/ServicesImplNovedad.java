@@ -41,6 +41,21 @@ public class ServicesImplNovedad implements ServicesNovedad {
 	public List<Novedad> novedadLaboratorio(String laboratorio) throws proyExcepcion {
 		return novedadDAO.novedadLaboratorio(laboratorio);
 	}
+
+	@Override
+	public List<Novedad> laboratorio() {
+		return novedadDAO.laboratorio();
+	}
+
+	@Override
+	public List<Novedad> elemento() {
+		return novedadDAO.elemento();
+	}
+
+	@Override
+	public List<Novedad> equipo() {
+		return novedadDAO.equipo();
+	}
 	
 
 }
