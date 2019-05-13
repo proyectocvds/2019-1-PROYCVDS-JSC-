@@ -96,10 +96,13 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
   
   ![registrarLab1](https://user-images.githubusercontent.com/48154086/57634864-bf1fe600-756b-11e9-9849-48fe75fcf42d.PNG)
   ![registrarLab2](https://user-images.githubusercontent.com/48154086/57634860-bd562280-756b-11e9-8f10-910f95bca644.PNG)
+  
   ![reporteLab3](https://user-images.githubusercontent.com/48154086/57634857-bc24f580-756b-11e9-92c9-92ca75d578c7.PNG)
     
      
   6. La opcion "Log Out" permite al usuario cerrar sesión.
+  
+  
      ![logout](https://user-images.githubusercontent.com/48154086/57635163-41a8a580-756c-11e9-8156-4be60cfdee2e.PNG)
 
     
