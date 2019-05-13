@@ -16,6 +16,7 @@ import edu.eci.cvds.proyExcepcion;
 import edu.eci.cvds.entities.Elemento;
 import edu.eci.cvds.services.Services;
 import edu.eci.cvds.services.ServicesElemento;
+import edu.eci.cvds.services.ServicesEquipo;
 import edu.eci.cvds.services.ServicesNovedad;
 import edu.eci.cvds.services.impl.ServicesImpl;
 
@@ -38,6 +39,7 @@ public class ElementoBean extends BasePageBean {
 	@ManagedProperty(value = "#{param.equipo}")
 	private String equipo;
 	private String nombre;
+	private EquipoBean equipobean;
 
 	public String getContrasena() {
 		return contrasena;
@@ -179,8 +181,12 @@ public class ElementoBean extends BasePageBean {
 
 	public void registrarElementoAEquipo(String idElemento, String equipo) throws proyExcepcion {
 		String eliminado = "eliminado";
+		System.out.println(idElemento);
 		FacesContext context = FacesContext.getCurrentInstance();
 		elementoServices.registrarElementoAEquipo(idElemento, equipo, eliminado);
+		equipobean.add(idElemento);
+		
+		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Insertado."));
 		context.addMessage(null, new FacesMessage("Succesfull", "Elemento Asociado" ) );
 		// novedadServices.registrarNovedad("4486456165413251", fecha, "Registro", "Se
 		// registro elemento a quipo", null, idElemento, equipo, null);
@@ -219,5 +225,4 @@ public class ElementoBean extends BasePageBean {
 	public List<Elemento> administraElemento() throws proyExcepcion, IOException {
 		return elementoServices.administraElemento(id);
 	}
-
 }
