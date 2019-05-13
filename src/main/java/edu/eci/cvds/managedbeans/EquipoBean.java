@@ -31,7 +31,7 @@ public class EquipoBean extends BasePageBean {
 	@ManagedProperty(value = "#{param.id}")
 	private String id;
 	private boolean disponible;
-	private ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+	private ArrayList<String> elementos = new ArrayList<String>();
 	@ManagedProperty(value = "#{param.laboratorio}")
 	private String laboratorio;
 	private Date fecha;
@@ -60,11 +60,11 @@ public class EquipoBean extends BasePageBean {
 		return equipoServices.listByEquipo();
 	}
 
-	public ArrayList<Elemento> getElementos() {
+	public ArrayList<String> getElementos() {
 		return elementos;
 	}
 
-	public void setElementos(ArrayList<Elemento> elementos) {
+	public void setElementos(ArrayList<String> elementos) {
 		this.elementos = elementos;
 	}
 
@@ -80,7 +80,7 @@ public class EquipoBean extends BasePageBean {
 		this.fecha = fecha;
 	}
 
-	public void add(Elemento elemento) {
+	public void add(String elemento) {
 		System.out.println(elementos.size());
 		elementos.add(elemento);
 	}
