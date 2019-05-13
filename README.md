@@ -60,13 +60,13 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
     1. La aplicacion cuenta con un menu para que el administrador seleccione la acción que desea realizar.
         ![Menu](https://user-images.githubusercontent.com/48154086/57624255-3008d300-7557-11e9-9316-6fef881344d6.PNG)
         
-     2. Al entrar en la opción de "Registrar Elemento", el administrador puede registrar un nuevo elemento el cual aparecera en el          reporte que se encuentra en la parte inferior de la página y cuenta con la opción de exportarlo en Excel. 
+   2. Al entrar en la opción de "Registrar Elemento", el administrador puede registrar un nuevo elemento el cual aparecera en el           reporte que se encuentra en la parte inferior de la página y cuenta con la opción de exportarlo en Excel. 
         
         ![registrarElem](https://user-images.githubusercontent.com/48154086/57633050-7d417080-7568-11e9-92d0-2e1e8dc3313c.PNG)
         ![exportar](https://user-images.githubusercontent.com/48154086/57633028-7581cc00-7568-11e9-8af3-666a90e8cc5b.PNG)
         
         
-     3. En la opción "Registrar Equipo", el administrador puede registrar uno nuevo y aparecerá en el reporte de equipos que se             encuentra dentro de la misma página y tiene la opción de exportar el reporte en Excel. 
+  3. En la opción "Registrar Equipo", el administrador puede registrar uno nuevo y aparecerá en el reporte de equipos que se               encuentra dentro de la misma página y tiene la opción de exportar el reporte en Excel. 
      
         ![registrarEqui](https://user-images.githubusercontent.com/48154086/57633061-7f0b3400-7568-11e9-804d-30142363c26c.PNG)
         ![exportar](https://user-images.githubusercontent.com/48154086/57633028-7581cc00-7568-11e9-8af3-666a90e8cc5b.PNG)
@@ -84,10 +84,10 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
     ![registrarNovElem2](https://user-images.githubusercontent.com/48154086/57633101-98ac7b80-7568-11e9-8996-0623981bbc71.PNG)
      
      
-     5. En la opcion "Registrar Laboratorio" el usuario tiene permisos para registrar un Laboratorio y este aparecerá en el reporte         que se encuentra en la página y tiene la opción de exportar a Excel el reporte.
+  5. En la opcion "Registrar Laboratorio" el usuario tiene permisos para registrar un Laboratorio y este aparecerá en el reporte           que se encuentra en la página y tiene la opción de exportar a Excel el reporte.
     
      
-     6. La opcion "Log Out" permite al usuario cerrar sesión.
+  6. La opcion "Log Out" permite al usuario cerrar sesión.
      
     
    
