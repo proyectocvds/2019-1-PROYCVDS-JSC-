@@ -24,50 +24,67 @@
 		<img src="logo.png"
 			style="width: 120px; height: 120px; border-radius: 60px"> </img> <br></br>
 		<br></br>
-		<h1>Registrar Elemento a Equipo</h1>
+		<h1>Registrar Elemento a Equipo: #{equipoBean.id}</h1>
 		#{testBean.setEquipo(elementoBean.equipo)}
 		<h:form id="registroElemento_form">
 			<br></br>
+
 			<p:messages id="registroElemento" showDetail="true" closable="true">
 					<p:autoUpdate/>
 				</p:messages>
 			<p:commandButton value="Registrar Elemento a Equipo"
 				update="@form"
 				action="#{elementoBean.registrarElementoAEquipo}"></p:commandButton>
+
+			<h1>Desea registrar un nuevo elemento:</h1>
+
 			<br></br>
-			<br></br>
-			<br></br>
-			<!--  
+
 			<p:commandButton id="imageBtn" value="Registrar Nuevo Elemento"
 				type="button">
-			</p:commandButton>-->
-			<p:overlayPanel id="imageBtn" for="imageBtn" hideEffect="fade">
-				<h1>Registrar Nuevo Elemento</h1>
-				<br></br>
-				<p:outputLabel>Id del Elemento: </p:outputLabel>
-				<h:inputText value="#{elementoBean.id}">
-				</h:inputText>
-				<br></br>
-				<p:outputLabel>Marca: </p:outputLabel>
-				<h:inputText value="#{elementoBean.marca}"></h:inputText>
-				<br></br>
-				<p:outputLabel>Fecha: </p:outputLabel>
-				<p:calendar value="#{elementoBean.fecha}" />
-				<br></br>
-				<p:outputLabel for="elemento" value="Tipo del Elemento" />
-				<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}"
-					style="width:125px">
-					<f:selectItem itemLabel="Seleccione un tipo" itemValue="" />
-					<f:selectItem itemLabel="Torre" itemValue="Torre" />
-					<f:selectItem itemLabel="Teclado" itemValue="Teclado" />
-					<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
-					<f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
-				</p:selectOneMenu>
-				<p:commandButton value="Registrar" update="@form"
-				actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
+			</p:commandButton>
+			<center>
+				<p:overlayPanel id="imagePanel" for="imageBtn" hideEffect="fade">
+					<h:panelGrid columns="1" cellspacing="20px">
+						<h1>Registrar Nuevo Elemento</h1>
+						<br></br>
+						<br></br>
+						<p:outputLabel>Id del Elemento: </p:outputLabel>
+						<h:inputText value="#{elementoBean.id}">
+						</h:inputText>
+						<br></br>
+						<br></br>
+						<p:outputLabel>Nombre del Elemento: </p:outputLabel>
+						<h:inputText value="#{elementoBean.nombre}" />
+						<br></br>
+						<br></br>
+						<p:outputLabel>Marca: </p:outputLabel>
+						<h:inputText value="#{elementoBean.marca}"></h:inputText>
+						<br></br>
+						<br></br>
+						<p:outputLabel>Fecha: </p:outputLabel>
+						<p:calendar value="#{elementoBean.fecha}" />
+						<br></br>
+						<br></br>
+						<p:outputLabel for="elemento" value="Tipo del Elemento" />
+						<p:selectOneMenu id="elemento" value="#{elementoBean.tipo}"
+							style="width:125px">
+							<f:selectItem itemLabel="Seleccione un tipo" itemValue="" />
+							<f:selectItem itemLabel="Torre" itemValue="Torre" />
+							<f:selectItem itemLabel="Teclado" itemValue="Teclado" />
+							<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
+							<f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
 
+						</p:selectOneMenu>
+						<br></br>
+						<br></br>
 
-			</p:overlayPanel>
+						<p:commandButton value="Registrar" update="@form"
+							actionListener="#{elementoBean.registrarElemento()}"></p:commandButton>
+
+					</h:panelGrid>
+				</p:overlayPanel>
+			</center>
 			<br></br>
 			<br></br>
 			<h1>Elementos Activos</h1>
