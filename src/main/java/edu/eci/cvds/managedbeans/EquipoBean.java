@@ -70,6 +70,8 @@ public class EquipoBean extends BasePageBean {
 
 	public void registrarEquipo() throws proyExcepcion {
 		equipoServices.registrarEquipo(id, false, fecha);
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull", "Equipo Registrado"));
 	}
 
 	public Date getFecha() {

@@ -136,6 +136,8 @@ public void validarUsuario () {
 		session.setAttribute("username",username);
 		session.setAttribute("contrasena",contrasena);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Succesfull", "Cerrando sesión"));
 	}
 	
 	/*public void addMessage(String mensaje, String detalle) {

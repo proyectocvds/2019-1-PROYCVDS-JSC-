@@ -25,6 +25,9 @@
 		<br></br>
 		<br></br>
 		<center>
+		<p:messages id="equipo" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
 			<h:panelGrid columns="2" cellspacing="5px">
 
 				<label>Id del Equipo: </label>
@@ -41,7 +44,7 @@
 		<center>
 			<h:commandButton value="Registrar equipo"
 				actionListener="#{equipoBean.registrarEquipo()}"
-				update="equipo_form"></h:commandButton>
+				update="@form"></h:commandButton>
 		</center>
 
 

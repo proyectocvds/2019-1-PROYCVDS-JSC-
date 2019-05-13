@@ -91,7 +91,7 @@
 					filterMatchMode="contains">
 					<h:outputText value="#{elemento.nombre}" style="center" />
 				</p:column>
-				
+
 				<p:column headerText="Disponible" sortBy="#{row.Disponible}"
 					filterBy="#{elemento.disponible}" filterStyle="width:100px;"
 					filterMatchMode="contains">
@@ -130,17 +130,26 @@
 					</p:button>
 				</p:column>
 				<p:column headerText="Administrar Elemento">
-					<p:button outcome="administracionElemento"
-						value="Administrar"
+					<p:button outcome="administracionElemento" value="Administrar"
 						actionListener="#{elementoBean.id}">
 						<f:param name="elemento" value="#{elemento.id}"></f:param>
 					</p:button>
 				</p:column>
 				<p:column headerText="Eliminar">
+					<p:growl id="message" showDetail="true" />
 					<p:commandButton value="Dar de baja"
-						actionListener="#{elementoBean.eliminarElemento}"
-						update="elemento_table">
+						actionListener="#{elementoBean.eliminarElemento(elemento.id)}" update="@form">
+						<p:confirm header="Confirmation"
+							message="está seguro que quiere dar de baja el elemento?"
+							icon="pi pi-exclamation-triangle" />
 					</p:commandButton>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Si" type="button"
+							styleClass="ui-confirmdialog-yes" icon="pi pi-check" update="@form"
+							actionListener="#{elementoBean.eliminarElemento(elemento.id)}" />
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no" icon="pi pi-times" />
+					</p:confirmDialog>
 				</p:column>
 			</p:dataTable>
 		</h:form>
