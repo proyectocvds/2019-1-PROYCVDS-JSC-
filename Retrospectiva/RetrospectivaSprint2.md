@@ -1,6 +1,6 @@
 # RETROSPECTIVA SPRINT 2 2019-1-PROYCVDS-JSC-
 
-# RETROSPECTIVA SPRINT 2 2019-1-PROYCVDS-JSC-
+
 
 1. Control de acceso si no hay login
 2. No abrir el login si ya inicio sesión
