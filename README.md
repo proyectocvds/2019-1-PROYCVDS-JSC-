@@ -73,22 +73,35 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
         ![reporteEquip](https://user-images.githubusercontent.com/48154086/57633199-ca254700-7568-11e9-9ad7-9d06362d6199.PNG)
         
         
-     4. En "Registrar Novedad" existen tres opciones para registrar una novedad a un Laboratorio a un elemento o a un equipo.
-        Para los Laboratorios:
+  4. En "Registrar Novedad" existen tres opciones para registrar una novedad a un Laboratorio a un elemento o a un equipo.
+     
+   Para los Laboratorios:
      ![registrarNovMenu](https://user-images.githubusercontent.com/48154086/57633188-c4c7fc80-7568-11e9-9a70-3ba2a0aa7ac7.PNG)
      ![registrarNovLab1](https://user-images.githubusercontent.com/48154086/57633171-bed21b80-7568-11e9-8c0b-9b81e6b0a435.PNG)
      ![registrarNovLab2](https://user-images.githubusercontent.com/48154086/57633183-c265a280-7568-11e9-9ab2-38eb66495715.PNG)
         
-        Para los Elementos:
+   Para los Elementos:
     ![reporteNovedadElem](https://user-images.githubusercontent.com/48154086/57633289-f2ad4100-7568-11e9-97d6-d06426e91875.PNG)
     ![registrarNovElem2](https://user-images.githubusercontent.com/48154086/57633101-98ac7b80-7568-11e9-8996-0623981bbc71.PNG)
+    ![NovedadElementoReporte](https://user-images.githubusercontent.com/48154086/57633769-a7dff900-7569-11e9-8201-8f3eec6e7b5b.PNG)
+    
+   Para los Equipos:
+   ![novedadEquipo1](https://user-images.githubusercontent.com/48154086/57634871-c1824000-756b-11e9-839a-5c90c632544c.PNG)
+   ![novedadEquipo2](https://user-images.githubusercontent.com/48154086/57634869-c0e9a980-756b-11e9-99f6-6ab913581f03.PNG)
+   
+      
      
      
   5. En la opcion "Registrar Laboratorio" el usuario tiene permisos para registrar un Laboratorio y este aparecerá en el reporte           que se encuentra en la página y tiene la opción de exportar a Excel el reporte.
+  
+  ![registrarLab1](https://user-images.githubusercontent.com/48154086/57634864-bf1fe600-756b-11e9-9849-48fe75fcf42d.PNG)
+  ![registrarLab2](https://user-images.githubusercontent.com/48154086/57634860-bd562280-756b-11e9-8f10-910f95bca644.PNG)
+  ![reporteLab3](https://user-images.githubusercontent.com/48154086/57634857-bc24f580-756b-11e9-92c9-92ca75d578c7.PNG)
     
      
   6. La opcion "Log Out" permite al usuario cerrar sesión.
-     
+     ![logout](https://user-images.githubusercontent.com/48154086/57635163-41a8a580-756c-11e9-8156-4be60cfdee2e.PNG)
+
     
    
    
