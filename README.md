@@ -51,7 +51,7 @@ https://cvds-pro.herokuapp.com/
 
 •Diagrama de clases
 
-![diagrama](https://user-images.githubusercontent.com/48154086/56165286-2c098580-5f98-11e9-9cde-23a677f12c99.PNG)
+![diagrama](https://user-images.githubusercontent.com/48154086/Diagrama.png.PNG)
 
 
 # Comandos de Despliegue
