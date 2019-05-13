@@ -12,6 +12,7 @@ public interface NovedadDAO {
 	
 
 	
+
 	public List<Novedad> consultarNovedad();
 
 	public void registrarNovedad(String id, java.util.Date fecha, String titulo, String detalle, String usuario, String elemento, String equipo,String laboratorio) throws proyExcepcion;
@@ -21,6 +22,12 @@ public interface NovedadDAO {
 	public List<Novedad> novedadElemento(String elemento);
 	
 	public List<Novedad> novedadLaboratorio(String laboratorio);
+
+	public List<Novedad> laboratorio();
+
+	public List<Novedad> elemento();
+
+	public List<Novedad> equipo();
 
 
 	

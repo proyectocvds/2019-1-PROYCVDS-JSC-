@@ -1,12 +1,13 @@
 package edu.eci.cvds.managedbeans;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import edu.eci.cvds.entities.Elemento;
 
+@SuppressWarnings("deprecation")
 @ManagedBean(name="equipo")
 @SessionScoped
 public class TestBean {

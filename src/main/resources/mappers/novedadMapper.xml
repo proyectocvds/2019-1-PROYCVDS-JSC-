@@ -51,6 +51,31 @@
 		WHERE laboratorio=#{laboratorio};
 	</select>
 
+	<select id="laboratorio" resultMap="NovedadResult">
+		SELECT id, fecha, titulo,
+		detalle, usuario, laboratorio
+		FROM NOVEDAD
+		WHERE laboratorio is not null
+		ORDER BY FECHA DESC;
+	</select>
 
+	<select id="elemento" resultMap="NovedadResult">
+		SELECT id, fecha, titulo,
+		detalle, usuario, elemento
+		FROM NOVEDAD
+		WHERE elemento is not null
+		ORDER
+		BY FECHA DESC;
+	</select>
+
+	<select id="equipo" resultMap="NovedadResult">
+		SELECT id, fecha, titulo,
+		detalle, usuario, equipo
+		FROM NOVEDAD
+		WHERE equipo is not null
+		ORDER
+		BY FECHA DESC;
+	</select>
+	
 </mapper>
   

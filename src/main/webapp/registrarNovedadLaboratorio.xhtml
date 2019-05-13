@@ -12,14 +12,15 @@
 </f:metadata>
 <h:body style="margin:0px; padding:0px;">
 	<p:button outcome="novedad" value="Regresar a Novedad" />
+	<p:button outcome="laboratorioARegistrar" value="Regresar a Registrar Laboratorio" />
 	<h:form id="novedad_form">
 		<center>
 			<img src="logo.png"
 				style="width: 120px; height: 120px; border-radius: 60px"> </img>
-			<h1>Novedad del laboratorio: #{laboratorioBean.id}</h1>
+			<h1>Registrar Novedad del laboratorio: #{laboratorioBean.id}</h1>
 			<br></br> <br></br>
 			<h:panelGrid columns="2" cellspacing="5px">
-			<label>id: </label>
+				<label>id: </label>
 				<p:inputText value="#{novedadBean.id}" />
 				<br />
 				<label>Fecha: </label>
@@ -34,6 +35,8 @@
 				<label>Usuario: </label>
 				<p:inputText value="#{novedadBean.usuario}" />
 				<br />
+				<label>Laboratorio: </label>
+				<p:inputText value="#{novedadBean.laboratorio}" />
 			</h:panelGrid>
 		</center>
 		<center>
@@ -53,7 +56,7 @@
 				fileName="ExcelElementos" />
 		</h:commandLink>
 		<p:dataTable id="novedad_table" var="novedad"
-			value="#{novedadBean.data}" paginator="true" rows="10"
+			value="#{novedadBean.laboratorio()}" paginator="true" rows="10"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="5,10,15"
 			currentPageReportTemplate="Página: ({currentPage} de {totalPages})">

@@ -21,5 +21,11 @@ public interface NovedadMapper {
 	
 	public List<Novedad> novedadLaboratorio(@Param("laboratorio") String elemento);
 
+	public List<Novedad> laboratorio();
+
+	public List<Novedad> elemento();
+
+	public List<Novedad> equipo();
+
 
 }
