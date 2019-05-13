@@ -44,19 +44,21 @@ El producto que desarrollo nuestro equipo es una herramienta donde el personal d
 • Manual de Usuario
 
 La plataforma Historial de Equipos cuenta con permisos para los usuarios que se encuentran registrados en la base de datos como    administradores, algunos de estos permisos son:
-   ->  Registrar un elemento que fue adquirido en el Laboratorio de Informática y tener el control de cada uno de ellos. Hay cuatro        tipos de elementos: Torre, Pantalla, Mouse y Teclado.
-   ->  Registrar un nuevo equipo perteneciente al departamento, con todos sus elementos esto quiere decir que debe contener todos  
+   1.  Registrar un elemento que fue adquirido en el Laboratorio de Informática y tener el control de cada uno de ellos. Hay cuatro        tipos de elementos: Torre, Pantalla, Mouse y Teclado.
+   2. Registrar un nuevo equipo perteneciente al departamento, con todos sus elementos esto quiere decir que debe contener todos  
        los elementos necesarios para su funcionamiento.
-   ->  Registrar una novedad sobre un elemento o un equipo para obtener un reporte historico de cada una de las novedades                  asociadas y asi conocer cuales han sido las tareas, cambios o mantenimientos realizados a los equipos y elementos.
-   ->  Consultar el reporte de equipos en el que puedo ver cada uno de los equipos con los que cuenta el Laboratorio.
-   ->  Asociar los elementos que se encuentran disponibles a un equipo en específico con el fin de controlar que cada equipo activo        se encuentre completo.
-   ->  Consultar el reporte de elementos en el que puedo tener un control de los elementos que tengo disponibles con su respectiva        información.
-   ->  Registrar un laboratorio perteneciente al departamento con todos sus equipos.
-   ->  Asociar los equipos a un laboratorio con el fin de controlar que equipos se encuentran en cada uno de los laboratorios.
-   ->  Dar de baja a un equipo para indicar que ya no estará en uso y no es posible asignar más elementos a este.
-   ->  Consultar el reporte de laboratorio para tener un control de que laboratorios se encuentran disponibles con su información          mas relevante.
+   3.  Registrar una novedad sobre un elemento o un equipo para obtener un reporte historico de cada una de las novedades                  asociadas y asi conocer cuales han sido las tareas, cambios o mantenimientos realizados a los equipos y elementos.
+   4.  Consultar el reporte de equipos en el que puedo ver cada uno de los equipos con los que cuenta el Laboratorio.
+   5.  Asociar los elementos que se encuentran disponibles a un equipo en específico con el fin de controlar que cada equipo activo        se encuentre completo.
+   6.  Consultar el reporte de elementos en el que puedo tener un control de los elementos que tengo disponibles con su respectiva        información.
+   7.  Registrar un laboratorio perteneciente al departamento con todos sus equipos.
+   8.  Asociar los equipos a un laboratorio con el fin de controlar que equipos se encuentran en cada uno de los laboratorios.
+   9.  Dar de baja a un equipo para indicar que ya no estará en uso y no es posible asignar más elementos a este.
+   10.  Consultar el reporte de laboratorio para tener un control de que laboratorios se encuentran disponibles con su información          mas relevante.
    
    • Imágenes y descripcion de las funcionalidades más importantes.
+   
+   ![Menu](https://user-images.githubusercontent.com/48154086/57624255-3008d300-7557-11e9-9316-6fef881344d6.PNG)
    
    
    
