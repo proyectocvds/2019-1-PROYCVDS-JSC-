@@ -47,9 +47,9 @@
 					<center>${equipo.getFecha()}</center>
 				</p:column>
 				<p:column headerTest="Registrar">
-				<p:commandButton value="Registrar Equipo"
-				update="registroEquipo_form"
-				actionListener="#{equipoBean.registrarEquipoALaboratorio(equipo.id, lab.laboratorio)}"></p:commandButton>
+					<p:commandButton value="Registrar Equipo"
+						update="registroEquipo_form"
+						actionListener="#{equipoBean.registrarEquipoALaboratorio(equipo.id, lab.laboratorio)}"></p:commandButton>
 				</p:column>
 			</p:dataTable>
 		</h:form>
