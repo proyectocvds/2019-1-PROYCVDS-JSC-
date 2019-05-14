@@ -35,8 +35,9 @@
 
 # Link Heroku
 https://cvds-pro.herokuapp.com/ 
-Username: rubian.saenz
-Password: proyectoCVDS1234
+
+• Username: rubian.saenz
+• Password: proyectoCVDS1234
 
 
 
@@ -158,8 +159,3 @@ https://github.com/proyectocvds/2019-1-PROYCVDS-JSC-/tree/master/Retrospectiva
 3) heroku login
 4) heroku war:deploy target/Proyectocvds-1.0.war --app cvds-pro
 5) heroku open
-
-
-
-
-
