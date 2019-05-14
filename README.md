@@ -1,8 +1,9 @@
-# 2019-1-PROYCVDS-JSC-
-
+# CICLOS DE VIDA DEL DESARROLLO DEL SOFTWARE
 2019-1
 
-# CICLOS DE VIDA DEL DESARROLLO DEL SOFTWARE
+Grupo:
+
+# 2019-1-PROYCVDS-JSC-
 
 # INTEGRANTES:
 
@@ -33,10 +34,12 @@
 
 • Sarah Vieda - Front 
 
+
 # Link Heroku
 https://cvds-pro.herokuapp.com/ 
 
 • Username: rubian.saenz
+
 • Password: proyectoCVDS1234
 
 
@@ -111,9 +114,6 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
   
      ![logout](https://user-images.githubusercontent.com/48154086/57635163-41a8a580-756c-11e9-8156-4be60cfdee2e.PNG)
 
-    
-   
-   
    
 # ARQUITECTURA Y DISEÑO DETALLADO
 
@@ -126,10 +126,6 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
 
 
 ![Diagrama de Clases](https://github.com/proyectocvds/2019-1-PROYCVDS-JSC-/blob/master/Diagrama%20de%20Clases.PNG)
-
-
-
-
 
 
 # STACK DE TECNOLOGIAS
