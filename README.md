@@ -36,8 +36,8 @@
 # Link Heroku
 https://cvds-pro.herokuapp.com/ 
 
-# Username: rubian.saenz
-# Password: proyectoCVDS1234
+• Username: rubian.saenz
+• Password: proyectoCVDS1234
 
 
 
