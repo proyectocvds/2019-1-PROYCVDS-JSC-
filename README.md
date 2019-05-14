@@ -125,7 +125,7 @@ La plataforma Historial de Equipos cuenta con permisos para los usuarios que se 
 •Diagrama de clases 
 
 
-https://github.com/proyectocvds/2019-1-PROYCVDS-JSC-/blob/master/Diagrama%20de%20Clases.PNG
+![Diagrama de Clases](https://github.com/proyectocvds/2019-1-PROYCVDS-JSC-/blob/master/Diagrama%20de%20Clases.PNG)
 
 
 
